@@ -37,7 +37,7 @@ public class Frases {
 	        lista.add ("Cuide bem daquilo que você ama. É caro demais perder o que não tem preço.") ; //28
 	        lista.add( "Tem gente que escolhe te perder ao invés de buscar melhorar. Você não pode nudar alguém, mas pode mudar de lugar e seguir.");//29
 	        lista.add( "Antes de falar que eu te abandonei, pergunta se tu fazia questão de me ter por perto.");//30
-	        //lista.add( "");//31
+	        lista.add( "Põe-te no lugar do outro, e te tornarás incapaz de julgá-lo.");//31
 	        //lista.add( "");//32
 	        //lista.add( "");//33
 	        //lista.add( "");//34
