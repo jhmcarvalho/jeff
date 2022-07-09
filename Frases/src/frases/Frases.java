@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Frases {
 	 public String sorteia (){
-	        List<String> lista = new ArrayList<String>() ;
+		 ArrayList<String> lista = new ArrayList<String>() ;
 	        lista.add ("Sempre lutei por liberdade, mas ser livre me fez só.") ; //1
 	        lista.add ("Não corra atrás de alguém que não dá um passo por você.") ; //2
 	        lista.add ("A dor mora na lembrança dos momentos felizes.") ; //3
@@ -38,11 +38,11 @@ public class Frases {
 	        lista.add( "Tem gente que escolhe te perder ao invés de buscar melhorar. Você não pode nudar alguém, mas pode mudar de lugar e seguir.");//29
 	        lista.add( "Antes de falar que eu te abandonei, pergunta se tu fazia questão de me ter por perto.");//30
 	        lista.add( "Põe-te no lugar do outro, e te tornarás incapaz de julgá-lo.");//31
-	        //lista.add( "");//32
-	        //lista.add( "");//33
-	        //lista.add( "");//34
-	        //lista.add( "");//35
-	        //lista.add( "");//36
+	        lista.add( "A medida do amor é amar sem medidas.");//32
+	        lista.add( "Não importa a cor do céu, quem faz o dia bonito é você.");//33
+	        lista.add( "Não tenha medo de descobrir que você não é mais o mesmo");//34
+	        lista.add( "Faça alguém feliz hoje. Pequenos gestos fazem toda a diferença.");//35
+	        lista.add( "Não deixe as incertezas atrapalharem sua felicidade.");//36
 	        //lista.add( "");//37
 	        //lista.add( "");//38
 	        //lista.add( "");//39
