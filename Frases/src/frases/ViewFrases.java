@@ -118,7 +118,7 @@ public class ViewFrases {
 						JOptionPane.QUESTION_MESSAGE);
 
 				if (retorno == JOptionPane.YES_OPTION) {
-					
+				//Colocar aqui o retorno do sim, pra gerar uma nova frase.	
 					
 					
 				} 
