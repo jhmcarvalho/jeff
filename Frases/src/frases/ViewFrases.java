@@ -2,11 +2,11 @@ package frases;
 
 import java.awt.Color;
 import java.awt.EventQueue;
-import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -17,6 +17,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+
+import java.awt.Font;
+
+import javax.swing.SwingConstants;
+//import com.sun.awt.AWTUtilities;
 
 public class ViewFrases {
 
@@ -82,14 +87,17 @@ public class ViewFrases {
 
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.WHITE);
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 450, 240);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
 		JLabel lblSuaFraseDo = new JLabel("SUA FRASE DO DIA \u00C9:");
-		lblSuaFraseDo.setBounds(156, 33, 212, 27);
+		lblSuaFraseDo.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 16));
+		lblSuaFraseDo.setBounds(142, 39, 212, 27);
 		frame.getContentPane().add(lblSuaFraseDo);
 		txtFrases = new JTextField();
+		txtFrases.setHorizontalAlignment(SwingConstants.LEFT);
+		txtFrases.setFont(new Font("Times New Roman", Font.PLAIN, 12));
 
 		//A LINHA DE BAIXO AINDA NÃO FUNCIONOU, MAS É PRA PEGAR A FRASE
 		 txtFrases.setText(frase);
@@ -104,18 +112,20 @@ public class ViewFrases {
 		JButton btnNovaFrase = new JButton("Nova Frase");
 		btnNovaFrase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
+				//	run();
 				int retorno = JOptionPane.showConfirmDialog(null,
 						"Gerar nova frase?", " ", JOptionPane.YES_NO_OPTION,
 						JOptionPane.QUESTION_MESSAGE);
 
 				if (retorno == JOptionPane.YES_OPTION) {
-				//	System.exit(0);
+					
+					
+					
 				} 
 
 			}
 		});
-		btnNovaFrase.setBounds(44, 192, 123, 27);
+		btnNovaFrase.setBounds(21, 166, 123, 27);
 		frame.getContentPane().add(btnNovaFrase);
 
 		btnSair = new JButton("Sair");
@@ -131,7 +141,7 @@ public class ViewFrases {
 				}
 			}
 		});
-		btnSair.setBounds(242, 192, 126, 27);
+		btnSair.setBounds(287, 166, 126, 27);
 		frame.getContentPane().add(btnSair);
 	}
 }

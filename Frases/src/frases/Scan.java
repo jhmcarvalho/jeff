@@ -36,4 +36,9 @@ public class Scan {
 
 	     return frase;      
 	  }
+
+	public void getConnection() {
+		// TODO Auto-generated method stub
+		
+	}
 	}
