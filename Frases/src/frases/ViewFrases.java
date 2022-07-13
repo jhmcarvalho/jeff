@@ -24,7 +24,7 @@ public class ViewFrases {
 	public JTextField txtFrases;
 	public JButton btnSair;
 	public String line;
-	public String frase;
+	public static String frase;
 	/**
 	 * Launch the application.
 	 * 
@@ -54,7 +54,7 @@ public class ViewFrases {
 	}
 
 	public static String choose(File f) throws FileNotFoundException {
-		String frase = null;
+		//String frase = null;
 		Random Rand = new Random();
 		int n = 0;
 		for (Scanner sc = new Scanner(f); sc.hasNext();) {
@@ -92,7 +92,7 @@ public class ViewFrases {
 		txtFrases = new JTextField();
 
 		//A LINHA DE BAIXO AINDA NÃO FUNCIONOU, MAS É PRA PEGAR A FRASE
-		 txtFrases.setText(line);
+		 txtFrases.setText(frase);
 		System.out.println(txtFrases.getText());
 
 		txtFrases.setBounds(21, 77, 392, 41);
@@ -105,12 +105,13 @@ public class ViewFrases {
 		btnNovaFrase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				if (txtFrases.getText() != null) {
-					JOptionPane.showMessageDialog(null, "Teste");
-				} else {
-					JOptionPane.showMessageDialog(null,
-							"Sua frase não pode ser gerada");
-				}
+				int retorno = JOptionPane.showConfirmDialog(null,
+						"Gerar nova frase?", " ", JOptionPane.YES_NO_OPTION,
+						JOptionPane.QUESTION_MESSAGE);
+
+				if (retorno == JOptionPane.YES_OPTION) {
+				//	System.exit(0);
+				} 
 
 			}
 		});
