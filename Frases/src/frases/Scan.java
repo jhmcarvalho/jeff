@@ -23,7 +23,7 @@ public class Scan {
 
 	  public static String choose(File f) throws FileNotFoundException
 	  {
-	     String result = null;
+	     String frase = null;
 	     Random Rand = new Random();
 	     int n = 0;
 	     for(Scanner sc = new Scanner(f); sc.hasNext(); )
@@ -31,9 +31,9 @@ public class Scan {
 	        ++n;
 	        String line = sc.nextLine();
 	        if(Rand.nextInt(n) == 0)
-	           result = line;         
+	           frase = line;         
 	     }
 
-	     return result;      
+	     return frase;      
 	  }
 	}

@@ -2,11 +2,15 @@ package frases;
 
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
+import java.util.Scanner;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,14 +20,17 @@ import javax.swing.JTextField;
 
 public class ViewFrases {
 
-	private JFrame frame;
-	private JTextField txtFrases;
-	private JButton btnSair;
-
+	public JFrame frame;
+	public JTextField txtFrases;
+	public JButton btnSair;
+	public String line;
+	public String frase;
 	/**
 	 * Launch the application.
+	 * 
+	 * @throws FileNotFoundException
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -34,6 +41,31 @@ public class ViewFrases {
 				}
 			}
 		});
+
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		for (int i = 0; i < 1; ++i) {
+			String s = choose(new File("D://Files.txt"));
+			if (!map.containsKey(s))
+				map.put(s, 0);
+			map.put(s, map.get(s) + 1);
+		}
+
+		System.out.println(map);
+	}
+
+	public static String choose(File f) throws FileNotFoundException {
+		String frase = null;
+		Random Rand = new Random();
+		int n = 0;
+		for (Scanner sc = new Scanner(f); sc.hasNext();) {
+			++n;
+			String line = sc.nextLine();
+			if (Rand.nextInt(n) == 0)
+				frase = line;
+
+		}
+
+		return frase;
 	}
 
 	/**
@@ -58,6 +90,11 @@ public class ViewFrases {
 		lblSuaFraseDo.setBounds(156, 33, 212, 27);
 		frame.getContentPane().add(lblSuaFraseDo);
 		txtFrases = new JTextField();
+
+		//A LINHA DE BAIXO AINDA NÃO FUNCIONOU, MAS É PRA PEGAR A FRASE
+		 txtFrases.setText(line);
+		System.out.println(txtFrases.getText());
+
 		txtFrases.setBounds(21, 77, 392, 41);
 		frame.getContentPane().add(txtFrases);
 		txtFrases.setColumns(10);
@@ -68,12 +105,12 @@ public class ViewFrases {
 		btnNovaFrase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-			//	if (txtFrases.getText() != null) {
-						//JOptionPane.showMessageDialog(null, +result);
-				//	} else {
-				//		JOptionPane.showMessageDialog(null,
-				//					"Sua frase não pode ser gerada");
-				//		}
+				if (txtFrases.getText() != null) {
+					JOptionPane.showMessageDialog(null, "Teste");
+				} else {
+					JOptionPane.showMessageDialog(null,
+							"Sua frase não pode ser gerada");
+				}
 
 			}
 		});
@@ -96,10 +133,4 @@ public class ViewFrases {
 		btnSair.setBounds(242, 192, 126, 27);
 		frame.getContentPane().add(btnSair);
 	}
-
-	// public boolean checkFrases(String frases){
-	// return frases.equals("frases");
- }
-	
-	
-	
+}
