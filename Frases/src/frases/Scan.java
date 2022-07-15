@@ -1,0 +1,44 @@
+package frases;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
+import java.util.Scanner;
+
+public class Scan {
+	 public static void main(String[] args) throws FileNotFoundException {
+	     Map<String,Integer> map = new HashMap<String,Integer>();
+	     for(int i = 0; i < 1; ++i)
+	     {
+	        String s = choose(new File("D://Files.txt"));
+	        if(!map.containsKey(s))
+	           map.put(s, 0);
+	        map.put(s, map.get(s) + 1);
+	     }
+
+	     System.out.println(map);
+	  }
+
+	  public static String choose(File f) throws FileNotFoundException
+	  {
+	     String frase = null;
+	     Random Rand = new Random();
+	     int n = 0;
+	     for(Scanner sc = new Scanner(f); sc.hasNext(); )
+	     {
+	        ++n;
+	        String line = sc.nextLine();
+	        if(Rand.nextInt(n) == 0)
+	           frase = line;         
+	     }
+
+	     return frase;      
+	  }
+
+	public void getConnection() {
+		// TODO Auto-generated method stub
+		
+	}
+	}
