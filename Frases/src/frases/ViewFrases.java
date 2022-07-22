@@ -21,6 +21,7 @@ import javax.swing.JTextField;
 import java.awt.Font;
 
 import javax.swing.SwingConstants;
+
 //import com.sun.awt.AWTUtilities;
 
 public class ViewFrases {
@@ -30,6 +31,7 @@ public class ViewFrases {
 	public JButton btnSair;
 	public String line;
 	public static String frase;
+
 	/**
 	 * Launch the application.
 	 * 
@@ -55,11 +57,11 @@ public class ViewFrases {
 			map.put(s, map.get(s) + 1);
 		}
 
-		System.out.println(map);
+		//System.out.println(map);
 	}
 
 	public static String choose(File f) throws FileNotFoundException {
-		//String frase = null;
+		// String frase = null;
 		Random Rand = new Random();
 		int n = 0;
 		for (Scanner sc = new Scanner(f); sc.hasNext();) {
@@ -99,9 +101,8 @@ public class ViewFrases {
 		txtFrases.setHorizontalAlignment(SwingConstants.LEFT);
 		txtFrases.setFont(new Font("Times New Roman", Font.PLAIN, 12));
 
-		//A LINHA DE BAIXO AINDA NÃO FUNCIONOU, MAS É PRA PEGAR A FRASE
-		 txtFrases.setText(frase);
-		System.out.println(txtFrases.getText());
+		txtFrases.setText(frase);
+	//	System.out.println(txtFrases.getText());
 
 		txtFrases.setBounds(21, 77, 392, 41);
 		frame.getContentPane().add(txtFrases);
@@ -112,18 +113,18 @@ public class ViewFrases {
 		JButton btnNovaFrase = new JButton("Nova Frase");
 		btnNovaFrase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//	run();
+				// run();
 				int retorno = JOptionPane.showConfirmDialog(null,
 						"Gerar nova frase?", " ", JOptionPane.YES_NO_OPTION,
 						JOptionPane.QUESTION_MESSAGE);
 
 				if (retorno == JOptionPane.YES_OPTION) {
-				//Colocar aqui o retorno do sim, pra gerar uma nova frase.	
-					
-					
-				} 
+					//System.out.println(map);
+
+				}
 
 			}
+
 		});
 		btnNovaFrase.setBounds(21, 166, 123, 27);
 		frame.getContentPane().add(btnNovaFrase);
