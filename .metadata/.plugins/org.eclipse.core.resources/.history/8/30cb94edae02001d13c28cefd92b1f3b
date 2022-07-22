@@ -1,0 +1,35 @@
+package frases;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.Random;
+
+public class loadFiles {
+
+		public void loadFiles (){
+			File f = new File ("D://Files.txt");
+			try{
+			BufferedReader in = new BufferedReader(new FileReader(f));
+			String line = null;
+			Random r = new Random();
+			int a = r.nextInt(135); //Gero o número aleatório da linha
+			for (int count = 0; count <= a; count ++){
+			line = in.readLine();
+			if(count == a){
+			Frases.add(line);
+			System.out.println("Add in my disk the file " + Frases.get(count));
+			}
+			}
+			}catch (Exception e){
+
+			}
+
+
+	}
+		 public static void main(String[] args){
+			 
+		 }
+	}
+
+

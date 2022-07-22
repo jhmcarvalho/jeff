@@ -1,0 +1,24 @@
+package frases;
+
+import java.io.FileNotFoundException;
+
+public static void main(String[] args) {	
+	
+}
+public void loadFiles (){
+File f = new File ("D://Files.txt");
+try{
+BufferedReader in = new BufferedReader(new FileReader(f));
+String line = null;
+Random r = new Random();
+int a = r.nextInt(135); //Gero o número aleatório da linha
+for (int count = 0; count <= a; count ++){
+line = in.readLine();
+if(count == a){
+files.add(line);
+System.out.println("Add in my disk the file " + files.get(count));
+}
+}
+}catch (Exception e){
+
+}
