@@ -2,6 +2,9 @@ package frases;
 
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -12,22 +15,27 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import java.awt.Font;
 
 import javax.swing.SwingConstants;
 
+import frases.Borders2UndecoFrame;
+
 //import com.sun.awt.AWTUtilities;
 
 public class ViewFrases {
 
 	public JFrame frame;
-	public JTextField txtFrases;
+	public JTextArea txtFrases;
 	public JButton btnSair;
 	public String line;
 	public static String frase;
@@ -86,21 +94,27 @@ public class ViewFrases {
 	 * Initialize the contents of the frame.
 	 */
 	public void initialize() {
-
-		frame = new JFrame();
+		GraphicsEnvironment graphics =
+		GraphicsEnvironment.getLocalGraphicsEnvironment();
+		GraphicsDevice device = graphics.getDefaultScreenDevice();
+		
+		frame = new JFrame("Frase do dia");
+		JPanel panel = new JPanel();
 		frame.getContentPane().setBackground(Color.WHITE);
-		frame.setBounds(100, 100, 450, 240);
+		//frame.setBounds(900, 100, 450, 240);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+	//	frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
-		JLabel lblSuaFraseDo = new JLabel("SUA FRASE DO DIA \u00C9:");
-		lblSuaFraseDo.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 16));
-		lblSuaFraseDo.setBounds(142, 39, 212, 27);
-		frame.getContentPane().add(lblSuaFraseDo);
-		txtFrases = new JTextField();
-		txtFrases.setHorizontalAlignment(SwingConstants.LEFT);
-		txtFrases.setFont(new Font("Times New Roman", Font.PLAIN, 12));
-
+		JLabel lbsuafrase = new JLabel("SUA FRASE DO DIA \u00C9:", JLabel.CENTER);
+		lbsuafrase.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 18));
+		lbsuafrase.setBounds(142, 39, 212, 27);
+		frame.getContentPane().add(lbsuafrase);
+		txtFrases = new JTextArea();
+		txtFrases.setLineWrap(true);
+		txtFrases.setWrapStyleWord(true);
+		txtFrases.setFont(new Font("Times New Roman", Font.PLAIN, 17));
+		txtFrases.setMargin(new Insets(5,5,5,5));
 		txtFrases.setText(frase);
 	//	System.out.println(txtFrases.getText());
 
@@ -109,6 +123,7 @@ public class ViewFrases {
 		txtFrases.setColumns(10);
 		txtFrases.setEditable(false);
 		txtFrases.setBackground(Color.LIGHT_GRAY);
+		device.setFullScreenWindow(frame);
 
 		JButton btnNovaFrase = new JButton("Nova Frase");
 		btnNovaFrase.addActionListener(new ActionListener() {
@@ -132,14 +147,15 @@ public class ViewFrases {
 		btnSair = new JButton("Sair");
 		btnSair.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
 
-				int retorno = JOptionPane.showConfirmDialog(null,
-						"Deseja sair?", " ", JOptionPane.YES_NO_OPTION,
-						JOptionPane.QUESTION_MESSAGE);
-
-				if (retorno == JOptionPane.YES_OPTION) {
-					System.exit(0);
-				}
+//				int retorno = JOptionPane.showConfirmDialog(null,
+//						"Deseja sair?", " ", JOptionPane.YES_NO_OPTION,
+//						JOptionPane.QUESTION_MESSAGE);
+//
+//				if (retorno == JOptionPane.YES_OPTION) {
+//					System.exit(0);
+//				}
 			}
 		});
 		btnSair.setBounds(287, 166, 126, 27);
