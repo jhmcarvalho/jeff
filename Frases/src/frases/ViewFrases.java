@@ -45,7 +45,9 @@ public class ViewFrases {
 	 * 
 	 * @throws FileNotFoundException
 	 */
+
 	public static void main(String[] args) throws FileNotFoundException {
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -64,8 +66,7 @@ public class ViewFrases {
 				map.put(s, 0);
 			map.put(s, map.get(s) + 1);
 		}
-
-		//System.out.println(map);
+		// System.out.println(map);
 	}
 
 	public static String choose(File f) throws FileNotFoundException {
@@ -79,64 +80,94 @@ public class ViewFrases {
 				frase = line;
 
 		}
-
 		return frase;
+
 	}
 
-	/**
-	 * Create the application.
-	 */
 	public ViewFrases() {
-		initialize();
+		Tela();
+
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	public void initialize() {
-		GraphicsEnvironment graphics =
-		GraphicsEnvironment.getLocalGraphicsEnvironment();
-		GraphicsDevice device = graphics.getDefaultScreenDevice();
-		
+	public void Tela() {
+		// GraphicsEnvironment graphics =
+		// GraphicsEnvironment.getLocalGraphicsEnvironment();
+		// GraphicsDevice device = graphics.getDefaultScreenDevice();
+
 		frame = new JFrame("Frase do dia");
-		JPanel panel = new JPanel();
 		frame.getContentPane().setBackground(Color.WHITE);
-		//frame.setBounds(900, 100, 450, 240);
+		frame.setBounds(900, 100, 550, 240);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-	//	frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		// frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
-		JLabel lbsuafrase = new JLabel("SUA FRASE DO DIA \u00C9:", JLabel.CENTER);
+		JLabel lbsuafrase = new JLabel("SUA FRASE DO DIA \u00C9:",
+				JLabel.CENTER);
 		lbsuafrase.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 18));
-		lbsuafrase.setBounds(142, 39, 212, 27);
+		lbsuafrase.setBounds(142, 39, 225, 27);
 		frame.getContentPane().add(lbsuafrase);
 		txtFrases = new JTextArea();
 		txtFrases.setLineWrap(true);
 		txtFrases.setWrapStyleWord(true);
 		txtFrases.setFont(new Font("Times New Roman", Font.PLAIN, 17));
-		txtFrases.setMargin(new Insets(5,5,5,5));
+		txtFrases.setMargin(new Insets(5, 5, 5, 5));
 		txtFrases.setText(frase);
-	//	System.out.println(txtFrases.getText());
+		// System.out.println(txtFrases.getText());
 
-		txtFrases.setBounds(21, 77, 392, 41);
+		txtFrases.setBounds(21, 77, 492, 57);
 		frame.getContentPane().add(txtFrases);
 		txtFrases.setColumns(10);
 		txtFrases.setEditable(false);
 		txtFrases.setBackground(Color.LIGHT_GRAY);
-		device.setFullScreenWindow(frame);
+		// device.setFullScreenWindow(frame);
 
 		JButton btnNovaFrase = new JButton("Nova Frase");
 		btnNovaFrase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				// run();
-				int retorno = JOptionPane.showConfirmDialog(null,
-						"Gerar nova frase?", " ", JOptionPane.YES_NO_OPTION,
-						JOptionPane.QUESTION_MESSAGE);
 
-				if (retorno == JOptionPane.YES_OPTION) {
-					//System.out.println(map);
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							ViewFrases window = new ViewFrases();
+							window.frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+
+				Map<String, Integer> map = new HashMap<String, Integer>();
+				for (int i = 0; i < 1; ++i) {
+					String s = null;
+					try {
+						s = choose(new File("D://Files.txt"));
+					} catch (FileNotFoundException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					if (!map.containsKey(s))
+						map.put(s, 0);
+					map.put(s, map.get(s) + 1);
+				}
+				// System.out.println(map);
+			}
+
+			public String choose(File f) throws FileNotFoundException {
+				// String frase = null;
+				Random Rand = new Random();
+				int n = 0;
+				for (Scanner sc = new Scanner(f); sc.hasNext();) {
+					++n;
+					String line = sc.nextLine();
+					if (Rand.nextInt(n) == 0)
+						frase = line;
 
 				}
+
+				return frase;
 
 			}
 
@@ -147,18 +178,20 @@ public class ViewFrases {
 		btnSair = new JButton("Sair");
 		btnSair.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
 
-//				int retorno = JOptionPane.showConfirmDialog(null,
-//						"Deseja sair?", " ", JOptionPane.YES_NO_OPTION,
-//						JOptionPane.QUESTION_MESSAGE);
-//
-//				if (retorno == JOptionPane.YES_OPTION) {
-//					System.exit(0);
-//				}
+				int retorno = JOptionPane
+						.showConfirmDialog(null, "Deseja realmente sair?",
+								"Confirmação de saída",
+								JOptionPane.YES_NO_OPTION,
+								JOptionPane.QUESTION_MESSAGE);
+
+				if (retorno == JOptionPane.YES_OPTION) {
+					System.exit(0);
+				}
 			}
 		});
-		btnSair.setBounds(287, 166, 126, 27);
+		btnSair.setBounds(390, 166, 123, 27);
 		frame.getContentPane().add(btnSair);
 	}
+
 }
