@@ -15,20 +15,13 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
 
 import java.awt.Font;
-
-import javax.swing.SwingConstants;
-
-import frases.Borders2UndecoFrame;
 
 //import com.sun.awt.AWTUtilities;
 
@@ -47,7 +40,7 @@ public class ViewFrases {
 	 */
 
 	public static void main(String[] args) throws FileNotFoundException {
-		
+
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -61,16 +54,16 @@ public class ViewFrases {
 
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		for (int i = 0; i < 1; ++i) {
-			String s = choose(new File("D://Files.txt"));
+			String s = Frase(new File("D://Files.txt"));
 			if (!map.containsKey(s))
 				map.put(s, 0);
 			map.put(s, map.get(s) + 1);
 		}
-		// System.out.println(map);
+
 	}
 
-	public static String choose(File f) throws FileNotFoundException {
-		// String frase = null;
+	public static String Frase(File f) throws FileNotFoundException {
+		
 		Random Rand = new Random();
 		int n = 0;
 		for (Scanner sc = new Scanner(f); sc.hasNext();) {
@@ -85,14 +78,6 @@ public class ViewFrases {
 	}
 
 	public ViewFrases() {
-		Tela();
-
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	public void Tela() {
 		// GraphicsEnvironment graphics =
 		// GraphicsEnvironment.getLocalGraphicsEnvironment();
 		// GraphicsDevice device = graphics.getDefaultScreenDevice();
@@ -152,6 +137,7 @@ public class ViewFrases {
 						map.put(s, 0);
 					map.put(s, map.get(s) + 1);
 				}
+
 				// System.out.println(map);
 			}
 
@@ -174,6 +160,8 @@ public class ViewFrases {
 		});
 		btnNovaFrase.setBounds(21, 166, 123, 27);
 		frame.getContentPane().add(btnNovaFrase);
+		frame.getRootPane().setDefaultButton(btnNovaFrase);
+		btnNovaFrase.requestFocus();
 
 		btnSair = new JButton("Sair");
 		btnSair.addActionListener(new ActionListener() {
