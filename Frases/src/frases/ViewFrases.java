@@ -2,19 +2,15 @@ package frases;
 
 import java.awt.Color;
 import java.awt.EventQueue;
-import java.awt.GraphicsDevice;
-import java.awt.GraphicsEnvironment;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -30,6 +26,12 @@ public class ViewFrases {
 	public JFrame frame;
 	public JTextArea txtFrases;
 	public JButton btnSair;
+	public JButton btnFeliz;
+	public JButton btnTriste;
+	public JButton btnMotivacional;
+	public boolean motivacao;
+	public boolean triste;
+	public boolean feliz;
 	public String line;
 	public static String frase;
 
@@ -63,7 +65,7 @@ public class ViewFrases {
 	}
 
 	public static String Frase(File f) throws FileNotFoundException {
-		
+
 		Random Rand = new Random();
 		int n = 0;
 		for (Scanner sc = new Scanner(f); sc.hasNext();) {
@@ -77,17 +79,75 @@ public class ViewFrases {
 
 	}
 
-	public ViewFrases() {
-		// GraphicsEnvironment graphics =
-		// GraphicsEnvironment.getLocalGraphicsEnvironment();
-		// GraphicsDevice device = graphics.getDefaultScreenDevice();
+	public void Mapeamento() {
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		for (int i = 0; i < 1; ++i) {
+			String s = null;
+			if (feliz) {
+				try {
+					s = choose(new File("D://Frases/Feliz.txt"));
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			} else if (triste) {
+				try {
+					s = choose(new File("D://Frases/Triste.txt"));
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			} else if (motivacao) {
+				try {
+					s = choose(new File("D://Frases/Motivacional.txt"));
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			if (!map.containsKey(s))
+				map.put(s, 0);
+			map.put(s, map.get(s) + 1);
+		}
+	}
 
+	public void Geracao() {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ViewFrases window = new ViewFrases();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	public String choose(File f) throws FileNotFoundException {
+		// String frase = null;
+		Random Rand = new Random();
+		int n = 0;
+		for (Scanner sc = new Scanner(f); sc.hasNext();) {
+			++n;
+			String line = sc.nextLine();
+			if (Rand.nextInt(n) == 0)
+				frase = line;
+
+		}
+
+		return frase;
+
+	}
+
+	public ViewFrases() {
+
+		// Criação do frame
 		frame = new JFrame("Frase do dia");
 		frame.getContentPane().setBackground(Color.WHITE);
-		frame.setBounds(900, 100, 550, 240);
+		frame.setBounds(900, 100, 567, 240);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		// frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
 		JLabel lbsuafrase = new JLabel("SUA FRASE DO DIA \u00C9:",
 				JLabel.CENTER);
@@ -100,68 +160,45 @@ public class ViewFrases {
 		txtFrases.setFont(new Font("Times New Roman", Font.PLAIN, 17));
 		txtFrases.setMargin(new Insets(5, 5, 5, 5));
 		txtFrases.setText(frase);
-		// System.out.println(txtFrases.getText());
-
 		txtFrases.setBounds(21, 77, 492, 57);
 		frame.getContentPane().add(txtFrases);
 		txtFrases.setColumns(10);
 		txtFrases.setEditable(false);
 		txtFrases.setBackground(Color.LIGHT_GRAY);
-		// device.setFullScreenWindow(frame);
 
-		JButton btnNovaFrase = new JButton("Nova Frase");
-		btnNovaFrase.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							ViewFrases window = new ViewFrases();
-							window.frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
-
-				Map<String, Integer> map = new HashMap<String, Integer>();
-				for (int i = 0; i < 1; ++i) {
-					String s = null;
-					try {
-						s = choose(new File("D://Files.txt"));
-					} catch (FileNotFoundException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					if (!map.containsKey(s))
-						map.put(s, 0);
-					map.put(s, map.get(s) + 1);
-				}
-
-				// System.out.println(map);
+		// Criação dos botões
+		btnFeliz = new JButton("Feliz");
+		btnFeliz.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				feliz = true;
+				Geracao();
+				Mapeamento();
 			}
-
-			public String choose(File f) throws FileNotFoundException {
-				// String frase = null;
-				Random Rand = new Random();
-				int n = 0;
-				for (Scanner sc = new Scanner(f); sc.hasNext();) {
-					++n;
-					String line = sc.nextLine();
-					if (Rand.nextInt(n) == 0)
-						frase = line;
-
-				}
-
-				return frase;
-
-			}
-
 		});
-		btnNovaFrase.setBounds(21, 166, 123, 27);
-		frame.getContentPane().add(btnNovaFrase);
-		frame.getRootPane().setDefaultButton(btnNovaFrase);
-		btnNovaFrase.requestFocus();
+		btnFeliz.setBounds(21, 166, 123, 27);
+		frame.getContentPane().add(btnFeliz);
+
+		btnTriste = new JButton("Triste");
+		btnTriste.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				triste = true;
+				Geracao();
+				Mapeamento();
+			}
+		});
+		btnTriste.setBounds(150, 166, 123, 27);
+		frame.getContentPane().add(btnTriste);
+
+		btnMotivacional = new JButton("Motivacional");
+		btnMotivacional.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				motivacao = true;
+				Geracao();
+				Mapeamento();
+			}
+		});
+		btnMotivacional.setBounds(279, 166, 123, 27);
+		frame.getContentPane().add(btnMotivacional);
 
 		btnSair = new JButton("Sair");
 		btnSair.addActionListener(new ActionListener() {
@@ -178,7 +215,7 @@ public class ViewFrases {
 				}
 			}
 		});
-		btnSair.setBounds(390, 166, 123, 27);
+		btnSair.setBounds(408, 166, 123, 27);
 		frame.getContentPane().add(btnSair);
 	}
 
