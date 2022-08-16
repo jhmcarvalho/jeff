@@ -1,0 +1,15 @@
+package aula_dev;
+
+import java.util.Random;
+
+public class Gerando_numeros {
+
+	public static void main(String[] args) {
+		int aleatorio;
+	Random random = new Random();	
+		for (int i = 1; i <=20; i++){
+			aleatorio = random.nextInt(2000) + 1000;
+		}
+	}
+
+}

@@ -1,0 +1,30 @@
+package aula_dev;
+
+public class Xuxa {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int qtd;
+		int i;
+		
+		for (i = 1; i <= qtd; i++){
+			System.out.println( i+ "patinhos foram passear \n\r "
+								+ "Além das montanhas \n\r"
+								+ "Para brincar \n\r"
+								+ "A mamãe gritou: Quá, quá, quá, quá \n\r"
+								+ "Mas só" + (i-1) + "patinhos voltaram de lá. \n\r");
+
+
+
+//
+//A mamãe patinha foi procurar
+//Além das montanhas
+//Na beira do mar
+//A mamãe gritou: Quá, quá, quá, quá
+//E os n patinhos voltaram de lá.
+//");
+		}
+
+	}
+
+}

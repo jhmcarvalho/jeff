@@ -1,0 +1,28 @@
+package frases;
+
+public class Categoria {
+
+		private boolean Feliz = true;
+		private boolean Triste;
+		private boolean Motivacional;
+		
+		
+		public boolean isFeliz() {
+			return Feliz;
+		}
+		public void setFeliz(boolean feliz) {
+			Feliz = feliz;
+		}
+		public boolean isTriste() {
+			return Triste;
+		}
+		public void setTriste(boolean triste) {
+			Triste = triste;
+		}
+		public boolean isMotivacional() {
+			return Motivacional;
+		}
+		public void setMotivacional(boolean motivacional) {
+			Motivacional = motivacional;
+		}
+}

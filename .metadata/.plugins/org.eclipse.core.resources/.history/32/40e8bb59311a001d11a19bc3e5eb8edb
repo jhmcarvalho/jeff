@@ -1,0 +1,24 @@
+package aula_dev;
+
+import java.util.Scanner;
+
+public class Teste {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int qtd;
+		double notas = 0;
+		double media;
+		int i;
+		
+		System.out.println("Digite a quantidade de alunos: ");
+		qtd = sc.nextInt();
+		
+		for (i = 1; i <= qtd; i++){
+			System.out.println("Digite a nota: ");
+			notas = sc.nextDouble();
+		}
+			System.out.println(notas);
+	}
+
+}

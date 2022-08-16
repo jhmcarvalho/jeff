@@ -1,0 +1,30 @@
+package aula_dev;
+
+import java.util.Scanner;
+
+public class Maior_e_segundo {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int maior = 0;
+		int digitado;
+		int segundo = 0;
+
+		for (int i = 0; i <= 10; i++) {
+			System.out.println("Digite os valores: ");
+			digitado = sc.nextInt();
+
+			if (digitado > maior) {
+				maior = digitado;
+
+			}
+			if (digitado < maior) {
+				segundo = digitado;
+			}
+
+		}
+		System.out.println("O maior valor digitado é: " + maior);
+		System.out.println("O segundo maior valor digitado é: " + segundo);
+	}
+
+}

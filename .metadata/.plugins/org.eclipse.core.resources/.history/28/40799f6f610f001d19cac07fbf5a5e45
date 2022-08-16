@@ -1,0 +1,6 @@
+package frases;
+
+public class JTextAreaPlus extends txtFrase{
+	
+
+}
