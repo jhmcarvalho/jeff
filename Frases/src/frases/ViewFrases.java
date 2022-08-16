@@ -91,21 +91,21 @@ public class ViewFrases {
 			String s = null;
 			if (feliz) {
 				try {
-					s = choose(new File("D://Frases/Feliz.txt"));
+					s = choose(new File("txt/Feliz.txt"));
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			} else if (triste) {
 				try {
-					s = choose(new File("D://Frases/Triste.txt"));
+					s = choose(new File("txt/Triste.txt"));
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			} else if (motivacao) {
 				try {
-					s = choose(new File("D://Frases/Motivacional.txt"));
+					s = choose(new File("txt/Motivacional.txt"));
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
