@@ -5,19 +5,20 @@ import java.awt.EventQueue;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 
@@ -29,12 +30,16 @@ public class ViewFrases {
 
 	public JFrame frame;
 	public static JFrame frame2;
+	public static JFrame frame3;
 	public static JFrame frmInicio;
 	public JTextArea txtFrases;
+	public JTextArea NovaFrase;
 	public static JTextArea txtFrases2;
 	public JButton btnSair;
 	public JButton btnFeliz;
 	public JButton btnTriste;
+	public JButton btnNovaFrase;
+	public JButton btnSalvar;
 	public static JButton btnInicio;
 	public JButton btnMotivacional;
 	public boolean motivacao;
@@ -61,12 +66,9 @@ public class ViewFrases {
 		frame2.getContentPane().setLayout(null);
 		ViewFrases window = new ViewFrases();
 		window.frame2.setVisible(true);
-
-	//	JTextArea lbsuafrase = new JTextArea("Bem vindo ao programa gerador de frases diarias aperte OK para continuar");
-		JLabel lbsuafrase = new JLabel("Bem vindo ao programa gerador de frases diarias aperte OK para continuar");
+		JLabel lbsuafrase = new JLabel(
+				"Bem vindo ao programa gerador de frases diarias aperte OK para continuar");
 		lbsuafrase.setVisible(true);
-	//	lbsuafrase.setLineWrap(true);
-	//	lbsuafrase.setWrapStyleWord(true);
 
 		lbsuafrase.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 15));
 		lbsuafrase.setBounds(37, 29, 935, 67);
@@ -79,10 +81,108 @@ public class ViewFrases {
 		frame2.getContentPane().add(btnInicio);
 		btnInicio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				frame2.dispose();
 				Geracao();
 				frase = "\n                       Selecione uma categoria para gerar sua frase";
 			}
 		});
+	}
+
+	public void MetodoAdd(String path) throws IOException {
+		String frase = NovaFrase.getText();
+
+		try {
+			FileWriter fw = new FileWriter("D:/Frases/Novas_frases.txt", true);
+			BufferedWriter conexao = new BufferedWriter(fw);
+			conexao.write(frase);
+			conexao.newLine();
+			conexao.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		JOptionPane.showMessageDialog(null, "Frase salva com sucesso");
+		NovaFrase.setText(null);
+
+	}
+
+	public void AddFrase() {
+		frame3 = new JFrame("Frase do dia");
+		frame3.getContentPane().setBackground(Color.WHITE);
+		frame3.setBounds(900, 100, 567, 240);
+		frame3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame3.getContentPane().setLayout(null);
+		JLabel lbsuafrase = new JLabel("Digite a nova frase abaixo:",
+				JLabel.CENTER);
+		lbsuafrase.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 18));
+		lbsuafrase.setBounds(142, 39, 225, 27);
+		frame3.getContentPane().add(lbsuafrase);
+		ViewFrases window = new ViewFrases();
+		window.frame3.setVisible(true);
+		NovaFrase = new JTextArea();
+		NovaFrase.setLineWrap(true);
+		NovaFrase.setWrapStyleWord(true);
+		NovaFrase.setFont(new Font("Times New Roman", Font.PLAIN, 17));
+		NovaFrase.setMargin(new Insets(5, 5, 5, 5));
+		NovaFrase.setBounds(21, 77, 492, 57);
+		frame3.getContentPane().add(NovaFrase);
+		NovaFrase.setColumns(10);
+		NovaFrase.setEditable(true);
+		NovaFrase.setBackground(Color.LIGHT_GRAY);
+
+		btnSair = new JButton("Sair");
+
+		btnSair.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				int retorno = JOptionPane
+						.showConfirmDialog(null, "Deseja realmente sair?",
+								"Confirmação de saída",
+								JOptionPane.YES_NO_OPTION,
+								JOptionPane.QUESTION_MESSAGE);
+
+				if (retorno == JOptionPane.YES_OPTION) {
+					System.exit(0);
+				}
+			}
+		});
+		btnSair.setBounds(408, 166, 123, 27);
+		btnSair.setForeground(Color.RED);
+		frame3.getContentPane().add(btnSair);
+
+		btnSalvar = new JButton("Salvar");
+		btnSalvar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					MetodoAdd(line);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+		btnSalvar.setBounds(21, 166, 123, 27);
+		frame3.getContentPane().add(btnSalvar);
+
+		btnSair = new JButton("Sair");
+
+		btnSair.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				int retorno = JOptionPane
+						.showConfirmDialog(null, "Deseja realmente sair?",
+								"Confirmação de saída",
+								JOptionPane.YES_NO_OPTION,
+								JOptionPane.QUESTION_MESSAGE);
+
+				if (retorno == JOptionPane.YES_OPTION) {
+					System.exit(0);
+				}
+			}
+		});
+		btnSair.setBounds(408, 166, 123, 27);
+		btnSair.setForeground(Color.RED);
+		frame.getContentPane().add(btnSair);
+
 	}
 
 	public void Mapeamento() {
@@ -176,6 +276,7 @@ public class ViewFrases {
 		btnFeliz = new JButton("Feliz");
 		btnFeliz.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
 				feliz = true;
 				Geracao();
 				Mapeamento();
@@ -187,6 +288,7 @@ public class ViewFrases {
 		btnTriste = new JButton("Triste");
 		btnTriste.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
 				triste = true;
 				Geracao();
 				Mapeamento();
@@ -198,6 +300,7 @@ public class ViewFrases {
 		btnMotivacional = new JButton("Motivacional");
 		btnMotivacional.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
 				motivacao = true;
 				Geracao();
 				Mapeamento();
@@ -205,6 +308,17 @@ public class ViewFrases {
 		});
 		btnMotivacional.setBounds(279, 166, 123, 27);
 		frame.getContentPane().add(btnMotivacional);
+
+		btnNovaFrase = new JButton("Add Frase");
+		btnNovaFrase.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				AddFrase();
+
+			}
+		});
+		btnNovaFrase.setBounds(500, 135, 30, 27);
+		frame.getContentPane().add(btnNovaFrase);
 
 		btnSair = new JButton("Sair");
 
