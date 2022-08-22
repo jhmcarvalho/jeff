@@ -8,6 +8,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="JOPTIONPANE.SHOWMESSAGEDIALOG(FRAMELOGIN, &quot;SENHA INCORRETA&quot;, &quot;SENHA&quot;, JOPTIONPANE.INFORMATION_MESSAGE);"/>
 			<item value="word"/>
 			<item value="down"/>
 			<item value="DOWN"/>
@@ -15,7 +16,6 @@
 			<item value="Sair"/>
 			<item value="Sobre"/>
 			<item value="Iniciar"/>
-			<item value="up"/>
 		</list>
 		<list key="replacehistory">
 			<item value="right"/>
