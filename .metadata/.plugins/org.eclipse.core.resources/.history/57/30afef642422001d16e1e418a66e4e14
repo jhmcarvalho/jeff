@@ -1,0 +1,16 @@
+package aula_dev;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+public class DataHora {
+
+	public static void main(String[] args) {
+		Calendar novoCalendario = Calendar.getInstance();
+		SimpleDateFormat dataHora = new SimpleDateFormat("dd/MM/yyyy - hh : mm : ss");
+		//txtAreaData.setText(dataHoraFormatada.format(novoCalendario.getTime()));
+		System.out.println(dataHora);
+
+	}
+
+}

@@ -1,0 +1,16 @@
+package aula_dev;
+
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+public class DataHora {
+
+	public static void main(String[] args) {
+		Date hora = new Date(0);
+		hora.getTime();
+
+	}
+
+}
