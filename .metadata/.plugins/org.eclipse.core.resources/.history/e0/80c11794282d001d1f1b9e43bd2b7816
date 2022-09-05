@@ -544,20 +544,8 @@ public class ViewFrases {
 
 		btnFundo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (frase != "\n                       Selecione uma categoria para gerar sua frase")
-				{
-					Fundo();
-				}else
-				{
-					JOptionPane
-					.showMessageDialog(
-							frameLogin,
-							"Gere uma frase antes de exportar!",
-							"Falha ao exportar",
-							JOptionPane.INFORMATION_MESSAGE);
-				}
 				//frame.dispose();
-				
+				Fundo();
 
 			}
 		});

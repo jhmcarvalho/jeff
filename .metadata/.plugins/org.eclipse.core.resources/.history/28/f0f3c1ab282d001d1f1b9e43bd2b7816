@@ -552,7 +552,7 @@ public class ViewFrases {
 					JOptionPane
 					.showMessageDialog(
 							frameLogin,
-							"Gere uma frase antes de exportar!",
+							"Gere uma frase primeiro!",
 							"Falha ao exportar",
 							JOptionPane.INFORMATION_MESSAGE);
 				}
