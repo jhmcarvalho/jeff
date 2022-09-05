@@ -2,20 +2,16 @@ package frases;
 
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Image;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.sql.Date;
-import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -24,17 +20,18 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.TimeZone;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import javax.swing.UIManager;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter.DEFAULT;
 
 import java.awt.Font;
 
@@ -52,12 +49,14 @@ public class ViewFrases {
 	public JTextArea Categoria;
 	public JTextArea NovaFrase;
 	public static JTextArea txtFrases2;
+	public static JTextArea Result;
 	public JButton btnSair;
 	public JButton btnFeliz;
 	public JButton btnTriste;
 	public JButton btnNovaFrase;
 	public JButton btnSalvar;
 	public JButton btnVoltar;
+	public JButton btnFundo;
 	public static JButton btnEntrar;
 	public static JButton btnInicio;
 	public static JCheckBox btnExibirSenha;
@@ -71,6 +70,7 @@ public class ViewFrases {
 	public static String frase;
 	public static String showHora;
 	public static String verificaLogin;
+	public static String Resultado;
 
 	/**
 	 * Launch the application.
@@ -80,10 +80,10 @@ public class ViewFrases {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		Login();
+		//Fundo();
 		//Geracao();
+		// Fundo();
 	}
-
-	
 
 	public static void Login() {
 		BoasVindas();
@@ -94,7 +94,6 @@ public class ViewFrases {
 		frameLogin.setBounds(900, 100, 567, 240);
 		frameLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frameLogin.getContentPane().setLayout(null);
-		
 
 		JLabel Hora = new JLabel(showHora);
 		Hora.setBounds(37, 3, 435, 67);
@@ -115,7 +114,8 @@ public class ViewFrases {
 		txtUsuario.setBounds(70, 99, 140, 27);
 		frameLogin.getContentPane().add(txtUsuario);
 		frameLogin.getContentPane().add(JlUsuario);
-		frameLogin.getContentPane().setBackground(new java.awt.Color(220, 230, 254));
+		frameLogin.getContentPane().setBackground(
+				new java.awt.Color(220, 230, 254));
 		JlUsuario.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 15));
 
 		JLabel JlSenha = new JLabel("Senha: ");
@@ -130,7 +130,7 @@ public class ViewFrases {
 		frameLogin.getContentPane().add(btnEntrar);
 		btnEntrar.setBounds(210, 165, 123, 27);
 		btnEntrar.setVisible(true);
-	
+
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (txtUsuario.getText().equals("jeff")) {
@@ -164,11 +164,10 @@ public class ViewFrases {
 		btnExibirSenha.setBounds(210, 130, 123, 27);
 		btnExibirSenha.setBackground(new java.awt.Color(220, 230, 254));
 		btnExibirSenha.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 15));
-		
-		
+
 		char defaultt = txtSenha.getEchoChar();
 		btnExibirSenha.addActionListener(new ActionListener() {
-			
+
 			public void actionPerformed(ActionEvent e) {
 				if (btnExibirSenha.isSelected()) {
 					txtSenha.setEchoChar((char) 0);
@@ -197,11 +196,12 @@ public class ViewFrases {
 		BoasVindas();
 
 		JLabel Hora = new JLabel(showHora);
-		frame2 = new JFrame("Frase do dia");	
+		frame2 = new JFrame("Frase do dia");
 		frame2.setBounds(900, 100, 667, 240);
 		frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame2.getContentPane().setLayout(null);
-		frame2.getContentPane().setBackground(new java.awt.Color(220, 230, 254));
+		frame2.getContentPane()
+				.setBackground(new java.awt.Color(220, 230, 254));
 		ViewFrases window = new ViewFrases();
 		window.frame2.setVisible(true);
 		JLabel lbsuafrase = new JLabel(
@@ -234,7 +234,8 @@ public class ViewFrases {
 		String frase = NovaFrase.getText();
 		if (feliz) {
 			try {
-				FileWriter fw = new FileWriter("C:/Dev/jeff/Frases/txt/Feliz.txt", true);
+				FileWriter fw = new FileWriter(
+						"C:/Dev/jeff/Frases/txt/Feliz.txt", true);
 				BufferedWriter conexao = new BufferedWriter(fw);
 				conexao.write(frase);
 				conexao.newLine();
@@ -244,7 +245,8 @@ public class ViewFrases {
 			}
 		} else if (triste) {
 			try {
-				FileWriter fw = new FileWriter("C:/Dev/jeff/Frases/txt/Triste.txt", true);
+				FileWriter fw = new FileWriter(
+						"C:/Dev/jeff/Frases/txt/Triste.txt", true);
 				BufferedWriter conexao = new BufferedWriter(fw);
 				conexao.write(frase);
 				conexao.newLine();
@@ -254,8 +256,8 @@ public class ViewFrases {
 			}
 		} else if (motivacao) {
 			try {
-				FileWriter fw = new FileWriter("C:/Dev/jeff/Frases/txt/Motivacional.txt",
-						true);
+				FileWriter fw = new FileWriter(
+						"C:/Dev/jeff/Frases/txt/Motivacional.txt", true);
 				BufferedWriter conexao = new BufferedWriter(fw);
 				conexao.write(frase);
 				conexao.newLine();
@@ -263,10 +265,10 @@ public class ViewFrases {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}else if (pergunta) {
+		} else if (pergunta) {
 			try {
-				FileWriter fw = new FileWriter("C:/Dev/jeff/Frases/txt/Pergunta.txt",
-						true);
+				FileWriter fw = new FileWriter(
+						"C:/Dev/jeff/Frases/txt/Pergunta.txt", true);
 				BufferedWriter conexao = new BufferedWriter(fw);
 				conexao.write(frase);
 				conexao.newLine();
@@ -284,7 +286,8 @@ public class ViewFrases {
 		frame3.setBounds(900, 100, 667, 240);
 		frame3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame3.getContentPane().setLayout(null);
-		frame3.getContentPane().setBackground(new java.awt.Color(220, 230, 254));
+		frame3.getContentPane()
+				.setBackground(new java.awt.Color(220, 230, 254));
 
 		JLabel lbsuafrase = new JLabel("Escolha a categoria da frase:",
 				JLabel.CENTER);
@@ -294,7 +297,7 @@ public class ViewFrases {
 		ViewFrases window = new ViewFrases();
 		window.frame3.setVisible(true);
 		Botoes();
-		
+
 		btnVoltar = new JButton("Voltar");
 		btnVoltar.setBounds(433, 172, 103, 27);
 		btnVoltar.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -307,8 +310,7 @@ public class ViewFrases {
 				Geracao();
 			}
 		});
-		
-		
+
 		frame3.getContentPane().add(btnFeliz);
 		frame3.getContentPane().add(btnTriste);
 		frame3.getContentPane().add(btnMotivacional);
@@ -355,7 +357,8 @@ public class ViewFrases {
 		frameNovaFrase.setBounds(900, 100, 667, 240);
 		frameNovaFrase.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frameNovaFrase.getContentPane().setLayout(null);
-		frameNovaFrase.getContentPane().setBackground(new java.awt.Color(220, 230, 254));
+		frameNovaFrase.getContentPane().setBackground(
+				new java.awt.Color(220, 230, 254));
 		JLabel NovaF = new JLabel("Digite a nova frase:", JLabel.CENTER);
 		NovaF.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 26));
 		NovaF.setBounds(142, 39, 325, 27);
@@ -409,7 +412,7 @@ public class ViewFrases {
 		btnSalvar.setForeground(new java.awt.Color(0, 0, 255));
 		btnSalvar.setBackground(new java.awt.Color(101, 171, 255));
 		frameNovaFrase.getContentPane().add(btnSalvar);
-		
+
 		btnVoltar = new JButton("Voltar");
 		btnVoltar.setBounds(262, 172, 123, 27);
 		btnVoltar.setForeground(new java.awt.Color(0, 0, 255));
@@ -431,6 +434,7 @@ public class ViewFrases {
 			if (feliz) {
 				try {
 					s = choose(new File("C:/Dev/jeff/Frases/txt/Feliz.txt"));
+					Resultado = s;
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -438,20 +442,24 @@ public class ViewFrases {
 			} else if (triste) {
 				try {
 					s = choose(new File("C:/Dev/jeff/Frases/txt/Triste.txt"));
+					Resultado = s;
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			} else if (motivacao) {
 				try {
-					s = choose(new File("C:/Dev/jeff/Frases/txt/Motivacional.txt"));
+					s = choose(new File(
+							"C:/Dev/jeff/Frases/txt/Motivacional.txt"));
+					Resultado = s;
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			}else if (pergunta) {
+			} else if (pergunta) {
 				try {
 					s = choose(new File("C:/Dev/jeff/Frases/txt/Pergunta.txt"));
+					Resultado = s;
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -520,6 +528,28 @@ public class ViewFrases {
 		txtFrases.setBackground(Color.WHITE);
 		Botoes();
 
+		btnFundo = new JButton("Exportar");
+		btnFundo.setBounds(600, 6, 35 , 27);
+	//	btnFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("img/exportar.png")));
+		ImageIcon imageIcon = new javax.swing.ImageIcon(getClass().getResource("img/exportar.png"));
+		Image image = imageIcon.getImage();
+		Image newimg = image.getScaledInstance(18, 18,  java.awt.Image.SCALE_SMOOTH); 
+		imageIcon = new ImageIcon(newimg);
+		btnFundo.setIcon(imageIcon);
+		
+		//btnFundo.setFont(new Font("Dialog", Font.BOLD, 11));
+//		btnFundo.setForeground(new java.awt.Color(0, 0, 255));
+//		btnFundo.setBackground(new java.awt.Color(101, 171, 255));
+		frame.getContentPane().add(btnFundo);
+
+		btnFundo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//frame.dispose();
+				Fundo();
+
+			}
+		});
+
 		btnFeliz.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
@@ -546,7 +576,7 @@ public class ViewFrases {
 				Mapeamento();
 			}
 		});
-		
+
 		btnPergunta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
@@ -587,7 +617,7 @@ public class ViewFrases {
 		btnMotivacional.setForeground(new java.awt.Color(0, 0, 255));
 		btnMotivacional.setBackground(new java.awt.Color(101, 171, 255));
 		frame.getContentPane().add(btnMotivacional);
-		
+
 		btnPergunta = new JButton("Pergunta");
 		btnPergunta.setBounds(326, 172, 103, 27);
 		btnPergunta.setFont(new Font("Dialog", Font.BOLD, 11));
@@ -624,4 +654,62 @@ public class ViewFrases {
 		btnSair.setBackground(new java.awt.Color(255, 146, 144));
 		frame.getContentPane().add(btnSair);
 	}
+
+	public static void Fundo() {
+		// obtem e coloca a imagem dentro de uma BufferedImage
+		BufferedImage img = null;
+
+		try {
+			img = ImageIO.read(new File("img/Fundo.jpg"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		// // Cria e configura o texto no JLabel
+
+		JLabel label = new JLabel();
+		// label.setText(Resultado);
+		label.setText("Teste2");
+		label.setFont(new Font("Calibri", Font.BOLD, 100));
+		label.setForeground(Color.white);
+		label.setBounds(0, 0, 867, 440);
+
+		Result = new JTextArea();
+		Result.setLineWrap(true);
+		Result.setWrapStyleWord(true);
+		Result.setBounds(340, 260, 487, 140);
+		Result.setVisible(true);
+
+		Result.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 20));
+		Result.setMargin(new Insets(5, 5, 5, 5));
+		Result.setText(Resultado);
+		Result.setColumns(10);
+		Result.setEditable(false);
+		Result.setForeground(Color.WHITE);
+		Result.setBackground(new Color(0, 0, 0, 0));
+
+		JScrollPane scrollPane = new JScrollPane(Result);
+		scrollPane.getViewport().setOpaque(false);
+		scrollPane.setOpaque(false);
+
+		// Cria e configura a janela
+		JFrame janela = new JFrame();
+		//janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		janela.setBounds(850, 100, 867, 440);
+		janela.getContentPane().setLayout(null);
+
+		// Força a imagem a ficar do tamanho da janela
+		Image dimg = img.getScaledInstance(janela.getWidth(),
+				janela.getHeight(), Image.SCALE_SMOOTH);
+
+		ImageIcon imageIcon = new ImageIcon(dimg);
+		label.setIcon(imageIcon);
+
+		// mostra a janela e adiciona o label a ela
+		janela.setVisible(true);
+		janela.add(Result);
+		janela.add(label);
+
+	}
+
 }
