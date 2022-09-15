@@ -1,0 +1,109 @@
+package util;
+
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+import frases.ViewFrases;
+
+public class Categorias {
+	
+public static JFrame frame;	
+public static JFrame frame3;
+public static JButton btnVoltar;
+public static JButton btnFeliz;
+public static JButton btnTriste;
+public static JButton btnMotivacional;
+public static JButton btnPiada;
+public static JButton btnSair;
+public static JButton btnPergunta;
+public static boolean feliz;
+public static boolean triste;
+public static boolean motivacao;
+public static boolean pergunta;
+public static boolean piada;
+	
+	
+	public static void Categoria() {
+		frame3 = new JFrame("Frase do dia");
+		frame3.setBounds(900, 100, 667, 240);
+		frame3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame3.getContentPane().setLayout(null);
+		frame3.getContentPane()
+				.setBackground(new java.awt.Color(220, 230, 254));
+
+		JLabel lbsuafrase = new JLabel("Escolha a categoria da frase:",
+				JLabel.CENTER);
+		lbsuafrase.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 18));
+		lbsuafrase.setBounds(142, 39, 325, 27);
+		frame3.getContentPane().add(lbsuafrase);
+		ViewFrases window = new ViewFrases();
+		window.frame3.setVisible(true);
+	//	Botoes();
+
+		btnVoltar = new JButton("Voltar");
+		btnVoltar.setBounds(541, 172, 103, 27);
+		btnVoltar.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnVoltar.setForeground(new java.awt.Color(0, 0, 255));
+		btnVoltar.setBackground(new java.awt.Color(101, 171, 255));
+		frame3.getContentPane().add(btnVoltar);
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame3.dispose();
+		//		Geracao();
+			}
+		});
+
+		frame3.getContentPane().add(btnFeliz);
+		frame3.getContentPane().add(btnTriste);
+		frame3.getContentPane().add(btnMotivacional);
+		frame3.getContentPane().add(btnPergunta);
+		frame3.getContentPane().add(btnSair);
+		frame3.getContentPane().add(btnPiada);
+
+		btnFeliz.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame3.dispose();
+				feliz = true;
+	//			AddFrase();
+			}
+		});
+		btnTriste.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame3.dispose();
+				frame.dispose();
+				triste = true;
+	//			AddFrase();
+			}
+		});
+		btnMotivacional.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame3.dispose();
+				frame.dispose();
+				motivacao = true;
+	//			AddFrase();
+			}
+		});
+		btnPergunta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame3.dispose();
+				frame.dispose();
+				pergunta = true;
+	//			AddFrase();
+			}
+		});
+		btnPiada.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame3.dispose();
+				frame.dispose();
+				piada = true;
+	//			AddFrase();
+			}
+		});
+
+	}
+}

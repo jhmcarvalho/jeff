@@ -1,0 +1,21 @@
+package util;
+
+import java.util.Calendar;
+import java.util.TimeZone;
+
+public class Horario {
+	
+	public String BoasVindas() {
+		Calendar calendar = Calendar.getInstance(TimeZone
+				.getTimeZone("Brazil/East"));
+		int hora = calendar.get(Calendar.HOUR_OF_DAY);
+		// System.out.println(hora);
+		if (hora < 12) {
+			return "Bom dia";// , usuario;
+		} else {
+			return "Boa tarde";// , usuario;
+		}
+
+	}
+
+}

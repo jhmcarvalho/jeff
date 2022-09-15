@@ -1,0 +1,80 @@
+package util;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+
+public class Botoes {
+	
+public static JButton btnFeliz;
+public static JButton btnTriste;
+public static JButton btnMotivacional;
+public static JButton btnPergunta;
+public static JButton btnNovaFrase;
+public static JButton btnSair;
+
+	public void Botoes() {
+
+		btnFeliz = new JButton("Feliz");
+		btnFeliz.setBounds(5, 172, 103, 27);
+		btnFeliz.setForeground(new java.awt.Color(0, 0, 255));
+		btnFeliz.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnFeliz.setBackground(new java.awt.Color(101, 171, 255));
+	//	frame.getContentPane().add(btnFeliz);
+
+		btnTriste = new JButton("Triste");
+		btnTriste.setBounds(112, 172, 103, 27);
+		btnTriste.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnTriste.setForeground(new java.awt.Color(0, 0, 255));
+		btnTriste.setBackground(new java.awt.Color(101, 171, 255));
+	//	frame.getContentPane().add(btnTriste);
+
+		btnMotivacional = new JButton("Motivacional");
+		btnMotivacional.setBounds(219, 172, 103, 27);
+		btnMotivacional.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnMotivacional.setForeground(new java.awt.Color(0, 0, 255));
+		btnMotivacional.setBackground(new java.awt.Color(101, 171, 255));
+	//	frame.getContentPane().add(btnMotivacional);
+
+		btnPergunta = new JButton("Pergunta");
+		btnPergunta.setBounds(326, 172, 103, 27);
+		btnPergunta.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnPergunta.setForeground(new java.awt.Color(0, 0, 255));
+		btnPergunta.setBackground(new java.awt.Color(101, 171, 255));
+	//	frame.getContentPane().add(btnPergunta);
+
+		btnNovaFrase = new JButton("Add Frase");
+		btnNovaFrase.setBounds(433, 172, 103, 27);
+		btnNovaFrase.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnNovaFrase.setForeground(new java.awt.Color(0, 0, 255));
+		btnNovaFrase.setBackground(new java.awt.Color(101, 171, 255));
+	//	frame.getContentPane().add(btnNovaFrase);
+
+		btnSair = new JButton("Sair");
+
+		btnSair.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				int retorno = JOptionPane
+						.showConfirmDialog(null, "Deseja realmente sair?",
+								"Confirmação de saída",
+								JOptionPane.YES_NO_OPTION,
+								JOptionPane.QUESTION_MESSAGE);
+
+				if (retorno == JOptionPane.YES_OPTION) {
+					System.exit(0);
+				}
+			}
+		});
+		btnSair.setBounds(541, 172, 103, 27);
+		btnSair.setForeground(Color.RED);
+		btnSair.setFont(new Font("Dialog", Font.BOLD, 11));
+		btnSair.setBackground(new java.awt.Color(255, 146, 144));
+	//	frame.getContentPane().add(btnSair);
+	}
+
+}

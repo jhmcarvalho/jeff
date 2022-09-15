@@ -33,6 +33,8 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import util.Horario;
+
 import java.awt.Font;
 
 //import com.sun.awt.AWTUtilities;
@@ -86,7 +88,6 @@ public class ViewFrases {
 	}
 
 	public static void Login() {
-		BoasVindas();
 		ViewFrases window = new ViewFrases();
 		frameLogin = new JFrame("Bem vindo(a) ao sistema!");
 		window.frameLogin.setVisible(true);
@@ -95,7 +96,7 @@ public class ViewFrases {
 		frameLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frameLogin.getContentPane().setLayout(null);
 
-		JLabel Hora = new JLabel(showHora);
+		JLabel Hora = new JLabel(Horario.BoasVindas());
 		Hora.setBounds(37, 3, 435, 67);
 		Hora.setFont(new Font("Rockwell", Font.BOLD, 15));
 		Hora.setVisible(true);
@@ -179,23 +180,9 @@ public class ViewFrases {
 
 	}
 
-	public static void BoasVindas() {
-		Calendar calendar = Calendar.getInstance(TimeZone
-				.getTimeZone("Brazil/East"));
-		int hora = calendar.get(Calendar.HOUR_OF_DAY);
-		// System.out.println(hora);
-		if (hora < 12) {
-			showHora = "Bom dia";// , usuario;
-		} else {
-			showHora = "Boa tarde";// , usuario;
-		}
-
-	}
-
 	public static void Inicio() {
-		BoasVindas();
 
-		JLabel Hora = new JLabel(showHora);
+		JLabel Hora = new JLabel(Horario.BoasVindas());
 		frame2 = new JFrame("Frase do dia");
 		frame2.setBounds(900, 100, 667, 240);
 		frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

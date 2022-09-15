@@ -1,0 +1,120 @@
+package util;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Arrays;
+
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+import entities.BoasVindas;
+import frases.ViewFrases;
+
+public class Login {
+	
+public static JFrame frameLogin;
+public static JButton btnEntrar;
+public static JCheckBox btnExibirSenha;
+	
+	public Login(){
+	ViewFrases window = new ViewFrases();
+	frameLogin = new JFrame("Bem vindo(a) ao sistema!");
+	window.frameLogin.setVisible(true);
+	frameLogin.getContentPane().setBackground(Color.WHITE);
+	frameLogin.setBounds(900, 100, 567, 240);
+	frameLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frameLogin.getContentPane().setLayout(null);
+
+	JLabel Hora = new JLabel(BoasVindas.horario());
+	Hora.setBounds(37, 3, 435, 67);
+	Hora.setFont(new Font("Rockwell", Font.BOLD, 15));
+	Hora.setVisible(true);
+	JLabel Login = new JLabel(
+			"Bem vindo ao programa gerador de frases! Digite suas credenciais para entrar");
+	Login.setVisible(true);
+	frameLogin.getContentPane().add(Hora);
+	Login.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 15));
+	Login.setBounds(37, 49, 935, 67);
+	frameLogin.getContentPane().add(Login);
+
+	JLabel JlUsuario = new JLabel("Usuário: ");
+	JlUsuario.setBounds(10, 99, 140, 27);
+	JlUsuario.setVisible(true);
+	JTextField txtUsuario = new JTextField();
+	txtUsuario.setBounds(70, 99, 140, 27);
+	frameLogin.getContentPane().add(txtUsuario);
+	frameLogin.getContentPane().add(JlUsuario);
+	frameLogin.getContentPane().setBackground(
+			new java.awt.Color(220, 230, 254));
+	txtUsuario.requestFocus();
+	JlUsuario.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 15));
+
+	JLabel JlSenha = new JLabel("Senha: ");
+	JlSenha.setBounds(10, 130, 140, 27);
+	JPasswordField txtSenha = new JPasswordField();
+	txtSenha.setBounds(70, 130, 140, 27);
+	frameLogin.getContentPane().add(txtSenha);
+	frameLogin.getContentPane().add(JlSenha);
+	JlSenha.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 15));
+
+	btnEntrar = new JButton("Entrar");
+	frameLogin.getContentPane().add(btnEntrar);
+	btnEntrar.setBounds(210, 165, 123, 27);
+	btnEntrar.setVisible(true);
+
+	btnEntrar.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			if (txtUsuario.getText().equals("jeff")) {
+
+				if (Arrays.equals(txtSenha.getPassword(), new char[] { 'd',
+						'8', 'h', 'j', '0', 'p', 't', 'r' })) {
+					//Inicio();
+					frameLogin.dispose();
+				} else
+					JOptionPane
+							.showMessageDialog(
+									frameLogin,
+									"Usuário ou senha incorreta! Verifique se você possui permissão",
+									"Falha ao logar",
+									JOptionPane.INFORMATION_MESSAGE);
+
+			} else
+				JOptionPane
+						.showMessageDialog(
+								frameLogin,
+								"Usuário ou senha incorreta! Verifique se você possui permissão",
+								"Falha ao logar",
+								JOptionPane.INFORMATION_MESSAGE);
+
+		}
+
+	});
+
+	btnExibirSenha = new JCheckBox("Exibir senha");
+	frameLogin.getContentPane().add(btnExibirSenha);
+	btnExibirSenha.setBounds(210, 130, 123, 27);
+	btnExibirSenha.setBackground(new java.awt.Color(220, 230, 254));
+	btnExibirSenha.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 15));
+
+	char defaultt = txtSenha.getEchoChar();
+	btnExibirSenha.addActionListener(new ActionListener() {
+
+		public void actionPerformed(ActionEvent e) {
+			if (btnExibirSenha.isSelected()) {
+				txtSenha.setEchoChar((char) 0);
+			} else {
+				txtSenha.setEchoChar(defaultt);
+			}
+		}
+	});
+
+}
+}
+

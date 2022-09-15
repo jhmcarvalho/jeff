@@ -1,0 +1,141 @@
+package util;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Image;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
+
+public class ViewPrincipal {
+	
+	public static String frase;
+	public static JFrame frame;
+	
+	public static void ViewFrases() {
+
+		
+
+		
+		
+		// Criação do frame
+		frame = new JFrame("Frase do dia");
+		frame.getContentPane().setBackground(Color.WHITE);
+		frame.setBounds(900, 100, 667, 240);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		frame.getContentPane().setBackground(new java.awt.Color(220, 230, 254));
+
+		JLabel lbsuafrase = new JLabel("SUA FRASE DO DIA \u00C9:",
+				JLabel.CENTER);
+		lbsuafrase.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 18));
+		lbsuafrase.setBounds(142, 39, 325, 27);
+		frame.getContentPane().add(lbsuafrase);
+		JTextArea txtFrases = new JTextArea();
+		txtFrases.setLineWrap(true);
+		txtFrases.setWrapStyleWord(true);
+		txtFrases.setFont(new Font("Times New Roman", Font.PLAIN, 17));
+		txtFrases.setMargin(new Insets(5, 5, 5, 5));
+		txtFrases.setText(frase);
+		txtFrases.setBounds(21, 77, 610, 67);
+		frame.getContentPane().add(txtFrases);
+		txtFrases.setColumns(10);
+		txtFrases.setEditable(false);
+		txtFrases.setBackground(Color.WHITE);
+	//	Botoes();
+
+		JButton btnFundo = new JButton("Exportar");
+		btnFundo.setBounds(500, 6, 35 , 27);
+	//	btnFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("img/exportar.png")));
+	//	ImageIcon imageIcon = new javax.swing.ImageIcon(getClass().getResource("img/exportar.png"));
+//		Image image = imageIcon.getImage();
+//		Image newimg = image.getScaledInstance(18, 18,  java.awt.Image.SCALE_SMOOTH); 
+//		imageIcon = new ImageIcon(newimg);
+//		btnFundo.setIcon(imageIcon);
+//		
+		//btnFundo.setFont(new Font("Dialog", Font.BOLD, 11));
+//		btnFundo.setForeground(new java.awt.Color(0, 0, 255));
+//		btnFundo.setBackground(new java.awt.Color(101, 171, 255));
+//		frame.getContentPane().add(btnFundo);
+//
+//		btnFundo.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//				if (frase != "\n                       Selecione uma categoria para gerar sua frase")
+//				{
+//					Fundo();
+//				}else
+//				{
+//					JOptionPane
+//					.showMessageDialog(
+//							frameLogin,
+//							"Gere uma frase antes de exportar!",
+//							"Falha ao exportar",
+//							JOptionPane.INFORMATION_MESSAGE);
+//				}
+//				//frame.dispose();
+//				
+//
+//			}
+//		});
+
+		btnFeliz.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				feliz = true;
+				Geracao();
+				Mapeamento();
+			}
+		});
+
+		btnTriste.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				triste = true;
+				Geracao();
+				Mapeamento();
+			}
+		});
+
+		btnMotivacional.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				motivacao = true;
+				Geracao();
+				Mapeamento();
+			}
+		});
+
+		btnPergunta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				pergunta = true;
+				Geracao();
+				Mapeamento();
+			}
+		});
+		
+		btnPiada.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				piada = true;
+				Geracao();
+				Mapeamento();
+			}
+		});
+
+		btnNovaFrase.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				Categorias.Categoria();
+
+			}
+		});
+	}
+}

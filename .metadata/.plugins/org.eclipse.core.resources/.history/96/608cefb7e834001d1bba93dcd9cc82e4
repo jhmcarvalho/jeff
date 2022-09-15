@@ -1,0 +1,72 @@
+package util;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+import javax.swing.JOptionPane;
+
+public class MetodoAdd {
+	
+	public static void MetodoAdd(String path) throws IOException {
+		String frase = AddFrase.NovaFrase.getText();
+		if (Categorias.feliz) {
+			try {
+				FileWriter fw = new FileWriter(
+						"C:/Dev/jeff/Frases/txt/Feliz.txt", true);
+				BufferedWriter conexao = new BufferedWriter(fw);
+				conexao.write(frase);
+				conexao.newLine();
+				conexao.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (Categorias.triste) {
+			try {
+				FileWriter fw = new FileWriter(
+						"C:/Dev/jeff/Frases/txt/Triste.txt", true);
+				BufferedWriter conexao = new BufferedWriter(fw);
+				conexao.write(frase);
+				conexao.newLine();
+				conexao.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (Categorias.motivacao) {
+			try {
+				FileWriter fw = new FileWriter(
+						"C:/Dev/jeff/Frases/txt/Motivacional.txt", true);
+				BufferedWriter conexao = new BufferedWriter(fw);
+				conexao.write(frase);
+				conexao.newLine();
+				conexao.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (Categorias.pergunta) {
+			try {
+				FileWriter fw = new FileWriter(
+						"C:/Dev/jeff/Frases/txt/Pergunta.txt", true);
+				BufferedWriter conexao = new BufferedWriter(fw);
+				conexao.write(frase);
+				conexao.newLine();
+				conexao.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (Categorias.piada) {
+			try {
+				FileWriter fw = new FileWriter(
+						"C:/Dev/jeff/Frases/txt/Piada.txt", true);
+				BufferedWriter conexao = new BufferedWriter(fw);
+				conexao.write(frase);
+				conexao.newLine();
+				conexao.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		JOptionPane.showMessageDialog(null, "Frase salva com sucesso");
+		AddFrase.NovaFrase.setText(null);
+	}
+}
