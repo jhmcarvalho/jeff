@@ -12,8 +12,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -655,18 +658,22 @@ public class ViewFrases {
 	}
 
 	public static void Fundo() {
+		JLabel label = new JLabel();
 		// obtem e coloca a imagem dentro de uma BufferedImage
 		BufferedImage img = null;
-
+		
 		try {
-			img = ImageIO.read(new File("img/Fundo.jpg"));
+			Random rand = new Random();
+			int randomNum = rand.nextInt((3 - 1) + 1) + 1;
+			img = ImageIO.read(new File("img/Fundo"+randomNum+".jpg"));
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
 		// // Cria e configura o texto no JLabel
 
-		JLabel label = new JLabel();
+		
 		// label.setText(Resultado);
 		label.setText("Teste2");
 		label.setFont(new Font("Calibri", Font.BOLD, 100));
@@ -710,8 +717,6 @@ public class ViewFrases {
 		janela.add(label);
 		
 		//ImageIO.write(getImagem(), "png", new File("C:/NovaImagem.png"));
-
-	}
 	
-
+	}
 }
