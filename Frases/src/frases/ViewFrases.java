@@ -6,6 +6,8 @@ import java.awt.Image;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -25,16 +27,20 @@ import java.util.TimeZone;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.InputMap;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
+import javax.swing.JRootPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.KeyStroke;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 
 import util.Horario;
 
@@ -84,9 +90,9 @@ public class ViewFrases {
 	 */
 
 	public static void main(String[] args) throws FileNotFoundException {
-		//Login();
-		//Fundo();
-		Geracao();
+		Login();
+		// Fundo();
+		// Geracao();
 		// Fundo();
 	}
 
@@ -98,6 +104,7 @@ public class ViewFrases {
 		frameLogin.setBounds(900, 100, 567, 240);
 		frameLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frameLogin.getContentPane().setLayout(null);
+		// frameLogin.getRootPane().setDefaultButton(btnEntrar);
 
 		JLabel Hora = new JLabel(Horario.BoasVindas());
 		Hora.setBounds(37, 3, 435, 67);
@@ -162,6 +169,27 @@ public class ViewFrases {
 			}
 
 		});
+		txtUsuario.addKeyListener(new KeyAdapter() {
+
+			public void keyPressed(KeyEvent e) {
+				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+					btnEntrar.doClick();
+				}
+			}
+
+		});
+
+		txtSenha.addKeyListener(new KeyAdapter() {
+
+			public void keyPressed(KeyEvent e) {
+				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+					btnEntrar.doClick();
+				}
+			}
+
+		});
+		
+		
 
 		btnExibirSenha = new JCheckBox("Exibir senha");
 		frameLogin.getContentPane().add(btnExibirSenha);
@@ -179,6 +207,16 @@ public class ViewFrases {
 					txtSenha.setEchoChar(defaultt);
 				}
 			}
+		});
+		
+		btnExibirSenha.addKeyListener(new KeyAdapter() {
+
+			public void keyPressed(KeyEvent e) {
+				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+					btnEntrar.doClick();
+				}
+			}
+
 		});
 
 	}
@@ -519,35 +557,33 @@ public class ViewFrases {
 		Botoes();
 
 		btnFundo = new JButton("Exportar");
-		btnFundo.setBounds(600, 6, 35 , 27);
-	//	btnFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("img/exportar.png")));
-		ImageIcon imageIcon = new javax.swing.ImageIcon(getClass().getResource("img/exportar.png"));
+		btnFundo.setBounds(600, 6, 35, 27);
+		// btnFundo.setIcon(new
+		// javax.swing.ImageIcon(getClass().getResource("img/exportar.png")));
+		ImageIcon imageIcon = new javax.swing.ImageIcon(getClass().getResource(
+				"img/exportar.png"));
 		Image image = imageIcon.getImage();
-		Image newimg = image.getScaledInstance(18, 18,  java.awt.Image.SCALE_SMOOTH); 
+		Image newimg = image.getScaledInstance(18, 18,
+				java.awt.Image.SCALE_SMOOTH);
 		imageIcon = new ImageIcon(newimg);
 		btnFundo.setIcon(imageIcon);
-		
-		//btnFundo.setFont(new Font("Dialog", Font.BOLD, 11));
-//		btnFundo.setForeground(new java.awt.Color(0, 0, 255));
-//		btnFundo.setBackground(new java.awt.Color(101, 171, 255));
+
+		// btnFundo.setFont(new Font("Dialog", Font.BOLD, 11));
+		// btnFundo.setForeground(new java.awt.Color(0, 0, 255));
+		// btnFundo.setBackground(new java.awt.Color(101, 171, 255));
 		frame.getContentPane().add(btnFundo);
 
 		btnFundo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (frase != "\n                       Selecione uma categoria para gerar sua frase")
-				{
+				if (frase != "\n                       Selecione uma categoria para gerar sua frase") {
 					Fundo();
-				}else
-				{
-					JOptionPane
-					.showMessageDialog(
-							frameLogin,
+				} else {
+					JOptionPane.showMessageDialog(frameLogin,
 							"Gere uma frase antes de exportar!",
 							"Falha ao exportar",
 							JOptionPane.INFORMATION_MESSAGE);
 				}
-				//frame.dispose();
-				
+				// frame.dispose();
 
 			}
 		});
@@ -661,19 +697,18 @@ public class ViewFrases {
 		JLabel label = new JLabel();
 		// obtem e coloca a imagem dentro de uma BufferedImage
 		BufferedImage img = null;
-		
+
 		try {
 			Random rand = new Random();
-			int randomNum = rand.nextInt((10 - 1) + 1) + 1;
-			img = ImageIO.read(new File("img/Fundo"+randomNum+".jpg"));
-			
+			int randomNum = rand.nextInt((9 - 1) + 1) + 1;
+			img = ImageIO.read(new File("img/Fundo" + randomNum + ".jpg"));
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
 		// // Cria e configura o texto no JLabel
 
-		
 		// label.setText(Resultado);
 		label.setText("Teste2");
 		label.setFont(new Font("Calibri", Font.BOLD, 100));
@@ -700,7 +735,7 @@ public class ViewFrases {
 
 		// Cria e configura a janela
 		JFrame janela = new JFrame();
-		//janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		// janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		janela.setBounds(850, 100, 867, 440);
 		janela.getContentPane().setLayout(null);
 
@@ -715,8 +750,8 @@ public class ViewFrases {
 		janela.setVisible(true);
 		janela.add(Result);
 		janela.add(label);
-		
-		//ImageIO.write(getImagem(), "png", new File("C:/NovaImagem.png"));
-	
+
+		// ImageIO.write(getImagem(), "png", new File("C:/NovaImagem.png"));
+
 	}
 }
