@@ -84,9 +84,9 @@ public class ViewFrases {
 	 */
 
 	public static void main(String[] args) throws FileNotFoundException {
-		Login();
+		//Login();
 		//Fundo();
-		//Geracao();
+		Geracao();
 		// Fundo();
 	}
 
@@ -664,7 +664,7 @@ public class ViewFrases {
 		
 		try {
 			Random rand = new Random();
-			int randomNum = rand.nextInt((3 - 1) + 1) + 1;
+			int randomNum = rand.nextInt((10 - 1) + 1) + 1;
 			img = ImageIO.read(new File("img/Fundo"+randomNum+".jpg"));
 			
 		} catch (IOException e) {
@@ -686,7 +686,7 @@ public class ViewFrases {
 		Result.setBounds(340, 260, 487, 140);
 		Result.setVisible(true);
 
-		Result.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 20));
+		Result.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 25));
 		Result.setMargin(new Insets(5, 5, 5, 5));
 		Result.setText(Resultado);
 		Result.setColumns(10);
