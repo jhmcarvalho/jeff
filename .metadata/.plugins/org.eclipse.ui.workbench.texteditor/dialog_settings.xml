@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="Hora" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Hora"/>
+			<item value="Boa"/>
+			<item value="Boa tarde"/>
 			<item value="AWT-EventQueue-0"/>
 			<item value="exporta"/>
 			<item value="Random"/>
 			<item value="expor"/>
 			<item value="random"/>
-			<item value="Array"/>
-			<item value="Geracao.Mapeamento(feliz);"/>
-			<item value="Resultado"/>
 		</list>
 		<list key="replacehistory">
 			<item value="right"/>
