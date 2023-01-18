@@ -2,17 +2,17 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Hora" key="selection"/>
+		<item value="exporta" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="exporta"/>
 			<item value="Hora"/>
 			<item value="Boa"/>
 			<item value="Boa tarde"/>
 			<item value="AWT-EventQueue-0"/>
-			<item value="exporta"/>
 			<item value="Random"/>
 			<item value="expor"/>
 			<item value="random"/>
@@ -28,7 +28,7 @@
 		<item value="257" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="381" key="DIALOG_HEIGHT"/>
-		<item value="1160" key="DIALOG_X_ORIGIN"/>
-		<item value="270" key="DIALOG_Y_ORIGIN"/>
+		<item value="1407" key="DIALOG_X_ORIGIN"/>
+		<item value="252" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

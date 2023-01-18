@@ -14,33 +14,24 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.TimeZone;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-import javax.swing.InputMap;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
-import javax.swing.JRootPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.KeyStroke;
 import javax.swing.SwingConstants;
-import javax.swing.SwingUtilities;
 
 import util.Horario;
 
@@ -263,7 +254,7 @@ public class ViewFrases {
 		if (feliz) {
 			try {
 				FileWriter fw = new FileWriter(
-						"C:/Dev/jeff/Frases/txt/Feliz.txt", true);
+						"txt/Feliz.txt", true);
 				BufferedWriter conexao = new BufferedWriter(fw);
 				conexao.write(frase);
 				conexao.newLine();
@@ -274,7 +265,7 @@ public class ViewFrases {
 		} else if (triste) {
 			try {
 				FileWriter fw = new FileWriter(
-						"C:/Dev/jeff/Frases/txt/Triste.txt", true);
+						"txt/Triste.txt", true);
 				BufferedWriter conexao = new BufferedWriter(fw);
 				conexao.write(frase);
 				conexao.newLine();
@@ -285,7 +276,7 @@ public class ViewFrases {
 		} else if (motivacao) {
 			try {
 				FileWriter fw = new FileWriter(
-						"C:/Dev/jeff/Frases/txt/Motivacional.txt", true);
+						"txt/Motivacional.txt", true);
 				BufferedWriter conexao = new BufferedWriter(fw);
 				conexao.write(frase);
 				conexao.newLine();
@@ -296,7 +287,7 @@ public class ViewFrases {
 		} else if (pergunta) {
 			try {
 				FileWriter fw = new FileWriter(
-						"C:/Dev/jeff/Frases/txt/Pergunta.txt", true);
+						"txt/Pergunta.txt", true);
 				BufferedWriter conexao = new BufferedWriter(fw);
 				conexao.write(frase);
 				conexao.newLine();
@@ -461,7 +452,7 @@ public class ViewFrases {
 			String s = null;
 			if (feliz) {
 				try {
-					s = choose(new File("C:/Dev/jeff/Frases/txt/Feliz.txt"));
+					s = choose(new File("txt/Feliz.txt"));
 					Resultado = s;
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
@@ -469,7 +460,7 @@ public class ViewFrases {
 				}
 			} else if (triste) {
 				try {
-					s = choose(new File("C:/Dev/jeff/Frases/txt/Triste.txt"));
+					s = choose(new File("txt/Triste.txt"));
 					Resultado = s;
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
@@ -478,7 +469,7 @@ public class ViewFrases {
 			} else if (motivacao) {
 				try {
 					s = choose(new File(
-							"C:/Dev/jeff/Frases/txt/Motivacional.txt"));
+							"txt/Motivacional.txt"));
 					Resultado = s;
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
@@ -486,7 +477,7 @@ public class ViewFrases {
 				}
 			} else if (pergunta) {
 				try {
-					s = choose(new File("C:/Dev/jeff/Frases/txt/Pergunta.txt"));
+					s = choose(new File("txt/Pergunta.txt"));
 					Resultado = s;
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
