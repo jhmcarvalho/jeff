@@ -73,6 +73,7 @@ public class ViewFrases {
 	public static String showHora;
 	public static String verificaLogin;
 	public static String Resultado;
+	public static int randomNum;
 
 	/**
 	 * Launch the application.
@@ -81,9 +82,9 @@ public class ViewFrases {
 	 */
 
 	public static void main(String[] args) throws FileNotFoundException {
-		Login();
+		// Login();
 		// Fundo();
-		// Geracao();
+		Geracao();
 		// Fundo();
 	}
 
@@ -179,8 +180,6 @@ public class ViewFrases {
 			}
 
 		});
-		
-		
 
 		btnExibirSenha = new JCheckBox("Exibir senha");
 		frameLogin.getContentPane().add(btnExibirSenha);
@@ -199,7 +198,7 @@ public class ViewFrases {
 				}
 			}
 		});
-		
+
 		btnExibirSenha.addKeyListener(new KeyAdapter() {
 
 			public void keyPressed(KeyEvent e) {
@@ -253,8 +252,7 @@ public class ViewFrases {
 		String frase = NovaFrase.getText();
 		if (feliz) {
 			try {
-				FileWriter fw = new FileWriter(
-						"txt/Feliz.txt", true);
+				FileWriter fw = new FileWriter("txt/Feliz.txt", true);
 				BufferedWriter conexao = new BufferedWriter(fw);
 				conexao.write(frase);
 				conexao.newLine();
@@ -264,8 +262,7 @@ public class ViewFrases {
 			}
 		} else if (triste) {
 			try {
-				FileWriter fw = new FileWriter(
-						"txt/Triste.txt", true);
+				FileWriter fw = new FileWriter("txt/Triste.txt", true);
 				BufferedWriter conexao = new BufferedWriter(fw);
 				conexao.write(frase);
 				conexao.newLine();
@@ -275,8 +272,7 @@ public class ViewFrases {
 			}
 		} else if (motivacao) {
 			try {
-				FileWriter fw = new FileWriter(
-						"txt/Motivacional.txt", true);
+				FileWriter fw = new FileWriter("txt/Motivacional.txt", true);
 				BufferedWriter conexao = new BufferedWriter(fw);
 				conexao.write(frase);
 				conexao.newLine();
@@ -286,8 +282,7 @@ public class ViewFrases {
 			}
 		} else if (pergunta) {
 			try {
-				FileWriter fw = new FileWriter(
-						"txt/Pergunta.txt", true);
+				FileWriter fw = new FileWriter("txt/Pergunta.txt", true);
 				BufferedWriter conexao = new BufferedWriter(fw);
 				conexao.write(frase);
 				conexao.newLine();
@@ -468,8 +463,7 @@ public class ViewFrases {
 				}
 			} else if (motivacao) {
 				try {
-					s = choose(new File(
-							"txt/Motivacional.txt"));
+					s = choose(new File("txt/Motivacional.txt"));
 					Resultado = s;
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
@@ -551,13 +545,14 @@ public class ViewFrases {
 		btnFundo.setBounds(600, 6, 35, 27);
 		// btnFundo.setIcon(new
 		// javax.swing.ImageIcon(getClass().getResource("img/exportar.png")));
-		ImageIcon imageIcon = new javax.swing.ImageIcon(getClass().getResource(
-				"img/exportar.png"));
-		Image image = imageIcon.getImage();
-		Image newimg = image.getScaledInstance(18, 18,
-				java.awt.Image.SCALE_SMOOTH);
-		imageIcon = new ImageIcon(newimg);
-		btnFundo.setIcon(imageIcon);
+		// ImageIcon imageIcon = new
+		// javax.swing.ImageIcon(getClass().getResource(
+		// "img/exportar.png"));
+		// Image image = imageIcon.getImage();
+		// Image newimg = image.getScaledInstance(18, 18,
+		// java.awt.Image.SCALE_SMOOTH);
+		// imageIcon = new ImageIcon(newimg);
+		// btnFundo.setIcon(imageIcon);
 
 		// btnFundo.setFont(new Font("Dialog", Font.BOLD, 11));
 		// btnFundo.setForeground(new java.awt.Color(0, 0, 255));
@@ -691,7 +686,8 @@ public class ViewFrases {
 
 		try {
 			Random rand = new Random();
-			int randomNum = rand.nextInt((9 - 1) + 1) + 1;
+			randomNum = rand.nextInt((10 - 1) + 1) + 1;
+			//randomNum = 15;
 			img = ImageIO.read(new File("img/Fundo" + randomNum + ".jpg"));
 
 		} catch (IOException e) {
@@ -699,8 +695,6 @@ public class ViewFrases {
 		}
 
 		// // Cria e configura o texto no JLabel
-
-		// label.setText(Resultado);
 		label.setText("Teste2");
 		label.setFont(new Font("Calibri", Font.BOLD, 100));
 		label.setForeground(Color.white);
@@ -709,15 +703,21 @@ public class ViewFrases {
 		Result = new JTextArea();
 		Result.setLineWrap(true);
 		Result.setWrapStyleWord(true);
-		Result.setBounds(340, 260, 487, 140);
+		Result.setBounds(340, 240, 487, 140);
 		Result.setVisible(true);
-
-		Result.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 25));
+		if (randomNum == 10 || randomNum == 15) {
+			Result.setForeground(Color.BLACK);
+		} else
+			Result.setForeground(Color.WHITE);
+		
+		if (randomNum == 12) {
+			Result.setBounds(30, 200, 487, 140);
+		}
+		Result.setFont(new Font("Sitka Text Italic", Font.PLAIN, 25));
 		Result.setMargin(new Insets(5, 5, 5, 5));
 		Result.setText(Resultado);
 		Result.setColumns(10);
 		Result.setEditable(false);
-		Result.setForeground(Color.WHITE);
 		Result.setBackground(new Color(0, 0, 0, 0));
 
 		JScrollPane scrollPane = new JScrollPane(Result);
@@ -726,7 +726,6 @@ public class ViewFrases {
 
 		// Cria e configura a janela
 		JFrame janela = new JFrame();
-		// janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		janela.setBounds(850, 100, 867, 440);
 		janela.getContentPane().setLayout(null);
 
@@ -741,8 +740,6 @@ public class ViewFrases {
 		janela.setVisible(true);
 		janela.add(Result);
 		janela.add(label);
-
-		// ImageIO.write(getImagem(), "png", new File("C:/NovaImagem.png"));
 
 	}
 }
