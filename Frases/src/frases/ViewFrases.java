@@ -687,7 +687,7 @@ public class ViewFrases {
 		try {
 			Random rand = new Random();
 			randomNum = rand.nextInt((10 - 1) + 1) + 1;
-			//randomNum = 15;
+			//randomNum = 10;
 			img = ImageIO.read(new File("img/Fundo" + randomNum + ".jpg"));
 
 		} catch (IOException e) {
