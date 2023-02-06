@@ -82,9 +82,9 @@ public class ViewFrases {
 	 */
 
 	public static void main(String[] args) throws FileNotFoundException {
-		// Login();
+		Login();
 		// Fundo();
-		Geracao();
+		// Geracao();
 		// Fundo();
 	}
 
@@ -149,7 +149,6 @@ public class ViewFrases {
 										"Usuário ou senha incorreta! Verifique se você possui permissão",
 										"Falha ao logar",
 										JOptionPane.INFORMATION_MESSAGE);
-
 				} else
 					JOptionPane
 							.showMessageDialog(
@@ -250,49 +249,53 @@ public class ViewFrases {
 
 	public void MetodoAdd(String path) throws IOException {
 		String frase = NovaFrase.getText();
-		if (feliz) {
-			try {
-				FileWriter fw = new FileWriter("txt/Feliz.txt", true);
-				BufferedWriter conexao = new BufferedWriter(fw);
-				conexao.write(frase);
-				conexao.newLine();
-				conexao.close();
-			} catch (Exception e) {
-				e.printStackTrace();
+		if (!frase.isEmpty()) {
+			if (feliz) {
+				try {
+					FileWriter fw = new FileWriter("txt/Feliz.txt", true);
+					BufferedWriter conexao = new BufferedWriter(fw);
+					conexao.write(frase);
+					conexao.newLine();
+					conexao.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			} else if (triste) {
+				try {
+					FileWriter fw = new FileWriter("txt/Triste.txt", true);
+					BufferedWriter conexao = new BufferedWriter(fw);
+					conexao.write(frase);
+					conexao.newLine();
+					conexao.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			} else if (motivacao) {
+				try {
+					FileWriter fw = new FileWriter("txt/Motivacional.txt", true);
+					BufferedWriter conexao = new BufferedWriter(fw);
+					conexao.write(frase);
+					conexao.newLine();
+					conexao.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			} else if (pergunta) {
+				try {
+					FileWriter fw = new FileWriter("txt/Pergunta.txt", true);
+					BufferedWriter conexao = new BufferedWriter(fw);
+					conexao.write(frase);
+					conexao.newLine();
+					conexao.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				JOptionPane.showMessageDialog(null, "Frase salva com sucesso");
+				NovaFrase.setText(null);
 			}
-		} else if (triste) {
-			try {
-				FileWriter fw = new FileWriter("txt/Triste.txt", true);
-				BufferedWriter conexao = new BufferedWriter(fw);
-				conexao.write(frase);
-				conexao.newLine();
-				conexao.close();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		} else if (motivacao) {
-			try {
-				FileWriter fw = new FileWriter("txt/Motivacional.txt", true);
-				BufferedWriter conexao = new BufferedWriter(fw);
-				conexao.write(frase);
-				conexao.newLine();
-				conexao.close();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		} else if (pergunta) {
-			try {
-				FileWriter fw = new FileWriter("txt/Pergunta.txt", true);
-				BufferedWriter conexao = new BufferedWriter(fw);
-				conexao.write(frase);
-				conexao.newLine();
-				conexao.close();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-		JOptionPane.showMessageDialog(null, "Frase salva com sucesso");
-		NovaFrase.setText(null);
+		} else
+			JOptionPane.showMessageDialog(null, "Digite uma frase para salvar");
+
 	}
 
 	public void Categoria() {
@@ -543,25 +546,12 @@ public class ViewFrases {
 
 		btnFundo = new JButton("Exportar");
 		btnFundo.setBounds(600, 6, 35, 27);
-		// btnFundo.setIcon(new
-		// javax.swing.ImageIcon(getClass().getResource("img/exportar.png")));
-		// ImageIcon imageIcon = new
-		// javax.swing.ImageIcon(getClass().getResource(
-		// "img/exportar.png"));
-		// Image image = imageIcon.getImage();
-		// Image newimg = image.getScaledInstance(18, 18,
-		// java.awt.Image.SCALE_SMOOTH);
-		// imageIcon = new ImageIcon(newimg);
-		// btnFundo.setIcon(imageIcon);
 
-		// btnFundo.setFont(new Font("Dialog", Font.BOLD, 11));
-		// btnFundo.setForeground(new java.awt.Color(0, 0, 255));
-		// btnFundo.setBackground(new java.awt.Color(101, 171, 255));
 		frame.getContentPane().add(btnFundo);
 
 		btnFundo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (frase != "\n                       Selecione uma categoria para gerar sua frase") {
+				if (frase != null) {
 					Fundo();
 				} else {
 					JOptionPane.showMessageDialog(frameLogin,
@@ -687,7 +677,7 @@ public class ViewFrases {
 		try {
 			Random rand = new Random();
 			randomNum = rand.nextInt((10 - 1) + 1) + 1;
-			//randomNum = 10;
+			// randomNum = 10;
 			img = ImageIO.read(new File("img/Fundo" + randomNum + ".jpg"));
 
 		} catch (IOException e) {
@@ -709,7 +699,7 @@ public class ViewFrases {
 			Result.setForeground(Color.BLACK);
 		} else
 			Result.setForeground(Color.WHITE);
-		
+
 		if (randomNum == 12) {
 			Result.setBounds(30, 200, 487, 140);
 		}
