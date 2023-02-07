@@ -1,6 +1,7 @@
 package frases;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Image;
 import java.awt.Insets;
@@ -21,6 +22,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -32,6 +34,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 
 import util.Horario;
 
@@ -52,6 +55,7 @@ public class ViewFrases {
 	public JTextArea NovaFrase;
 	public static JTextArea txtFrases2;
 	public static JTextArea Result;
+	public static JTextField txtUsuario;
 	public JButton btnSair;
 	public JButton btnFeliz;
 	public JButton btnTriste;
@@ -82,11 +86,21 @@ public class ViewFrases {
 	 */
 
 	public static void main(String[] args) throws FileNotFoundException {
-		Login();
+		//Login();
+		Inicio();
 		// Fundo();
 		// Geracao();
-		// Fundo();
+
+		
+//		SwingUtilities.invokeLater( new Runnable() { 
+//
+//			public void run() { 
+//			        txtUsuario.requestFocus(); 
+//			    } 
+//			} );
+		
 	}
+	
 
 	public static void Login() {
 		ViewFrases window = new ViewFrases();
@@ -113,7 +127,7 @@ public class ViewFrases {
 		JLabel JlUsuario = new JLabel("Usuário: ");
 		JlUsuario.setBounds(10, 99, 140, 27);
 		JlUsuario.setVisible(true);
-		JTextField txtUsuario = new JTextField();
+		txtUsuario = new JTextField();
 		txtUsuario.setBounds(70, 99, 140, 27);
 		frameLogin.getContentPane().add(txtUsuario);
 		frameLogin.getContentPane().add(JlUsuario);
@@ -160,6 +174,15 @@ public class ViewFrases {
 			}
 
 		});
+		
+		//Serve pra setar o foco no campo de usuário ao iniciar o sistema
+		SwingUtilities.invokeLater( new Runnable() { 
+
+			public void run() { 
+			        txtUsuario.requestFocus(); 
+			    } 
+			} );
+		
 		txtUsuario.addKeyListener(new KeyAdapter() {
 
 			public void keyPressed(KeyEvent e) {
@@ -232,12 +255,22 @@ public class ViewFrases {
 		lbsuafrase.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 15));
 		lbsuafrase.setBounds(87, 49, 935, 67);
 		frame2.getContentPane().add(lbsuafrase);
-		btnInicio = new JButton("OK");
-		btnInicio.setBounds(250, 106, 165, 57);
-		btnInicio.setHorizontalAlignment(SwingConstants.CENTER);
-		btnInicio.setFont(new Font("Times New Roman", Font.PLAIN, 19));
-		btnInicio.setBackground(Color.LIGHT_GRAY);
-		frame2.getContentPane().add(btnInicio);
+//		btnInicio = new JButton("OK");
+		
+		
+		BufferedImage buttonIcon = null;
+		try {
+			buttonIcon = ImageIO.read(new File("img/icons/ok_button.png"));
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		JButton btnInicio = new JButton(new ImageIcon(buttonIcon));
+		btnInicio.setBorderPainted(false); //mudar pra true para exibir a borda do tamanho do campo
+		btnInicio.setContentAreaFilled(false);
+	    frame2.getContentPane().add(btnInicio);
+	    btnInicio.setBounds(300, 106, 55, 55);
+		btnInicio.setHorizontalAlignment(SwingConstants.CENTER);	
 		btnInicio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame2.dispose();
