@@ -81,8 +81,7 @@ public class Buttons {
 	public static Component botaoFeliz() {
 		BufferedImage btnFelizIcon = null;
 		try {
-			btnFelizIcon = ImageIO
-					.read(new File("img/icons/feliz_button.png"));
+			btnFelizIcon = ImageIO.read(new File("img/icons/feliz_button.png"));
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -106,7 +105,7 @@ public class Buttons {
 		return btnFeliz;
 
 	}
-	
+
 	public static Component botaoTriste() {
 		BufferedImage btnTristeIcon = null;
 		try {
@@ -135,20 +134,21 @@ public class Buttons {
 		return btnTriste;
 
 	}
-	
+
 	public static Component botaoMotivacional() {
 		BufferedImage btnMotivacionalIcon = null;
 		try {
-			btnMotivacionalIcon = ImageIO
-					.read(new File("img/icons/motivacional_button.png"));
+			btnMotivacionalIcon = ImageIO.read(new File(
+					"img/icons/motivacional_button.png"));
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		btnMotivacional = new JButton(new ImageIcon(btnMotivacionalIcon));
 		btnMotivacional.setToolTipText("Motivacional");
-		btnMotivacional.setBorderPainted(false); // mudar pra true para exibir a borda
-											// do tamanho do campo
+		btnMotivacional.setBorderPainted(false); // mudar pra true para exibir a
+													// borda
+		// do tamanho do campo
 		btnMotivacional.setContentAreaFilled(false);
 		btnMotivacional.setBounds(235, 155, 45, 45);
 		btnMotivacional.setHorizontalAlignment(SwingConstants.CENTER);
@@ -164,20 +164,21 @@ public class Buttons {
 		return btnMotivacional;
 
 	}
-	
+
 	public static Component botaoPergunta() {
 		BufferedImage btnPerguntaIcon = null;
 		try {
-			btnPerguntaIcon = ImageIO
-					.read(new File("img/icons/pergunta_button.png"));
+			btnPerguntaIcon = ImageIO.read(new File(
+					"img/icons/pergunta_button.png"));
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		btnPergunta = new JButton(new ImageIcon(btnPerguntaIcon));
 		btnPergunta.setToolTipText("Pergunta");
-		btnPergunta.setBorderPainted(false); // mudar pra true para exibir a borda
-											// do tamanho do campo
+		btnPergunta.setBorderPainted(false); // mudar pra true para exibir a
+												// borda
+												// do tamanho do campo
 		btnPergunta.setContentAreaFilled(false);
 		btnPergunta.setBounds(335, 155, 45, 45);
 		btnPergunta.setHorizontalAlignment(SwingConstants.CENTER);
@@ -193,40 +194,11 @@ public class Buttons {
 		return btnPergunta;
 
 	}
-	
-//	public static Component botaoAddFrase() {
-//		BufferedImage btnPerguntaIcon = null;
-//		try {
-//			btnPerguntaIcon = ImageIO
-//					.read(new File("img/icons/novo_button.png"));
-//		} catch (IOException e1) {
-//			// TODO Auto-generated catch block
-//			e1.printStackTrace();
-//		}
-//		btnAddFrase = new JButton(new ImageIcon(btnPerguntaIcon));
-//		btnAddFrase.setBorderPainted(true); // mudar pra true para exibir a borda
-//											// do tamanho do campo
-//		btnAddFrase.setContentAreaFilled(false);
-//		btnAddFrase.setBounds(435, 155, 45, 45);
-//		btnAddFrase.setHorizontalAlignment(SwingConstants.CENTER);
-//		btnAddFrase.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				ViewFrases.frame.dispose();
-//				ViewFrases.Categoria();
-//
-//			}
-//		});
-//
-//
-//		return btnAddFrase;
-//
-//	}
-	
+
 	public static Component botaoSair() {
 		BufferedImage btnSairIcon = null;
 		try {
-			btnSairIcon = ImageIO
-					.read(new File("img/icons/sair_button.png"));
+			btnSairIcon = ImageIO.read(new File("img/icons/sair_button.png"));
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -252,7 +224,6 @@ public class Buttons {
 				}
 			}
 		});
-
 
 		return btnSair;
 
