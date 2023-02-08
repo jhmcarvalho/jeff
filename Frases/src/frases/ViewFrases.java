@@ -3,6 +3,8 @@ package frases;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Insets;
+import java.awt.KeyEventDispatcher;
+import java.awt.KeyboardFocusManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
@@ -23,6 +25,7 @@ import util.Buttons;
 import util.Frames;
 import util.Horario;
 import util.Inicio;
+import util.Mapeamento;
 
 //import com.sun.awt.AWTUtilities;
 
@@ -34,7 +37,7 @@ public class ViewFrases {
 	public static JTextArea txtFrases2;
 	public static JTextArea Result;
 	public static JTextField txtUsuario;
-	public static JButton btnEntrar;
+	public static JPasswordField txtSenha;
 
 	public static JCheckBox btnExibirSenha;
 	public JButton btnMotivacional;
@@ -56,7 +59,7 @@ public class ViewFrases {
 		Login();
 		// Inicio();
 		// Fundo();
-		// Geracao();
+		// Mapeamento.Geracao();
 
 	}
 
@@ -89,43 +92,13 @@ public class ViewFrases {
 
 		JLabel JlSenha = new JLabel("Senha: ");
 		JlSenha.setBounds(10, 130, 140, 27);
-		JPasswordField txtSenha = new JPasswordField();
-		txtSenha.setBounds(70, 130, 140, 27);
-		Frames.frameLogin.getContentPane().add(txtSenha);
+		Buttons.txtSenha = new JPasswordField();
+		Buttons.txtSenha.setBounds(70, 130, 140, 27);
+		Frames.frameLogin.getContentPane().add(Buttons.txtSenha);
 		Frames.frameLogin.getContentPane().add(JlSenha);
 		JlSenha.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 15));
 
-		btnEntrar = new JButton("Entrar");
-		Frames.frameLogin.getContentPane().add(btnEntrar);
-		btnEntrar.setBounds(210, 165, 123, 27);
-		btnEntrar.setVisible(true);
-
-		btnEntrar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (txtUsuario.getText().equals("jeff")) {
-
-					if (Arrays.equals(txtSenha.getPassword(), new char[] { 'd',
-							'8', 'h', 'j', '0', 'p', 't', 'r' })) {
-						Inicio.Inicio();
-						Frames.frameLogin.dispose();
-					} else
-						JOptionPane
-								.showMessageDialog(
-										Frames.frameLogin,
-										"Usuário ou senha incorreta! Verifique se você possui permissão",
-										"Falha ao logar",
-										JOptionPane.INFORMATION_MESSAGE);
-				} else
-					JOptionPane
-							.showMessageDialog(
-									Frames.frameLogin,
-									"Usuário ou senha incorreta! Verifique se você possui permissão",
-									"Falha ao logar",
-									JOptionPane.INFORMATION_MESSAGE);
-
-			}
-
-		});
+		
 
 		// Serve pra setar o foco no campo de usuário ao iniciar o sistema
 		SwingUtilities.invokeLater(new Runnable() {
@@ -134,56 +107,20 @@ public class ViewFrases {
 				txtUsuario.requestFocus();
 			}
 		});
-
-		txtUsuario.addKeyListener(new KeyAdapter() {
-
-			public void keyPressed(KeyEvent e) {
-				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-					btnEntrar.doClick();
-				}
-			}
-
-		});
-
-		txtSenha.addKeyListener(new KeyAdapter() {
-
-			public void keyPressed(KeyEvent e) {
-				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-					btnEntrar.doClick();
-				}
-			}
-
-		});
-
-		btnExibirSenha = new JCheckBox("Exibir senha");
-		Frames.frameLogin.getContentPane().add(btnExibirSenha);
-		btnExibirSenha.setBounds(210, 130, 123, 27);
-		btnExibirSenha.setBackground(new java.awt.Color(220, 230, 254));
-		btnExibirSenha.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 15));
-
-		char defaultt = txtSenha.getEchoChar();
-		btnExibirSenha.addActionListener(new ActionListener() {
-
-			public void actionPerformed(ActionEvent e) {
-				if (btnExibirSenha.isSelected()) {
-					txtSenha.setEchoChar((char) 0);
-				} else {
-					txtSenha.setEchoChar(defaultt);
-				}
-			}
-		});
-
-		btnExibirSenha.addKeyListener(new KeyAdapter() {
-
-			public void keyPressed(KeyEvent e) {
-				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-					btnEntrar.doClick();
-				}
-			}
-
-		});
-
-	}
+		
+		KeyboardFocusManager.getCurrentKeyboardFocusManager()
+				.addKeyEventDispatcher(new KeyEventDispatcher() {
+					@Override
+					public boolean dispatchKeyEvent(KeyEvent event) {
+						if (event.getID() == KeyEvent.KEY_RELEASED
+								&& event.getKeyCode() == KeyEvent.VK_ENTER) {
+							Buttons.btnEntrar.doClick();
+							return true;
+						}
+						return false;
+					}
+				});
+		}
 
 	public ViewFrases() {
 		Frames.Frames();

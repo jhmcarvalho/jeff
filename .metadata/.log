@@ -6567,3 +6567,2460 @@ org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 3887
 	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.async(DebugPlugin.java:1087)
 	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:429)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.debug 4 125 2023-02-08 11:02:12.634
+!MESSAGE Internal error logged from JDI Debug: 
+!STACK 0
+org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 3888.
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:186)
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:197)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:191)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:226)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesBySignature(VirtualMachineImpl.java:638)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesByName(VirtualMachineImpl.java:667)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.jdiClassesByName(JDIDebugTarget.java:1602)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.filterUnloadedTypes(JavaHotCodeReplaceManager.java:349)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.doHotCodeReplace(JavaHotCodeReplaceManager.java:460)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.access$0(JavaHotCodeReplaceManager.java:443)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager$1.run(JavaHotCodeReplaceManager.java:315)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.run(DebugPlugin.java:1106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.async(DebugPlugin.java:1087)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:429)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.debug 4 5010 2023-02-08 11:02:18.990
+!MESSAGE At least one target failed to drop to frame after successful hot code replace.
+!SUBENTRY 1 org.eclipse.jdt.debug 4 5010 2023-02-08 11:02:18.990
+!MESSAGE org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 3890. occurred retrieving stack frames.
+!STACK 0
+org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 3890.
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:186)
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:197)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:191)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:226)
+	at org.eclipse.jdi.internal.ThreadReferenceImpl.frames(ThreadReferenceImpl.java:257)
+	at org.eclipse.jdi.internal.ThreadReferenceImpl.frames(ThreadReferenceImpl.java:240)
+	at org.eclipse.jdt.internal.debug.core.model.JDIThread.getUnderlyingFrames(JDIThread.java:664)
+	at org.eclipse.jdt.internal.debug.core.model.JDIThread.computeStackFrames(JDIThread.java:563)
+	at org.eclipse.jdt.internal.debug.core.model.JDIThread.computeStackFrames(JDIThread.java:635)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.getAffectedFrame(JavaHotCodeReplaceManager.java:922)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.getAffectedFrames(JavaHotCodeReplaceManager.java:885)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.attemptPopFrames(JavaHotCodeReplaceManager.java:831)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.doHotCodeReplace(JavaHotCodeReplaceManager.java:478)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.access$0(JavaHotCodeReplaceManager.java:443)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager$1.run(JavaHotCodeReplaceManager.java:315)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.run(DebugPlugin.java:1106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.async(DebugPlugin.java:1087)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:429)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.debug 4 5010 2023-02-08 11:04:35.935
+!MESSAGE At least one target failed to drop to frame after successful hot code replace.
+!SUBENTRY 1 org.eclipse.jdt.debug 4 5010 2023-02-08 11:04:35.935
+!MESSAGE org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 3920. occurred retrieving stack frames.
+!STACK 0
+org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 3920.
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:186)
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:197)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:191)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:226)
+	at org.eclipse.jdi.internal.ThreadReferenceImpl.frames(ThreadReferenceImpl.java:257)
+	at org.eclipse.jdi.internal.ThreadReferenceImpl.frames(ThreadReferenceImpl.java:240)
+	at org.eclipse.jdt.internal.debug.core.model.JDIThread.getUnderlyingFrames(JDIThread.java:664)
+	at org.eclipse.jdt.internal.debug.core.model.JDIThread.computeStackFrames(JDIThread.java:563)
+	at org.eclipse.jdt.internal.debug.core.model.JDIThread.computeStackFrames(JDIThread.java:635)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.getAffectedFrame(JavaHotCodeReplaceManager.java:922)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.getAffectedFrames(JavaHotCodeReplaceManager.java:885)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.attemptPopFrames(JavaHotCodeReplaceManager.java:831)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.doHotCodeReplace(JavaHotCodeReplaceManager.java:478)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.access$0(JavaHotCodeReplaceManager.java:443)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager$1.run(JavaHotCodeReplaceManager.java:315)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.run(DebugPlugin.java:1106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.async(DebugPlugin.java:1087)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:429)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.debug 4 125 2023-02-08 11:04:43.324
+!MESSAGE Internal error logged from JDI Debug: 
+!STACK 0
+org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 3926.
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:186)
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:197)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:191)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:226)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesBySignature(VirtualMachineImpl.java:638)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesByName(VirtualMachineImpl.java:667)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.jdiClassesByName(JDIDebugTarget.java:1602)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.filterUnloadedTypes(JavaHotCodeReplaceManager.java:349)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.doHotCodeReplace(JavaHotCodeReplaceManager.java:460)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.access$0(JavaHotCodeReplaceManager.java:443)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager$1.run(JavaHotCodeReplaceManager.java:315)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.run(DebugPlugin.java:1106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.async(DebugPlugin.java:1087)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:429)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.debug 4 125 2023-02-08 11:04:46.338
+!MESSAGE Internal error logged from JDI Debug: 
+!STACK 0
+org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 3928.
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:186)
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:197)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:191)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:226)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesBySignature(VirtualMachineImpl.java:638)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesByName(VirtualMachineImpl.java:667)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.jdiClassesByName(JDIDebugTarget.java:1602)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.filterUnloadedTypes(JavaHotCodeReplaceManager.java:349)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.doHotCodeReplace(JavaHotCodeReplaceManager.java:460)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.access$0(JavaHotCodeReplaceManager.java:443)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager$1.run(JavaHotCodeReplaceManager.java:315)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.run(DebugPlugin.java:1106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.async(DebugPlugin.java:1087)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:429)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.debug 4 125 2023-02-08 11:04:49.351
+!MESSAGE Internal error logged from JDI Debug: 
+!STACK 0
+org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 3930.
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:186)
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:197)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:191)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:226)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesBySignature(VirtualMachineImpl.java:638)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesByName(VirtualMachineImpl.java:667)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.jdiClassesByName(JDIDebugTarget.java:1602)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.filterUnloadedTypes(JavaHotCodeReplaceManager.java:349)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.doHotCodeReplace(JavaHotCodeReplaceManager.java:460)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.access$0(JavaHotCodeReplaceManager.java:443)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager$1.run(JavaHotCodeReplaceManager.java:315)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.run(DebugPlugin.java:1106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.async(DebugPlugin.java:1087)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:429)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.debug 4 125 2023-02-08 11:04:52.363
+!MESSAGE Internal error logged from JDI Debug: 
+!STACK 0
+org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 3931.
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:186)
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:197)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:191)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:226)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesBySignature(VirtualMachineImpl.java:638)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesByName(VirtualMachineImpl.java:667)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.jdiClassesByName(JDIDebugTarget.java:1602)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.filterUnloadedTypes(JavaHotCodeReplaceManager.java:349)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.doHotCodeReplace(JavaHotCodeReplaceManager.java:460)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.access$0(JavaHotCodeReplaceManager.java:443)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager$1.run(JavaHotCodeReplaceManager.java:315)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.run(DebugPlugin.java:1106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.async(DebugPlugin.java:1087)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:429)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.debug 4 5010 2023-02-08 11:09:16.330
+!MESSAGE At least one target failed to drop to frame after successful hot code replace.
+!SUBENTRY 1 org.eclipse.jdt.debug 4 5010 2023-02-08 11:09:16.330
+!MESSAGE org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 4095. occurred retrieving stack frames.
+!STACK 0
+org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 4095.
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:186)
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:197)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:191)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:226)
+	at org.eclipse.jdi.internal.ThreadReferenceImpl.frames(ThreadReferenceImpl.java:257)
+	at org.eclipse.jdi.internal.ThreadReferenceImpl.frames(ThreadReferenceImpl.java:240)
+	at org.eclipse.jdt.internal.debug.core.model.JDIThread.getUnderlyingFrames(JDIThread.java:664)
+	at org.eclipse.jdt.internal.debug.core.model.JDIThread.computeStackFrames(JDIThread.java:563)
+	at org.eclipse.jdt.internal.debug.core.model.JDIThread.computeStackFrames(JDIThread.java:635)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.getAffectedFrame(JavaHotCodeReplaceManager.java:922)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.getAffectedFrames(JavaHotCodeReplaceManager.java:885)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.attemptPopFrames(JavaHotCodeReplaceManager.java:831)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.doHotCodeReplace(JavaHotCodeReplaceManager.java:478)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.access$0(JavaHotCodeReplaceManager.java:443)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager$1.run(JavaHotCodeReplaceManager.java:315)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.run(DebugPlugin.java:1106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.async(DebugPlugin.java:1087)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:429)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.debug 4 125 2023-02-08 11:09:19.900
+!MESSAGE Internal error logged from JDI Debug: 
+!STACK 0
+org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 4099.
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:186)
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:197)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:191)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:226)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesBySignature(VirtualMachineImpl.java:638)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesByName(VirtualMachineImpl.java:667)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.jdiClassesByName(JDIDebugTarget.java:1602)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.filterUnloadedTypes(JavaHotCodeReplaceManager.java:349)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.doHotCodeReplace(JavaHotCodeReplaceManager.java:460)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.access$0(JavaHotCodeReplaceManager.java:443)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager$1.run(JavaHotCodeReplaceManager.java:315)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.run(DebugPlugin.java:1106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.async(DebugPlugin.java:1087)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:429)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.debug 4 125 2023-02-08 11:09:22.900
+!MESSAGE Internal error logged from JDI Debug: 
+!STACK 0
+org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 4101.
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:186)
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:197)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:191)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:226)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesBySignature(VirtualMachineImpl.java:638)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesByName(VirtualMachineImpl.java:667)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.jdiClassesByName(JDIDebugTarget.java:1602)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.filterUnloadedTypes(JavaHotCodeReplaceManager.java:349)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.doHotCodeReplace(JavaHotCodeReplaceManager.java:460)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.access$0(JavaHotCodeReplaceManager.java:443)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager$1.run(JavaHotCodeReplaceManager.java:315)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.run(DebugPlugin.java:1106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.async(DebugPlugin.java:1087)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:429)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.debug 4 125 2023-02-08 11:09:25.901
+!MESSAGE Internal error logged from JDI Debug: 
+!STACK 0
+org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 4103.
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:186)
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:197)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:191)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:226)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesBySignature(VirtualMachineImpl.java:638)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesByName(VirtualMachineImpl.java:667)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.jdiClassesByName(JDIDebugTarget.java:1602)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.filterUnloadedTypes(JavaHotCodeReplaceManager.java:349)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.doHotCodeReplace(JavaHotCodeReplaceManager.java:460)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.access$0(JavaHotCodeReplaceManager.java:443)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager$1.run(JavaHotCodeReplaceManager.java:315)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.run(DebugPlugin.java:1106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.async(DebugPlugin.java:1087)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:429)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.debug 4 125 2023-02-08 11:09:28.905
+!MESSAGE Internal error logged from JDI Debug: 
+!STACK 0
+org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 4105.
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:186)
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:197)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:191)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:226)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesBySignature(VirtualMachineImpl.java:638)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesByName(VirtualMachineImpl.java:667)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.jdiClassesByName(JDIDebugTarget.java:1602)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.filterUnloadedTypes(JavaHotCodeReplaceManager.java:349)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.doHotCodeReplace(JavaHotCodeReplaceManager.java:460)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.access$0(JavaHotCodeReplaceManager.java:443)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager$1.run(JavaHotCodeReplaceManager.java:315)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.run(DebugPlugin.java:1106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.async(DebugPlugin.java:1087)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:429)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.debug 4 125 2023-02-08 11:09:31.906
+!MESSAGE Internal error logged from JDI Debug: 
+!STACK 0
+org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 4106.
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:186)
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:197)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:191)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:226)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesBySignature(VirtualMachineImpl.java:638)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesByName(VirtualMachineImpl.java:667)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.jdiClassesByName(JDIDebugTarget.java:1602)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.filterUnloadedTypes(JavaHotCodeReplaceManager.java:349)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.doHotCodeReplace(JavaHotCodeReplaceManager.java:460)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.access$0(JavaHotCodeReplaceManager.java:443)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager$1.run(JavaHotCodeReplaceManager.java:315)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.run(DebugPlugin.java:1106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.async(DebugPlugin.java:1087)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:429)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.debug 4 5010 2023-02-08 11:09:39.512
+!MESSAGE At least one target failed to drop to frame after successful hot code replace.
+!SUBENTRY 1 org.eclipse.jdt.debug 4 5010 2023-02-08 11:09:39.512
+!MESSAGE org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 4108. occurred retrieving stack frames.
+!STACK 0
+org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 4108.
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:186)
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:197)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:191)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:226)
+	at org.eclipse.jdi.internal.ThreadReferenceImpl.frames(ThreadReferenceImpl.java:257)
+	at org.eclipse.jdi.internal.ThreadReferenceImpl.frames(ThreadReferenceImpl.java:240)
+	at org.eclipse.jdt.internal.debug.core.model.JDIThread.getUnderlyingFrames(JDIThread.java:664)
+	at org.eclipse.jdt.internal.debug.core.model.JDIThread.computeStackFrames(JDIThread.java:563)
+	at org.eclipse.jdt.internal.debug.core.model.JDIThread.computeStackFrames(JDIThread.java:635)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.getAffectedFrame(JavaHotCodeReplaceManager.java:922)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.getAffectedFrames(JavaHotCodeReplaceManager.java:885)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.attemptPopFrames(JavaHotCodeReplaceManager.java:831)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.doHotCodeReplace(JavaHotCodeReplaceManager.java:478)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.access$0(JavaHotCodeReplaceManager.java:443)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager$1.run(JavaHotCodeReplaceManager.java:315)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.run(DebugPlugin.java:1106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.async(DebugPlugin.java:1087)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:429)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.debug 4 5010 2023-02-08 11:22:57.593
+!MESSAGE At least one target failed to drop to frame after successful hot code replace.
+!SUBENTRY 1 org.eclipse.jdt.debug 4 5010 2023-02-08 11:22:57.593
+!MESSAGE org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 4348. occurred retrieving stack frames.
+!STACK 0
+org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 4348.
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:186)
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:197)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:191)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:226)
+	at org.eclipse.jdi.internal.ThreadReferenceImpl.frames(ThreadReferenceImpl.java:257)
+	at org.eclipse.jdi.internal.ThreadReferenceImpl.frames(ThreadReferenceImpl.java:240)
+	at org.eclipse.jdt.internal.debug.core.model.JDIThread.getUnderlyingFrames(JDIThread.java:664)
+	at org.eclipse.jdt.internal.debug.core.model.JDIThread.computeStackFrames(JDIThread.java:563)
+	at org.eclipse.jdt.internal.debug.core.model.JDIThread.computeStackFrames(JDIThread.java:635)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.getAffectedFrame(JavaHotCodeReplaceManager.java:922)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.getAffectedFrames(JavaHotCodeReplaceManager.java:885)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.attemptPopFrames(JavaHotCodeReplaceManager.java:831)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.doHotCodeReplace(JavaHotCodeReplaceManager.java:478)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.access$0(JavaHotCodeReplaceManager.java:443)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager$1.run(JavaHotCodeReplaceManager.java:315)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.run(DebugPlugin.java:1106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.async(DebugPlugin.java:1087)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:429)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.debug 4 125 2023-02-08 11:23:05.164
+!MESSAGE Internal error logged from JDI Debug: 
+!STACK 0
+org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 4354.
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:186)
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:197)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:191)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:226)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesBySignature(VirtualMachineImpl.java:638)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesByName(VirtualMachineImpl.java:667)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.jdiClassesByName(JDIDebugTarget.java:1602)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.filterUnloadedTypes(JavaHotCodeReplaceManager.java:349)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.doHotCodeReplace(JavaHotCodeReplaceManager.java:460)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.access$0(JavaHotCodeReplaceManager.java:443)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager$1.run(JavaHotCodeReplaceManager.java:315)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.run(DebugPlugin.java:1106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.async(DebugPlugin.java:1087)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:429)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.debug 4 125 2023-02-08 11:23:08.177
+!MESSAGE Internal error logged from JDI Debug: 
+!STACK 0
+org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 4356.
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:186)
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:197)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:191)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:226)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesBySignature(VirtualMachineImpl.java:638)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesByName(VirtualMachineImpl.java:667)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.jdiClassesByName(JDIDebugTarget.java:1602)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.filterUnloadedTypes(JavaHotCodeReplaceManager.java:349)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.doHotCodeReplace(JavaHotCodeReplaceManager.java:460)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.access$0(JavaHotCodeReplaceManager.java:443)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager$1.run(JavaHotCodeReplaceManager.java:315)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.run(DebugPlugin.java:1106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.async(DebugPlugin.java:1087)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:429)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.debug 4 125 2023-02-08 11:23:11.179
+!MESSAGE Internal error logged from JDI Debug: 
+!STACK 0
+org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 4358.
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:186)
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:197)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:191)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:226)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesBySignature(VirtualMachineImpl.java:638)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesByName(VirtualMachineImpl.java:667)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.jdiClassesByName(JDIDebugTarget.java:1602)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.filterUnloadedTypes(JavaHotCodeReplaceManager.java:349)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.doHotCodeReplace(JavaHotCodeReplaceManager.java:460)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.access$0(JavaHotCodeReplaceManager.java:443)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager$1.run(JavaHotCodeReplaceManager.java:315)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.run(DebugPlugin.java:1106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.async(DebugPlugin.java:1087)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:429)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.debug 4 125 2023-02-08 11:23:14.193
+!MESSAGE Internal error logged from JDI Debug: 
+!STACK 0
+org.eclipse.jdi.TimeoutException: Timeout occurred while waiting for packet 4359.
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:186)
+	at org.eclipse.jdi.internal.connect.PacketReceiveManager.getReply(PacketReceiveManager.java:197)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:191)
+	at org.eclipse.jdi.internal.MirrorImpl.requestVM(MirrorImpl.java:226)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesBySignature(VirtualMachineImpl.java:638)
+	at org.eclipse.jdi.internal.VirtualMachineImpl.classesByName(VirtualMachineImpl.java:667)
+	at org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.jdiClassesByName(JDIDebugTarget.java:1602)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.filterUnloadedTypes(JavaHotCodeReplaceManager.java:349)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.doHotCodeReplace(JavaHotCodeReplaceManager.java:460)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager.access$0(JavaHotCodeReplaceManager.java:443)
+	at org.eclipse.jdt.internal.debug.core.hcr.JavaHotCodeReplaceManager$1.run(JavaHotCodeReplaceManager.java:315)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.run(DebugPlugin.java:1106)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$AsynchRunner.async(DebugPlugin.java:1087)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:429)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2023-02-08 15:26:34.833 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_291
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pt_BR
+Framework arguments:  -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product -product org.eclipse.epp.package.rcp.product -data D:\Dev\jeff -product org.eclipse.epp.package.rcp.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2023-02-08 15:27:12.018
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\SUPGT-ATV1192'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.recommenders.models.rcp 1 0 2023-02-08 15:40:02.242
+!MESSAGE org.eclipse.recommenders:index::zip:0.0.0 could not be resolved from model repositories. Are you offline?
+
+!ENTRY org.eclipse.jdt.core 4 4 2023-02-08 16:34:37.350
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package util;
+
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.Arrays;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
+import frases.ViewFrases;
+
+public class Buttons {
+
+	public static JButton btnInicio;
+	public static JButton btnVoltar;
+	public static JButton btnVoltarAdd;
+	public static JButton btnSalvar;
+	public static JButton btnEntrar;
+	public static JCheckBox btnExibirSenha;
+	public static JButton btnFeliz;
+	public static JButton btnFelizAdd;
+	public static JButton btnTriste;
+	public static JButton btnTristeAdd;
+	public static JButton btnMotivacional;
+	public static JButton btnMotivacionalAdd;
+	public static JButton btnPergunta;
+	public static JButton btnPerguntaAdd;
+	public static JButton btnAddFrase;
+	public static JButton btnSair;
+	public static JButton btnSairAdd;
+	public static String line;
+	public static JPasswordField txtSenha;
+	public static JTextField txtUsuario;
+
+	public static JFrame Botoes() {
+
+		BufferedImage btnFelizIcon = null;
+		BufferedImage btnTristeIcon = null;
+		BufferedImage btnMotivacionalIcon = null;
+		BufferedImage btnPerguntaIcon = null;
+		BufferedImage btnSairIcon = null;
+		BufferedImage btnVoltarIcon = null;
+		BufferedImage btnNovaFraseIcon = null;
+		BufferedImage btnSalvarIcon = null;
+		BufferedImage btnEntrarIcon = null;
+		BufferedImage btnOk = null;
+		BufferedImage btnFundoIcon = null;
+		BufferedImage btnMostrarSenhaIcon = null;
+
+		try {
+			btnFelizIcon = ImageIO.read(new File("img/icons/feliz_button.png"));
+			btnTristeIcon = ImageIO
+					.read(new File("img/icons/triste_button.png"));
+			btnMotivacionalIcon = ImageIO.read(new File(
+					"img/icons/motivacional_button.png"));
+			btnPerguntaIcon = ImageIO.read(new File(
+					"img/icons/pergunta_button.png"));
+			btnSairIcon = ImageIO.read(new File("img/icons/sair_button.png"));
+			btnVoltarIcon = ImageIO
+					.read(new File("img/icons/voltar_button.png"));
+			btnNovaFraseIcon = ImageIO.read(new File(
+					"img/icons/mais_button.png"));
+			btnSalvarIcon = ImageIO
+					.read(new File("img/icons/salvar_button.png"));
+			btnOk = ImageIO.read(new File("img/icons/ok_button.png"));
+			btnFundoIcon = ImageIO.read(new File("img/icons/fundo_button.png"));
+			btnEntrarIcon = ImageIO
+					.read(new File("img/icons/entrar_button.png"));
+			btnMostrarSenhaIcon = ImageIO.read(new File("img/icons/olho.png"));
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		JButton btnFundo = new JButton(new ImageIcon(btnFundoIcon));
+		btnFundo.setBounds(585, 155, 45, 45);
+		btnFundo.setToolTipText("Gerar imagem");
+		btnFundo.setBorderPainted(false);
+		btnFundo.setContentAreaFilled(false);
+		btnFundo.setHorizontalAlignment(SwingConstants.CENTER);
+		btnFundo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (ViewFrases.frase != null) {
+					Fundo.Fundo();
+				} else {
+					JOptionPane.showMessageDialog(Frames.frameLogin,
+							"Gere uma frase antes de exportar!",
+							"Falha ao exportar",
+							JOptionPane.INFORMATION_MESSAGE);
+				}
+			}
+		});
+
+		JButton btnInicio = new JButton(new ImageIcon(btnOk));
+		btnInicio.setBorderPainted(false);
+		btnInicio.setContentAreaFilled(false);
+		btnInicio.setBounds(300, 106, 55, 55);
+		btnInicio.setHorizontalAlignment(SwingConstants.CENTER);
+		btnInicio.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameInicio.dispose();
+				Mapeamento.Geracao();
+				ViewFrases.frase = "\n                       Selecione uma categoria para gerar sua frase";
+			}
+		});
+
+		JButton btnNovaFrase = new JButton(new ImageIcon(btnNovaFraseIcon));
+		btnNovaFrase.setBorderPainted(false);
+		btnNovaFrase.setContentAreaFilled(false);
+		btnNovaFrase.setBounds(463, 162, 35, 35);
+		Frames.frame.getContentPane().add(btnNovaFrase);
+		btnNovaFrase.setToolTipText("Nova frase");
+
+		btnNovaFrase.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frame.dispose();
+				Frames.frameAdd.dispose();
+				Mapeamento.Categoria();
+
+			}
+		});
+
+		btnFeliz = new JButton(new ImageIcon(btnFelizIcon));
+		btnFeliz.setToolTipText("Feliz");
+		btnFeliz.setBorderPainted(false);
+		btnFeliz.setContentAreaFilled(false);
+		btnFeliz.setBounds(35, 155, 45, 45);
+		btnFeliz.setHorizontalAlignment(SwingConstants.CENTER);
+		btnFeliz.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frame.dispose();
+				ViewFrases.feliz = true;
+				Mapeamento.Geracao();
+				Mapeamento.Mapeamento();
+			}
+		});
+		btnFelizAdd = new JButton(new ImageIcon(btnFelizIcon));
+		btnFelizAdd.setToolTipText("Feliz");
+		btnFelizAdd.setBorderPainted(false);
+		btnFelizAdd.setContentAreaFilled(false);
+		btnFelizAdd.setBounds(35, 155, 45, 45);
+		btnFelizAdd.setHorizontalAlignment(SwingConstants.CENTER);
+		btnFelizAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameAdd.dispose();
+				Frames.frame.dispose();
+				ViewFrases.feliz = true;
+				MetodoAdd.AddFrase();
+			}
+		});
+
+		btnTriste = new JButton(new ImageIcon(btnTristeIcon));
+		btnTriste.setToolTipText("Triste");
+		btnTriste.setBorderPainted(false);
+		btnTriste.setContentAreaFilled(false);
+		btnTriste.setBounds(135, 155, 45, 45);
+		btnTriste.setHorizontalAlignment(SwingConstants.CENTER);
+		btnTriste.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frame.dispose();
+				ViewFrases.triste = true;
+				Mapeamento.Geracao();
+				Mapeamento.Mapeamento();
+			}
+		});
+		btnTristeAdd = new JButton(new ImageIcon(btnTristeIcon));
+		btnTristeAdd.setToolTipText("Triste");
+		btnTristeAdd.setBorderPainted(false);
+		btnTristeAdd.setContentAreaFilled(false);
+		btnTristeAdd.setBounds(135, 155, 45, 45);
+		btnTristeAdd.setHorizontalAlignment(SwingConstants.CENTER);
+		btnTristeAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameAdd.dispose();
+				Frames.frame.dispose();
+				ViewFrases.triste = true;
+				MetodoAdd.AddFrase();
+			}
+		});
+
+		btnMotivacional = new JButton(new ImageIcon(btnMotivacionalIcon));
+		btnMotivacional.setToolTipText("Motivacional");
+		btnMotivacional.setBorderPainted(false);
+		btnMotivacional.setContentAreaFilled(false);
+		btnMotivacional.setBounds(235, 155, 45, 45);
+		btnMotivacional.setHorizontalAlignment(SwingConstants.CENTER);
+		btnMotivacional.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frame.dispose();
+				ViewFrases.motivacao = true;
+				Mapeamento.Geracao();
+				Mapeamento.Mapeamento();
+			}
+		});
+		btnMotivacionalAdd = new JButton(new ImageIcon(btnMotivacionalIcon));
+		btnMotivacionalAdd.setToolTipText("Motivacional");
+		btnMotivacionalAdd.setBorderPainted(false);
+		btnMotivacionalAdd.setContentAreaFilled(false);
+		btnMotivacionalAdd.setBounds(235, 155, 45, 45);
+		btnMotivacionalAdd.setHorizontalAlignment(SwingConstants.CENTER);
+		btnMotivacionalAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameAdd.dispose();
+				Frames.frame.dispose();
+				ViewFrases.motivacao = true;
+				MetodoAdd.AddFrase();
+			}
+		});
+
+		btnPergunta = new JButton(new ImageIcon(btnPerguntaIcon));
+		btnPergunta.setToolTipText("Pergunta");
+		btnPergunta.setBorderPainted(false);
+		btnPergunta.setContentAreaFilled(false);
+		btnPergunta.setBounds(335, 155, 45, 45);
+		btnPergunta.setHorizontalAlignment(SwingConstants.CENTER);
+		btnPergunta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frame.dispose();
+				ViewFrases.pergunta = true;
+				Mapeamento.Geracao();
+				Mapeamento.Mapeamento();
+			}
+		});
+		btnPerguntaAdd = new JButton(new ImageIcon(btnPerguntaIcon));
+		btnPerguntaAdd.setToolTipText("Pergunta");
+		btnPerguntaAdd.setBorderPainted(false);
+		btnPerguntaAdd.setContentAreaFilled(false);
+		btnPerguntaAdd.setBounds(335, 155, 45, 45);
+		btnPerguntaAdd.setHorizontalAlignment(SwingConstants.CENTER);
+		btnPerguntaAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameAdd.dispose();
+				Frames.frame.dispose();
+				ViewFrases.pergunta = true;
+				MetodoAdd.AddFrase();
+			}
+		});
+
+		btnSair = new JButton(new ImageIcon(btnSairIcon));
+		btnSair.setToolTipText("Sair");
+		btnSair.setBorderPainted(false);
+		btnSair.setContentAreaFilled(false);
+		btnSair.setBounds(610, 5, 22, 22);
+		btnSair.setHorizontalAlignment(SwingConstants.CENTER);
+		btnSair.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				int retorno = JOptionPane
+						.showConfirmDialog(null, "Deseja realmente sair?",
+								"Confirmação de saída",
+								JOptionPane.YES_NO_OPTION,
+								JOptionPane.QUESTION_MESSAGE);
+
+				if (retorno == JOptionPane.YES_OPTION) {
+					System.exit(0);
+				}
+			}
+		});
+		btnSairAdd = new JButton(new ImageIcon(btnSairIcon));
+		btnSairAdd.setToolTipText("Sair");
+		btnSairAdd.setBorderPainted(false);
+		btnSairAdd.setContentAreaFilled(false);
+		btnSairAdd.setBounds(600, 6, 30, 30);
+		btnSairAdd.setHorizontalAlignment(SwingConstants.CENTER);
+		btnSairAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				int retorno = JOptionPane
+						.showConfirmDialog(null, "Deseja realmente sair?",
+								"Confirmação de saída",
+								JOptionPane.YES_NO_OPTION,
+								JOptionPane.QUESTION_MESSAGE);
+
+				if (retorno == JOptionPane.YES_OPTION) {
+					System.exit(0);
+				}
+			}
+		});
+
+		btnVoltar = new JButton(new ImageIcon(btnVoltarIcon));
+		btnVoltar.setToolTipText("Voltar");
+		btnVoltar.setBorderPainted(false);
+		btnVoltar.setContentAreaFilled(false);
+		btnVoltar.setBounds(463, 155, 45, 45);
+		btnVoltar.setHorizontalAlignment(SwingConstants.CENTER);
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameAdd.dispose();
+				Frames.frame.dispose();
+				Frames.frameNovaFrase.dispose();
+				Mapeamento.Geracao();
+			}
+		});
+		btnVoltarAdd = new JButton(new ImageIcon(btnVoltarIcon));
+		btnVoltarAdd.setToolTipText("Voltar");
+		btnVoltarAdd.setBorderPainted(false);
+		btnVoltarAdd.setContentAreaFilled(false);
+		btnVoltarAdd.setBounds(463, 155, 45, 45);
+		btnVoltarAdd.setHorizontalAlignment(SwingConstants.CENTER);
+		btnVoltarAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameAdd.dispose();
+				Frames.frame.dispose();
+				Frames.frameNovaFrase.dispose();
+				Mapeamento.Geracao();
+			}
+		});
+
+		btnSalvar = new JButton(new ImageIcon(btnSalvarIcon));
+		btnSalvar.setToolTipText("Salvar");
+		btnSalvar.setBorderPainted(false);
+		btnSalvar.setContentAreaFilled(false);
+		btnSalvar.setBounds(35, 162, 35, 35);
+		btnSalvar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					MetodoAdd.MetodoAdd(line);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+
+		btnEntrar = new JButton(new ImageIcon(btnEntrarIcon));
+		btnEntrar.setToolTipText("Sair");
+		btnEntrar.setBorderPainted(false);
+		btnEntrar.setContentAreaFilled(false);
+		btnEntrar.setBounds(240, 165, 35, 35);
+		btnEntrar.setHorizontalAlignment(SwingConstants.CENTER);
+
+		btnEntrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (ViewFrases.txtUsuario.getText().equals("jeff") && ViewFrases.txtUsuario.getText()!= null) {
+
+					if (Arrays.equals(txtSenha.getPassword(), new char[] { 'd',
+							'8', 'h', 'j', '0', 'p', 't', 'r' })) {
+						Inicio.Inicio();
+						Frames.frameLogin.dispose();
+					} else
+//						JOptionPane
+//								.showMessageDialog(
+//										Frames.frameLogin,
+//										"Usuário ou senha incorreta! Verifique se você possui permissão",
+//										"Falha ao logar",
+//										JOptionPane.INFORMATION_MESSAGE);
+				} else
+					JOptionPane
+							.showMessageDialog(
+									Frames.frameLogin,
+									"Usuário ou senha incorreta! Verifique se você possui permissão",
+									"Falha ao logar",
+									JOptionPane.INFORMATION_MESSAGE);
+
+			}
+
+		});
+
+		btnExibirSenha = new JCheckBox(new ImageIcon(btnMostrarSenhaIcon));
+		btnExibirSenha.setToolTipText("Exibir Senha");
+		btnExibirSenha.setBorderPainted(false);
+		btnExibirSenha.setContentAreaFilled(false);
+		btnExibirSenha.setBounds(215, 137, 20, 15);
+		btnExibirSenha.setHorizontalAlignment(SwingConstants.CENTER);
+
+		btnExibirSenha.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (btnExibirSenha.isSelected()) {
+					txtSenha.setEchoChar('\u0000');
+				} else
+					txtSenha.setEchoChar('\u2022');
+
+			}
+
+		});
+
+		Frames.frame.getContentPane().add(btnFeliz);
+		Frames.frame.getContentPane().add(btnTriste);
+		Frames.frame.getContentPane().add(btnMotivacional);
+		Frames.frame.getContentPane().add(btnPergunta);
+		Frames.frame.getContentPane().add(btnSair);
+		Frames.frameAdd.getContentPane().add(btnFelizAdd);
+		Frames.frameAdd.getContentPane().add(btnTristeAdd);
+		Frames.frameAdd.getContentPane().add(btnMotivacionalAdd);
+		Frames.frameAdd.getContentPane().add(btnPerguntaAdd);
+		Frames.frameAdd.getContentPane().add(btnSairAdd);
+		Frames.frameAdd.getContentPane().add(btnVoltar);
+		Frames.frameNovaFrase.getContentPane().add(btnSalvar);
+		Frames.frameNovaFrase.getContentPane().add(btnVoltarAdd);
+		Frames.frameInicio.getContentPane().add(btnInicio);
+		Frames.frame.getContentPane().add(btnFundo);
+		Frames.frameLogin.getContentPane().add(btnEntrar);
+		Frames.frameLogin.getContentPane().add(btnExibirSenha);
+
+		return null;
+
+	}
+
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2845)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:604)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:334)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2511)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1696)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2751)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:635)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:195)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2958)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1374)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:270)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:202)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:259)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:579)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1082)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:171)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:90)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:729)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:789)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1247)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:126)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:104)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+
+!ENTRY org.eclipse.jdt.ui 4 2 2023-02-08 16:34:37.353
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2845)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:604)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:334)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2511)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1696)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2751)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:635)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:195)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2958)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1374)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:270)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:202)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:259)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:579)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1082)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:171)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:90)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:729)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:789)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1247)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:126)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:104)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+
+!ENTRY org.eclipse.jdt.ui 4 0 2023-02-08 16:34:37.353
+!MESSAGE Error in JDT Core during reconcile
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2845)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:604)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:334)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2511)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1696)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2751)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:635)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:195)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2958)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1374)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:270)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:202)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:259)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:579)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1082)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:171)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:90)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:729)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:789)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1247)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:126)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:108)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:89)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:151)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:86)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:104)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+
+!ENTRY org.eclipse.jdt.core 4 4 2023-02-08 16:34:37.361
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package util;
+
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.Arrays;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
+import frases.ViewFrases;
+
+public class Buttons {
+
+	public static JButton btnInicio;
+	public static JButton btnVoltar;
+	public static JButton btnVoltarAdd;
+	public static JButton btnSalvar;
+	public static JButton btnEntrar;
+	public static JCheckBox btnExibirSenha;
+	public static JButton btnFeliz;
+	public static JButton btnFelizAdd;
+	public static JButton btnTriste;
+	public static JButton btnTristeAdd;
+	public static JButton btnMotivacional;
+	public static JButton btnMotivacionalAdd;
+	public static JButton btnPergunta;
+	public static JButton btnPerguntaAdd;
+	public static JButton btnAddFrase;
+	public static JButton btnSair;
+	public static JButton btnSairAdd;
+	public static String line;
+	public static JPasswordField txtSenha;
+	public static JTextField txtUsuario;
+
+	public static JFrame Botoes() {
+
+		BufferedImage btnFelizIcon = null;
+		BufferedImage btnTristeIcon = null;
+		BufferedImage btnMotivacionalIcon = null;
+		BufferedImage btnPerguntaIcon = null;
+		BufferedImage btnSairIcon = null;
+		BufferedImage btnVoltarIcon = null;
+		BufferedImage btnNovaFraseIcon = null;
+		BufferedImage btnSalvarIcon = null;
+		BufferedImage btnEntrarIcon = null;
+		BufferedImage btnOk = null;
+		BufferedImage btnFundoIcon = null;
+		BufferedImage btnMostrarSenhaIcon = null;
+
+		try {
+			btnFelizIcon = ImageIO.read(new File("img/icons/feliz_button.png"));
+			btnTristeIcon = ImageIO
+					.read(new File("img/icons/triste_button.png"));
+			btnMotivacionalIcon = ImageIO.read(new File(
+					"img/icons/motivacional_button.png"));
+			btnPerguntaIcon = ImageIO.read(new File(
+					"img/icons/pergunta_button.png"));
+			btnSairIcon = ImageIO.read(new File("img/icons/sair_button.png"));
+			btnVoltarIcon = ImageIO
+					.read(new File("img/icons/voltar_button.png"));
+			btnNovaFraseIcon = ImageIO.read(new File(
+					"img/icons/mais_button.png"));
+			btnSalvarIcon = ImageIO
+					.read(new File("img/icons/salvar_button.png"));
+			btnOk = ImageIO.read(new File("img/icons/ok_button.png"));
+			btnFundoIcon = ImageIO.read(new File("img/icons/fundo_button.png"));
+			btnEntrarIcon = ImageIO
+					.read(new File("img/icons/entrar_button.png"));
+			btnMostrarSenhaIcon = ImageIO.read(new File("img/icons/olho.png"));
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		JButton btnFundo = new JButton(new ImageIcon(btnFundoIcon));
+		btnFundo.setBounds(585, 155, 45, 45);
+		btnFundo.setToolTipText("Gerar imagem");
+		btnFundo.setBorderPainted(false);
+		btnFundo.setContentAreaFilled(false);
+		btnFundo.setHorizontalAlignment(SwingConstants.CENTER);
+		btnFundo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (ViewFrases.frase != null) {
+					Fundo.Fundo();
+				} else {
+					JOptionPane.showMessageDialog(Frames.frameLogin,
+							"Gere uma frase antes de exportar!",
+							"Falha ao exportar",
+							JOptionPane.INFORMATION_MESSAGE);
+				}
+			}
+		});
+
+		JButton btnInicio = new JButton(new ImageIcon(btnOk));
+		btnInicio.setBorderPainted(false);
+		btnInicio.setContentAreaFilled(false);
+		btnInicio.setBounds(300, 106, 55, 55);
+		btnInicio.setHorizontalAlignment(SwingConstants.CENTER);
+		btnInicio.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameInicio.dispose();
+				Mapeamento.Geracao();
+				ViewFrases.frase = "\n                       Selecione uma categoria para gerar sua frase";
+			}
+		});
+
+		JButton btnNovaFrase = new JButton(new ImageIcon(btnNovaFraseIcon));
+		btnNovaFrase.setBorderPainted(false);
+		btnNovaFrase.setContentAreaFilled(false);
+		btnNovaFrase.setBounds(463, 162, 35, 35);
+		Frames.frame.getContentPane().add(btnNovaFrase);
+		btnNovaFrase.setToolTipText("Nova frase");
+
+		btnNovaFrase.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frame.dispose();
+				Frames.frameAdd.dispose();
+				Mapeamento.Categoria();
+
+			}
+		});
+
+		btnFeliz = new JButton(new ImageIcon(btnFelizIcon));
+		btnFeliz.setToolTipText("Feliz");
+		btnFeliz.setBorderPainted(false);
+		btnFeliz.setContentAreaFilled(false);
+		btnFeliz.setBounds(35, 155, 45, 45);
+		btnFeliz.setHorizontalAlignment(SwingConstants.CENTER);
+		btnFeliz.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frame.dispose();
+				ViewFrases.feliz = true;
+				Mapeamento.Geracao();
+				Mapeamento.Mapeamento();
+			}
+		});
+		btnFelizAdd = new JButton(new ImageIcon(btnFelizIcon));
+		btnFelizAdd.setToolTipText("Feliz");
+		btnFelizAdd.setBorderPainted(false);
+		btnFelizAdd.setContentAreaFilled(false);
+		btnFelizAdd.setBounds(35, 155, 45, 45);
+		btnFelizAdd.setHorizontalAlignment(SwingConstants.CENTER);
+		btnFelizAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameAdd.dispose();
+				Frames.frame.dispose();
+				ViewFrases.feliz = true;
+				MetodoAdd.AddFrase();
+			}
+		});
+
+		btnTriste = new JButton(new ImageIcon(btnTristeIcon));
+		btnTriste.setToolTipText("Triste");
+		btnTriste.setBorderPainted(false);
+		btnTriste.setContentAreaFilled(false);
+		btnTriste.setBounds(135, 155, 45, 45);
+		btnTriste.setHorizontalAlignment(SwingConstants.CENTER);
+		btnTriste.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frame.dispose();
+				ViewFrases.triste = true;
+				Mapeamento.Geracao();
+				Mapeamento.Mapeamento();
+			}
+		});
+		btnTristeAdd = new JButton(new ImageIcon(btnTristeIcon));
+		btnTristeAdd.setToolTipText("Triste");
+		btnTristeAdd.setBorderPainted(false);
+		btnTristeAdd.setContentAreaFilled(false);
+		btnTristeAdd.setBounds(135, 155, 45, 45);
+		btnTristeAdd.setHorizontalAlignment(SwingConstants.CENTER);
+		btnTristeAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameAdd.dispose();
+				Frames.frame.dispose();
+				ViewFrases.triste = true;
+				MetodoAdd.AddFrase();
+			}
+		});
+
+		btnMotivacional = new JButton(new ImageIcon(btnMotivacionalIcon));
+		btnMotivacional.setToolTipText("Motivacional");
+		btnMotivacional.setBorderPainted(false);
+		btnMotivacional.setContentAreaFilled(false);
+		btnMotivacional.setBounds(235, 155, 45, 45);
+		btnMotivacional.setHorizontalAlignment(SwingConstants.CENTER);
+		btnMotivacional.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frame.dispose();
+				ViewFrases.motivacao = true;
+				Mapeamento.Geracao();
+				Mapeamento.Mapeamento();
+			}
+		});
+		btnMotivacionalAdd = new JButton(new ImageIcon(btnMotivacionalIcon));
+		btnMotivacionalAdd.setToolTipText("Motivacional");
+		btnMotivacionalAdd.setBorderPainted(false);
+		btnMotivacionalAdd.setContentAreaFilled(false);
+		btnMotivacionalAdd.setBounds(235, 155, 45, 45);
+		btnMotivacionalAdd.setHorizontalAlignment(SwingConstants.CENTER);
+		btnMotivacionalAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameAdd.dispose();
+				Frames.frame.dispose();
+				ViewFrases.motivacao = true;
+				MetodoAdd.AddFrase();
+			}
+		});
+
+		btnPergunta = new JButton(new ImageIcon(btnPerguntaIcon));
+		btnPergunta.setToolTipText("Pergunta");
+		btnPergunta.setBorderPainted(false);
+		btnPergunta.setContentAreaFilled(false);
+		btnPergunta.setBounds(335, 155, 45, 45);
+		btnPergunta.setHorizontalAlignment(SwingConstants.CENTER);
+		btnPergunta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frame.dispose();
+				ViewFrases.pergunta = true;
+				Mapeamento.Geracao();
+				Mapeamento.Mapeamento();
+			}
+		});
+		btnPerguntaAdd = new JButton(new ImageIcon(btnPerguntaIcon));
+		btnPerguntaAdd.setToolTipText("Pergunta");
+		btnPerguntaAdd.setBorderPainted(false);
+		btnPerguntaAdd.setContentAreaFilled(false);
+		btnPerguntaAdd.setBounds(335, 155, 45, 45);
+		btnPerguntaAdd.setHorizontalAlignment(SwingConstants.CENTER);
+		btnPerguntaAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameAdd.dispose();
+				Frames.frame.dispose();
+				ViewFrases.pergunta = true;
+				MetodoAdd.AddFrase();
+			}
+		});
+
+		btnSair = new JButton(new ImageIcon(btnSairIcon));
+		btnSair.setToolTipText("Sair");
+		btnSair.setBorderPainted(false);
+		btnSair.setContentAreaFilled(false);
+		btnSair.setBounds(610, 5, 22, 22);
+		btnSair.setHorizontalAlignment(SwingConstants.CENTER);
+		btnSair.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				int retorno = JOptionPane
+						.showConfirmDialog(null, "Deseja realmente sair?",
+								"Confirmação de saída",
+								JOptionPane.YES_NO_OPTION,
+								JOptionPane.QUESTION_MESSAGE);
+
+				if (retorno == JOptionPane.YES_OPTION) {
+					System.exit(0);
+				}
+			}
+		});
+		btnSairAdd = new JButton(new ImageIcon(btnSairIcon));
+		btnSairAdd.setToolTipText("Sair");
+		btnSairAdd.setBorderPainted(false);
+		btnSairAdd.setContentAreaFilled(false);
+		btnSairAdd.setBounds(600, 6, 30, 30);
+		btnSairAdd.setHorizontalAlignment(SwingConstants.CENTER);
+		btnSairAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				int retorno = JOptionPane
+						.showConfirmDialog(null, "Deseja realmente sair?",
+								"Confirmação de saída",
+								JOptionPane.YES_NO_OPTION,
+								JOptionPane.QUESTION_MESSAGE);
+
+				if (retorno == JOptionPane.YES_OPTION) {
+					System.exit(0);
+				}
+			}
+		});
+
+		btnVoltar = new JButton(new ImageIcon(btnVoltarIcon));
+		btnVoltar.setToolTipText("Voltar");
+		btnVoltar.setBorderPainted(false);
+		btnVoltar.setContentAreaFilled(false);
+		btnVoltar.setBounds(463, 155, 45, 45);
+		btnVoltar.setHorizontalAlignment(SwingConstants.CENTER);
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameAdd.dispose();
+				Frames.frame.dispose();
+				Frames.frameNovaFrase.dispose();
+				Mapeamento.Geracao();
+			}
+		});
+		btnVoltarAdd = new JButton(new ImageIcon(btnVoltarIcon));
+		btnVoltarAdd.setToolTipText("Voltar");
+		btnVoltarAdd.setBorderPainted(false);
+		btnVoltarAdd.setContentAreaFilled(false);
+		btnVoltarAdd.setBounds(463, 155, 45, 45);
+		btnVoltarAdd.setHorizontalAlignment(SwingConstants.CENTER);
+		btnVoltarAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameAdd.dispose();
+				Frames.frame.dispose();
+				Frames.frameNovaFrase.dispose();
+				Mapeamento.Geracao();
+			}
+		});
+
+		btnSalvar = new JButton(new ImageIcon(btnSalvarIcon));
+		btnSalvar.setToolTipText("Salvar");
+		btnSalvar.setBorderPainted(false);
+		btnSalvar.setContentAreaFilled(false);
+		btnSalvar.setBounds(35, 162, 35, 35);
+		btnSalvar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					MetodoAdd.MetodoAdd(line);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+
+		btnEntrar = new JButton(new ImageIcon(btnEntrarIcon));
+		btnEntrar.setToolTipText("Sair");
+		btnEntrar.setBorderPainted(false);
+		btnEntrar.setContentAreaFilled(false);
+		btnEntrar.setBounds(240, 165, 35, 35);
+		btnEntrar.setHorizontalAlignment(SwingConstants.CENTER);
+
+		btnEntrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (ViewFrases.txtUsuario.getText().equals("jeff") && ViewFrases.txtUsuario.getText()!= null) {
+
+					if (Arrays.equals(txtSenha.getPassword(), new char[] { 'd',
+							'8', 'h', 'j', '0', 'p', 't', 'r' })) {
+						Inicio.Inicio();
+						Frames.frameLogin.dispose();
+					} else
+//						JOptionPane
+//								.showMessageDialog(
+//										Frames.frameLogin,
+//										"Usuário ou senha incorreta! Verifique se você possui permissão",
+//										"Falha ao logar",
+//										JOptionPane.INFORMATION_MESSAGE);
+				} else
+					JOptionPane
+							.showMessageDialog(
+									Frames.frameLogin,
+									"Usuário ou senha incorreta! Verifique se você possui permissão",
+									"Falha ao logar",
+									JOptionPane.INFORMATION_MESSAGE);
+
+			}
+
+		});
+
+		btnExibirSenha = new JCheckBox(new ImageIcon(btnMostrarSenhaIcon));
+		btnExibirSenha.setToolTipText("Exibir Senha");
+		btnExibirSenha.setBorderPainted(false);
+		btnExibirSenha.setContentAreaFilled(false);
+		btnExibirSenha.setBounds(215, 137, 20, 15);
+		btnExibirSenha.setHorizontalAlignment(SwingConstants.CENTER);
+
+		btnExibirSenha.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (btnExibirSenha.isSelected()) {
+					txtSenha.setEchoChar('\u0000');
+				} else
+					txtSenha.setEchoChar('\u2022');
+
+			}
+
+		});
+
+		Frames.frame.getContentPane().add(btnFeliz);
+		Frames.frame.getContentPane().add(btnTriste);
+		Frames.frame.getContentPane().add(btnMotivacional);
+		Frames.frame.getContentPane().add(btnPergunta);
+		Frames.frame.getContentPane().add(btnSair);
+		Frames.frameAdd.getContentPane().add(btnFelizAdd);
+		Frames.frameAdd.getContentPane().add(btnTristeAdd);
+		Frames.frameAdd.getContentPane().add(btnMotivacionalAdd);
+		Frames.frameAdd.getContentPane().add(btnPerguntaAdd);
+		Frames.frameAdd.getContentPane().add(btnSairAdd);
+		Frames.frameAdd.getContentPane().add(btnVoltar);
+		Frames.frameNovaFrase.getContentPane().add(btnSalvar);
+		Frames.frameNovaFrase.getContentPane().add(btnVoltarAdd);
+		Frames.frameInicio.getContentPane().add(btnInicio);
+		Frames.frame.getContentPane().add(btnFundo);
+		Frames.frameLogin.getContentPane().add(btnEntrar);
+		Frames.frameLogin.getContentPane().add(btnExibirSenha);
+
+		return null;
+
+	}
+
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2845)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:604)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:334)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2511)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1696)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2751)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:635)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:195)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2958)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1374)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:292)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1209)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:809)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:544)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:537)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:480)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:470)
+	at org.eclipse.jdt.ui.SharedASTProvider.getAST(SharedASTProvider.java:128)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:170)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:155)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.ui 4 2 2023-02-08 16:34:37.378
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2845)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:604)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:334)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2511)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1696)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2751)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:635)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:195)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2958)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1374)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:292)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1209)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:809)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:544)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:537)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:480)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:470)
+	at org.eclipse.jdt.ui.SharedASTProvider.getAST(SharedASTProvider.java:128)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:170)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:155)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.ui 4 0 2023-02-08 16:34:37.378
+!MESSAGE Error in JDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2845)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:604)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:334)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2511)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1696)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2751)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:635)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:195)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2958)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1374)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:292)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1209)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:809)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:544)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:537)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:480)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:470)
+	at org.eclipse.jdt.ui.SharedASTProvider.getAST(SharedASTProvider.java:128)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:170)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:155)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.core 4 4 2023-02-08 16:34:37.646
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package util;
+
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.Arrays;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
+import frases.ViewFrases;
+
+public class Buttons {
+
+	public static JButton btnInicio;
+	public static JButton btnVoltar;
+	public static JButton btnVoltarAdd;
+	public static JButton btnSalvar;
+	public static JButton btnEntrar;
+	public static JCheckBox btnExibirSenha;
+	public static JButton btnFeliz;
+	public static JButton btnFelizAdd;
+	public static JButton btnTriste;
+	public static JButton btnTristeAdd;
+	public static JButton btnMotivacional;
+	public static JButton btnMotivacionalAdd;
+	public static JButton btnPergunta;
+	public static JButton btnPerguntaAdd;
+	public static JButton btnAddFrase;
+	public static JButton btnSair;
+	public static JButton btnSairAdd;
+	public static String line;
+	public static JPasswordField txtSenha;
+	public static JTextField txtUsuario;
+
+	public static JFrame Botoes() {
+
+		BufferedImage btnFelizIcon = null;
+		BufferedImage btnTristeIcon = null;
+		BufferedImage btnMotivacionalIcon = null;
+		BufferedImage btnPerguntaIcon = null;
+		BufferedImage btnSairIcon = null;
+		BufferedImage btnVoltarIcon = null;
+		BufferedImage btnNovaFraseIcon = null;
+		BufferedImage btnSalvarIcon = null;
+		BufferedImage btnEntrarIcon = null;
+		BufferedImage btnOk = null;
+		BufferedImage btnFundoIcon = null;
+		BufferedImage btnMostrarSenhaIcon = null;
+
+		try {
+			btnFelizIcon = ImageIO.read(new File("img/icons/feliz_button.png"));
+			btnTristeIcon = ImageIO
+					.read(new File("img/icons/triste_button.png"));
+			btnMotivacionalIcon = ImageIO.read(new File(
+					"img/icons/motivacional_button.png"));
+			btnPerguntaIcon = ImageIO.read(new File(
+					"img/icons/pergunta_button.png"));
+			btnSairIcon = ImageIO.read(new File("img/icons/sair_button.png"));
+			btnVoltarIcon = ImageIO
+					.read(new File("img/icons/voltar_button.png"));
+			btnNovaFraseIcon = ImageIO.read(new File(
+					"img/icons/mais_button.png"));
+			btnSalvarIcon = ImageIO
+					.read(new File("img/icons/salvar_button.png"));
+			btnOk = ImageIO.read(new File("img/icons/ok_button.png"));
+			btnFundoIcon = ImageIO.read(new File("img/icons/fundo_button.png"));
+			btnEntrarIcon = ImageIO
+					.read(new File("img/icons/entrar_button.png"));
+			btnMostrarSenhaIcon = ImageIO.read(new File("img/icons/olho.png"));
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		JButton btnFundo = new JButton(new ImageIcon(btnFundoIcon));
+		btnFundo.setBounds(585, 155, 45, 45);
+		btnFundo.setToolTipText("Gerar imagem");
+		btnFundo.setBorderPainted(false);
+		btnFundo.setContentAreaFilled(false);
+		btnFundo.setHorizontalAlignment(SwingConstants.CENTER);
+		btnFundo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (ViewFrases.frase != null) {
+					Fundo.Fundo();
+				} else {
+					JOptionPane.showMessageDialog(Frames.frameLogin,
+							"Gere uma frase antes de exportar!",
+							"Falha ao exportar",
+							JOptionPane.INFORMATION_MESSAGE);
+				}
+			}
+		});
+
+		JButton btnInicio = new JButton(new ImageIcon(btnOk));
+		btnInicio.setBorderPainted(false);
+		btnInicio.setContentAreaFilled(false);
+		btnInicio.setBounds(300, 106, 55, 55);
+		btnInicio.setHorizontalAlignment(SwingConstants.CENTER);
+		btnInicio.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameInicio.dispose();
+				Mapeamento.Geracao();
+				ViewFrases.frase = "\n                       Selecione uma categoria para gerar sua frase";
+			}
+		});
+
+		JButton btnNovaFrase = new JButton(new ImageIcon(btnNovaFraseIcon));
+		btnNovaFrase.setBorderPainted(false);
+		btnNovaFrase.setContentAreaFilled(false);
+		btnNovaFrase.setBounds(463, 162, 35, 35);
+		Frames.frame.getContentPane().add(btnNovaFrase);
+		btnNovaFrase.setToolTipText("Nova frase");
+
+		btnNovaFrase.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frame.dispose();
+				Frames.frameAdd.dispose();
+				Mapeamento.Categoria();
+
+			}
+		});
+
+		btnFeliz = new JButton(new ImageIcon(btnFelizIcon));
+		btnFeliz.setToolTipText("Feliz");
+		btnFeliz.setBorderPainted(false);
+		btnFeliz.setContentAreaFilled(false);
+		btnFeliz.setBounds(35, 155, 45, 45);
+		btnFeliz.setHorizontalAlignment(SwingConstants.CENTER);
+		btnFeliz.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frame.dispose();
+				ViewFrases.feliz = true;
+				Mapeamento.Geracao();
+				Mapeamento.Mapeamento();
+			}
+		});
+		btnFelizAdd = new JButton(new ImageIcon(btnFelizIcon));
+		btnFelizAdd.setToolTipText("Feliz");
+		btnFelizAdd.setBorderPainted(false);
+		btnFelizAdd.setContentAreaFilled(false);
+		btnFelizAdd.setBounds(35, 155, 45, 45);
+		btnFelizAdd.setHorizontalAlignment(SwingConstants.CENTER);
+		btnFelizAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameAdd.dispose();
+				Frames.frame.dispose();
+				ViewFrases.feliz = true;
+				MetodoAdd.AddFrase();
+			}
+		});
+
+		btnTriste = new JButton(new ImageIcon(btnTristeIcon));
+		btnTriste.setToolTipText("Triste");
+		btnTriste.setBorderPainted(false);
+		btnTriste.setContentAreaFilled(false);
+		btnTriste.setBounds(135, 155, 45, 45);
+		btnTriste.setHorizontalAlignment(SwingConstants.CENTER);
+		btnTriste.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frame.dispose();
+				ViewFrases.triste = true;
+				Mapeamento.Geracao();
+				Mapeamento.Mapeamento();
+			}
+		});
+		btnTristeAdd = new JButton(new ImageIcon(btnTristeIcon));
+		btnTristeAdd.setToolTipText("Triste");
+		btnTristeAdd.setBorderPainted(false);
+		btnTristeAdd.setContentAreaFilled(false);
+		btnTristeAdd.setBounds(135, 155, 45, 45);
+		btnTristeAdd.setHorizontalAlignment(SwingConstants.CENTER);
+		btnTristeAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameAdd.dispose();
+				Frames.frame.dispose();
+				ViewFrases.triste = true;
+				MetodoAdd.AddFrase();
+			}
+		});
+
+		btnMotivacional = new JButton(new ImageIcon(btnMotivacionalIcon));
+		btnMotivacional.setToolTipText("Motivacional");
+		btnMotivacional.setBorderPainted(false);
+		btnMotivacional.setContentAreaFilled(false);
+		btnMotivacional.setBounds(235, 155, 45, 45);
+		btnMotivacional.setHorizontalAlignment(SwingConstants.CENTER);
+		btnMotivacional.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frame.dispose();
+				ViewFrases.motivacao = true;
+				Mapeamento.Geracao();
+				Mapeamento.Mapeamento();
+			}
+		});
+		btnMotivacionalAdd = new JButton(new ImageIcon(btnMotivacionalIcon));
+		btnMotivacionalAdd.setToolTipText("Motivacional");
+		btnMotivacionalAdd.setBorderPainted(false);
+		btnMotivacionalAdd.setContentAreaFilled(false);
+		btnMotivacionalAdd.setBounds(235, 155, 45, 45);
+		btnMotivacionalAdd.setHorizontalAlignment(SwingConstants.CENTER);
+		btnMotivacionalAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameAdd.dispose();
+				Frames.frame.dispose();
+				ViewFrases.motivacao = true;
+				MetodoAdd.AddFrase();
+			}
+		});
+
+		btnPergunta = new JButton(new ImageIcon(btnPerguntaIcon));
+		btnPergunta.setToolTipText("Pergunta");
+		btnPergunta.setBorderPainted(false);
+		btnPergunta.setContentAreaFilled(false);
+		btnPergunta.setBounds(335, 155, 45, 45);
+		btnPergunta.setHorizontalAlignment(SwingConstants.CENTER);
+		btnPergunta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frame.dispose();
+				ViewFrases.pergunta = true;
+				Mapeamento.Geracao();
+				Mapeamento.Mapeamento();
+			}
+		});
+		btnPerguntaAdd = new JButton(new ImageIcon(btnPerguntaIcon));
+		btnPerguntaAdd.setToolTipText("Pergunta");
+		btnPerguntaAdd.setBorderPainted(false);
+		btnPerguntaAdd.setContentAreaFilled(false);
+		btnPerguntaAdd.setBounds(335, 155, 45, 45);
+		btnPerguntaAdd.setHorizontalAlignment(SwingConstants.CENTER);
+		btnPerguntaAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameAdd.dispose();
+				Frames.frame.dispose();
+				ViewFrases.pergunta = true;
+				MetodoAdd.AddFrase();
+			}
+		});
+
+		btnSair = new JButton(new ImageIcon(btnSairIcon));
+		btnSair.setToolTipText("Sair");
+		btnSair.setBorderPainted(false);
+		btnSair.setContentAreaFilled(false);
+		btnSair.setBounds(610, 5, 22, 22);
+		btnSair.setHorizontalAlignment(SwingConstants.CENTER);
+		btnSair.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				int retorno = JOptionPane
+						.showConfirmDialog(null, "Deseja realmente sair?",
+								"Confirmação de saída",
+								JOptionPane.YES_NO_OPTION,
+								JOptionPane.QUESTION_MESSAGE);
+
+				if (retorno == JOptionPane.YES_OPTION) {
+					System.exit(0);
+				}
+			}
+		});
+		btnSairAdd = new JButton(new ImageIcon(btnSairIcon));
+		btnSairAdd.setToolTipText("Sair");
+		btnSairAdd.setBorderPainted(false);
+		btnSairAdd.setContentAreaFilled(false);
+		btnSairAdd.setBounds(600, 6, 30, 30);
+		btnSairAdd.setHorizontalAlignment(SwingConstants.CENTER);
+		btnSairAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				int retorno = JOptionPane
+						.showConfirmDialog(null, "Deseja realmente sair?",
+								"Confirmação de saída",
+								JOptionPane.YES_NO_OPTION,
+								JOptionPane.QUESTION_MESSAGE);
+
+				if (retorno == JOptionPane.YES_OPTION) {
+					System.exit(0);
+				}
+			}
+		});
+
+		btnVoltar = new JButton(new ImageIcon(btnVoltarIcon));
+		btnVoltar.setToolTipText("Voltar");
+		btnVoltar.setBorderPainted(false);
+		btnVoltar.setContentAreaFilled(false);
+		btnVoltar.setBounds(463, 155, 45, 45);
+		btnVoltar.setHorizontalAlignment(SwingConstants.CENTER);
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameAdd.dispose();
+				Frames.frame.dispose();
+				Frames.frameNovaFrase.dispose();
+				Mapeamento.Geracao();
+			}
+		});
+		btnVoltarAdd = new JButton(new ImageIcon(btnVoltarIcon));
+		btnVoltarAdd.setToolTipText("Voltar");
+		btnVoltarAdd.setBorderPainted(false);
+		btnVoltarAdd.setContentAreaFilled(false);
+		btnVoltarAdd.setBounds(463, 155, 45, 45);
+		btnVoltarAdd.setHorizontalAlignment(SwingConstants.CENTER);
+		btnVoltarAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameAdd.dispose();
+				Frames.frame.dispose();
+				Frames.frameNovaFrase.dispose();
+				Mapeamento.Geracao();
+			}
+		});
+
+		btnSalvar = new JButton(new ImageIcon(btnSalvarIcon));
+		btnSalvar.setToolTipText("Salvar");
+		btnSalvar.setBorderPainted(false);
+		btnSalvar.setContentAreaFilled(false);
+		btnSalvar.setBounds(35, 162, 35, 35);
+		btnSalvar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					MetodoAdd.MetodoAdd(line);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+
+		btnEntrar = new JButton(new ImageIcon(btnEntrarIcon));
+		btnEntrar.setToolTipText("Sair");
+		btnEntrar.setBorderPainted(false);
+		btnEntrar.setContentAreaFilled(false);
+		btnEntrar.setBounds(240, 165, 35, 35);
+		btnEntrar.setHorizontalAlignment(SwingConstants.CENTER);
+
+		btnEntrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (ViewFrases.txtUsuario.getText().equals("jeff") && ViewFrases.txtUsuario.getText()!= null) {
+
+					if (Arrays.equals(txtSenha.getPassword(), new char[] { 'd',
+							'8', 'h', 'j', '0', 'p', 't', 'r' })) {
+						Inicio.Inicio();
+						Frames.frameLogin.dispose();
+					} else
+//						JOptionPane
+//								.showMessageDialog(
+//										Frames.frameLogin,
+//										"Usuário ou senha incorreta! Verifique se você possui permissão",
+//										"Falha ao logar",
+//										JOptionPane.INFORMATION_MESSAGE);
+				} else
+					JOptionPane
+							.showMessageDialog(
+									Frames.frameLogin,
+									"Usuário ou senha incorreta! Verifique se você possui permissão",
+									"Falha ao logar",
+									JOptionPane.INFORMATION_MESSAGE);
+
+			}
+
+		});
+
+		btnExibirSenha = new JCheckBox(new ImageIcon(btnMostrarSenhaIcon));
+		btnExibirSenha.setToolTipText("Exibir Senha");
+		btnExibirSenha.setBorderPainted(false);
+		btnExibirSenha.setContentAreaFilled(false);
+		btnExibirSenha.setBounds(215, 137, 20, 15);
+		btnExibirSenha.setHorizontalAlignment(SwingConstants.CENTER);
+
+		btnExibirSenha.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (btnExibirSenha.isSelected()) {
+					txtSenha.setEchoChar('\u0000');
+				} else
+					txtSenha.setEchoChar('\u2022');
+
+			}
+
+		});
+
+		Frames.frame.getContentPane().add(btnFeliz);
+		Frames.frame.getContentPane().add(btnTriste);
+		Frames.frame.getContentPane().add(btnMotivacional);
+		Frames.frame.getContentPane().add(btnPergunta);
+		Frames.frame.getContentPane().add(btnSair);
+		Frames.frameAdd.getContentPane().add(btnFelizAdd);
+		Frames.frameAdd.getContentPane().add(btnTristeAdd);
+		Frames.frameAdd.getContentPane().add(btnMotivacionalAdd);
+		Frames.frameAdd.getContentPane().add(btnPerguntaAdd);
+		Frames.frameAdd.getContentPane().add(btnSairAdd);
+		Frames.frameAdd.getContentPane().add(btnVoltar);
+		Frames.frameNovaFrase.getContentPane().add(btnSalvar);
+		Frames.frameNovaFrase.getContentPane().add(btnVoltarAdd);
+		Frames.frameInicio.getContentPane().add(btnInicio);
+		Frames.frame.getContentPane().add(btnFundo);
+		Frames.frameLogin.getContentPane().add(btnEntrar);
+		Frames.frameLogin.getContentPane().add(btnExibirSenha);
+
+		return null;
+
+	}
+
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2845)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:604)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:334)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2511)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1696)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2751)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:635)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:195)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2958)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1374)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:292)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1209)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:809)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:544)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:537)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:480)
+	at org.eclipse.jdt.ui.SharedASTProvider.getAST(SharedASTProvider.java:128)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:170)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:155)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.ui 4 2 2023-02-08 16:34:37.646
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2845)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:604)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:334)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2511)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1696)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2751)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:635)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:195)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2958)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1374)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:292)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1209)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:809)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:544)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:537)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:480)
+	at org.eclipse.jdt.ui.SharedASTProvider.getAST(SharedASTProvider.java:128)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:170)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:155)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.ui 4 0 2023-02-08 16:34:37.646
+!MESSAGE Error in JDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2845)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:604)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:334)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2511)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1696)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2751)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:635)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:195)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2958)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1374)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:292)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1209)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:809)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:544)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:537)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:480)
+	at org.eclipse.jdt.ui.SharedASTProvider.getAST(SharedASTProvider.java:128)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:170)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:155)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jdt.core 4 4 2023-02-08 16:34:37.678
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package util;
+
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.Arrays;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
+import frases.ViewFrases;
+
+public class Buttons {
+
+	public static JButton btnInicio;
+	public static JButton btnVoltar;
+	public static JButton btnVoltarAdd;
+	public static JButton btnSalvar;
+	public static JButton btnEntrar;
+	public static JCheckBox btnExibirSenha;
+	public static JButton btnFeliz;
+	public static JButton btnFelizAdd;
+	public static JButton btnTriste;
+	public static JButton btnTristeAdd;
+	public static JButton btnMotivacional;
+	public static JButton btnMotivacionalAdd;
+	public static JButton btnPergunta;
+	public static JButton btnPerguntaAdd;
+	public static JButton btnAddFrase;
+	public static JButton btnSair;
+	public static JButton btnSairAdd;
+	public static String line;
+	public static JPasswordField txtSenha;
+	public static JTextField txtUsuario;
+
+	public static JFrame Botoes() {
+
+		BufferedImage btnFelizIcon = null;
+		BufferedImage btnTristeIcon = null;
+		BufferedImage btnMotivacionalIcon = null;
+		BufferedImage btnPerguntaIcon = null;
+		BufferedImage btnSairIcon = null;
+		BufferedImage btnVoltarIcon = null;
+		BufferedImage btnNovaFraseIcon = null;
+		BufferedImage btnSalvarIcon = null;
+		BufferedImage btnEntrarIcon = null;
+		BufferedImage btnOk = null;
+		BufferedImage btnFundoIcon = null;
+		BufferedImage btnMostrarSenhaIcon = null;
+
+		try {
+			btnFelizIcon = ImageIO.read(new File("img/icons/feliz_button.png"));
+			btnTristeIcon = ImageIO
+					.read(new File("img/icons/triste_button.png"));
+			btnMotivacionalIcon = ImageIO.read(new File(
+					"img/icons/motivacional_button.png"));
+			btnPerguntaIcon = ImageIO.read(new File(
+					"img/icons/pergunta_button.png"));
+			btnSairIcon = ImageIO.read(new File("img/icons/sair_button.png"));
+			btnVoltarIcon = ImageIO
+					.read(new File("img/icons/voltar_button.png"));
+			btnNovaFraseIcon = ImageIO.read(new File(
+					"img/icons/mais_button.png"));
+			btnSalvarIcon = ImageIO
+					.read(new File("img/icons/salvar_button.png"));
+			btnOk = ImageIO.read(new File("img/icons/ok_button.png"));
+			btnFundoIcon = ImageIO.read(new File("img/icons/fundo_button.png"));
+			btnEntrarIcon = ImageIO
+					.read(new File("img/icons/entrar_button.png"));
+			btnMostrarSenhaIcon = ImageIO.read(new File("img/icons/olho.png"));
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		JButton btnFundo = new JButton(new ImageIcon(btnFundoIcon));
+		btnFundo.setBounds(585, 155, 45, 45);
+		btnFundo.setToolTipText("Gerar imagem");
+		btnFundo.setBorderPainted(false);
+		btnFundo.setContentAreaFilled(false);
+		btnFundo.setHorizontalAlignment(SwingConstants.CENTER);
+		btnFundo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (ViewFrases.frase != null) {
+					Fundo.Fundo();
+				} else {
+					JOptionPane.showMessageDialog(Frames.frameLogin,
+							"Gere uma frase antes de exportar!",
+							"Falha ao exportar",
+							JOptionPane.INFORMATION_MESSAGE);
+				}
+			}
+		});
+
+		JButton btnInicio = new JButton(new ImageIcon(btnOk));
+		btnInicio.setBorderPainted(false);
+		btnInicio.setContentAreaFilled(false);
+		btnInicio.setBounds(300, 106, 55, 55);
+		btnInicio.setHorizontalAlignment(SwingConstants.CENTER);
+		btnInicio.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameInicio.dispose();
+				Mapeamento.Geracao();
+				ViewFrases.frase = "\n                       Selecione uma categoria para gerar sua frase";
+			}
+		});
+
+		JButton btnNovaFrase = new JButton(new ImageIcon(btnNovaFraseIcon));
+		btnNovaFrase.setBorderPainted(false);
+		btnNovaFrase.setContentAreaFilled(false);
+		btnNovaFrase.setBounds(463, 162, 35, 35);
+		Frames.frame.getContentPane().add(btnNovaFrase);
+		btnNovaFrase.setToolTipText("Nova frase");
+
+		btnNovaFrase.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frame.dispose();
+				Frames.frameAdd.dispose();
+				Mapeamento.Categoria();
+
+			}
+		});
+
+		btnFeliz = new JButton(new ImageIcon(btnFelizIcon));
+		btnFeliz.setToolTipText("Feliz");
+		btnFeliz.setBorderPainted(false);
+		btnFeliz.setContentAreaFilled(false);
+		btnFeliz.setBounds(35, 155, 45, 45);
+		btnFeliz.setHorizontalAlignment(SwingConstants.CENTER);
+		btnFeliz.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frame.dispose();
+				ViewFrases.feliz = true;
+				Mapeamento.Geracao();
+				Mapeamento.Mapeamento();
+			}
+		});
+		btnFelizAdd = new JButton(new ImageIcon(btnFelizIcon));
+		btnFelizAdd.setToolTipText("Feliz");
+		btnFelizAdd.setBorderPainted(false);
+		btnFelizAdd.setContentAreaFilled(false);
+		btnFelizAdd.setBounds(35, 155, 45, 45);
+		btnFelizAdd.setHorizontalAlignment(SwingConstants.CENTER);
+		btnFelizAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameAdd.dispose();
+				Frames.frame.dispose();
+				ViewFrases.feliz = true;
+				MetodoAdd.AddFrase();
+			}
+		});
+
+		btnTriste = new JButton(new ImageIcon(btnTristeIcon));
+		btnTriste.setToolTipText("Triste");
+		btnTriste.setBorderPainted(false);
+		btnTriste.setContentAreaFilled(false);
+		btnTriste.setBounds(135, 155, 45, 45);
+		btnTriste.setHorizontalAlignment(SwingConstants.CENTER);
+		btnTriste.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frame.dispose();
+				ViewFrases.triste = true;
+				Mapeamento.Geracao();
+				Mapeamento.Mapeamento();
+			}
+		});
+		btnTristeAdd = new JButton(new ImageIcon(btnTristeIcon));
+		btnTristeAdd.setToolTipText("Triste");
+		btnTristeAdd.setBorderPainted(false);
+		btnTristeAdd.setContentAreaFilled(false);
+		btnTristeAdd.setBounds(135, 155, 45, 45);
+		btnTristeAdd.setHorizontalAlignment(SwingConstants.CENTER);
+		btnTristeAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameAdd.dispose();
+				Frames.frame.dispose();
+				ViewFrases.triste = true;
+				MetodoAdd.AddFrase();
+			}
+		});
+
+		btnMotivacional = new JButton(new ImageIcon(btnMotivacionalIcon));
+		btnMotivacional.setToolTipText("Motivacional");
+		btnMotivacional.setBorderPainted(false);
+		btnMotivacional.setContentAreaFilled(false);
+		btnMotivacional.setBounds(235, 155, 45, 45);
+		btnMotivacional.setHorizontalAlignment(SwingConstants.CENTER);
+		btnMotivacional.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frame.dispose();
+				ViewFrases.motivacao = true;
+				Mapeamento.Geracao();
+				Mapeamento.Mapeamento();
+			}
+		});
+		btnMotivacionalAdd = new JButton(new ImageIcon(btnMotivacionalIcon));
+		btnMotivacionalAdd.setToolTipText("Motivacional");
+		btnMotivacionalAdd.setBorderPainted(false);
+		btnMotivacionalAdd.setContentAreaFilled(false);
+		btnMotivacionalAdd.setBounds(235, 155, 45, 45);
+		btnMotivacionalAdd.setHorizontalAlignment(SwingConstants.CENTER);
+		btnMotivacionalAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameAdd.dispose();
+				Frames.frame.dispose();
+				ViewFrases.motivacao = true;
+				MetodoAdd.AddFrase();
+			}
+		});
+
+		btnPergunta = new JButton(new ImageIcon(btnPerguntaIcon));
+		btnPergunta.setToolTipText("Pergunta");
+		btnPergunta.setBorderPainted(false);
+		btnPergunta.setContentAreaFilled(false);
+		btnPergunta.setBounds(335, 155, 45, 45);
+		btnPergunta.setHorizontalAlignment(SwingConstants.CENTER);
+		btnPergunta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frame.dispose();
+				ViewFrases.pergunta = true;
+				Mapeamento.Geracao();
+				Mapeamento.Mapeamento();
+			}
+		});
+		btnPerguntaAdd = new JButton(new ImageIcon(btnPerguntaIcon));
+		btnPerguntaAdd.setToolTipText("Pergunta");
+		btnPerguntaAdd.setBorderPainted(false);
+		btnPerguntaAdd.setContentAreaFilled(false);
+		btnPerguntaAdd.setBounds(335, 155, 45, 45);
+		btnPerguntaAdd.setHorizontalAlignment(SwingConstants.CENTER);
+		btnPerguntaAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameAdd.dispose();
+				Frames.frame.dispose();
+				ViewFrases.pergunta = true;
+				MetodoAdd.AddFrase();
+			}
+		});
+
+		btnSair = new JButton(new ImageIcon(btnSairIcon));
+		btnSair.setToolTipText("Sair");
+		btnSair.setBorderPainted(false);
+		btnSair.setContentAreaFilled(false);
+		btnSair.setBounds(610, 5, 22, 22);
+		btnSair.setHorizontalAlignment(SwingConstants.CENTER);
+		btnSair.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				int retorno = JOptionPane
+						.showConfirmDialog(null, "Deseja realmente sair?",
+								"Confirmação de saída",
+								JOptionPane.YES_NO_OPTION,
+								JOptionPane.QUESTION_MESSAGE);
+
+				if (retorno == JOptionPane.YES_OPTION) {
+					System.exit(0);
+				}
+			}
+		});
+		btnSairAdd = new JButton(new ImageIcon(btnSairIcon));
+		btnSairAdd.setToolTipText("Sair");
+		btnSairAdd.setBorderPainted(false);
+		btnSairAdd.setContentAreaFilled(false);
+		btnSairAdd.setBounds(600, 6, 30, 30);
+		btnSairAdd.setHorizontalAlignment(SwingConstants.CENTER);
+		btnSairAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				int retorno = JOptionPane
+						.showConfirmDialog(null, "Deseja realmente sair?",
+								"Confirmação de saída",
+								JOptionPane.YES_NO_OPTION,
+								JOptionPane.QUESTION_MESSAGE);
+
+				if (retorno == JOptionPane.YES_OPTION) {
+					System.exit(0);
+				}
+			}
+		});
+
+		btnVoltar = new JButton(new ImageIcon(btnVoltarIcon));
+		btnVoltar.setToolTipText("Voltar");
+		btnVoltar.setBorderPainted(false);
+		btnVoltar.setContentAreaFilled(false);
+		btnVoltar.setBounds(463, 155, 45, 45);
+		btnVoltar.setHorizontalAlignment(SwingConstants.CENTER);
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameAdd.dispose();
+				Frames.frame.dispose();
+				Frames.frameNovaFrase.dispose();
+				Mapeamento.Geracao();
+			}
+		});
+		btnVoltarAdd = new JButton(new ImageIcon(btnVoltarIcon));
+		btnVoltarAdd.setToolTipText("Voltar");
+		btnVoltarAdd.setBorderPainted(false);
+		btnVoltarAdd.setContentAreaFilled(false);
+		btnVoltarAdd.setBounds(463, 155, 45, 45);
+		btnVoltarAdd.setHorizontalAlignment(SwingConstants.CENTER);
+		btnVoltarAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameAdd.dispose();
+				Frames.frame.dispose();
+				Frames.frameNovaFrase.dispose();
+				Mapeamento.Geracao();
+			}
+		});
+
+		btnSalvar = new JButton(new ImageIcon(btnSalvarIcon));
+		btnSalvar.setToolTipText("Salvar");
+		btnSalvar.setBorderPainted(false);
+		btnSalvar.setContentAreaFilled(false);
+		btnSalvar.setBounds(35, 162, 35, 35);
+		btnSalvar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					MetodoAdd.MetodoAdd(line);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+
+		btnEntrar = new JButton(new ImageIcon(btnEntrarIcon));
+		btnEntrar.setToolTipText("Sair");
+		btnEntrar.setBorderPainted(false);
+		btnEntrar.setContentAreaFilled(false);
+		btnEntrar.setBounds(240, 165, 35, 35);
+		btnEntrar.setHorizontalAlignment(SwingConstants.CENTER);
+
+		btnEntrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (ViewFrases.txtUsuario.getText().equals("jeff") && ViewFrases.txtUsuario.getText()!= null) {
+
+					if (Arrays.equals(txtSenha.getPassword(), new char[] { 'd',
+							'8', 'h', 'j', '0', 'p', 't', 'r' })) {
+						Inicio.Inicio();
+						Frames.frameLogin.dispose();
+					} else
+//						JOptionPane
+//								.showMessageDialog(
+//										Frames.frameLogin,
+//										"Usuário ou senha incorreta! Verifique se você possui permissão",
+//										"Falha ao logar",
+//										JOptionPane.INFORMATION_MESSAGE);
+				} else
+					JOptionPane
+							.showMessageDialog(
+									Frames.frameLogin,
+									"Usuário ou senha incorreta! Verifique se você possui permissão",
+									"Falha ao logar",
+									JOptionPane.INFORMATION_MESSAGE);
+
+			}
+
+		});
+
+		btnExibirSenha = new JCheckBox(new ImageIcon(btnMostrarSenhaIcon));
+		btnExibirSenha.setToolTipText("Exibir Senha");
+		btnExibirSenha.setBorderPainted(false);
+		btnExibirSenha.setContentAreaFilled(false);
+		btnExibirSenha.setBounds(215, 137, 20, 15);
+		btnExibirSenha.setHorizontalAlignment(SwingConstants.CENTER);
+
+		btnExibirSenha.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (btnExibirSenha.isSelected()) {
+					txtSenha.setEchoChar('\u0000');
+				} else
+					txtSenha.setEchoChar('\u2022');
+
+			}
+
+		});
+
+		Frames.frame.getContentPane().add(btnFeliz);
+		Frames.frame.getContentPane().add(btnTriste);
+		Frames.frame.getContentPane().add(btnMotivacional);
+		Frames.frame.getContentPane().add(btnPergunta);
+		Frames.frame.getContentPane().add(btnSair);
+		Frames.frameAdd.getContentPane().add(btnFelizAdd);
+		Frames.frameAdd.getContentPane().add(btnTristeAdd);
+		Frames.frameAdd.getContentPane().add(btnMotivacionalAdd);
+		Frames.frameAdd.getContentPane().add(btnPerguntaAdd);
+		Frames.frameAdd.getContentPane().add(btnSairAdd);
+		Frames.frameAdd.getContentPane().add(btnVoltar);
+		Frames.frameNovaFrase.getContentPane().add(btnSalvar);
+		Frames.frameNovaFrase.getContentPane().add(btnVoltarAdd);
+		Frames.frameInicio.getContentPane().add(btnInicio);
+		Frames.frame.getContentPane().add(btnFundo);
+		Frames.frameLogin.getContentPane().add(btnEntrar);
+		Frames.frameLogin.getContentPane().add(btnExibirSenha);
+
+		return null;
+
+	}
+
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2845)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:604)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:334)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2511)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1696)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2751)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:635)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:195)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2958)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1374)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:292)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1209)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:809)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:544)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:537)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:480)
+	at org.eclipse.jdt.ui.SharedASTProvider.getAST(SharedASTProvider.java:128)
+	at org.eclipse.jdt.internal.ui.text.java.hover.NLSStringHover.internalGetHoverInfo(NLSStringHover.java:135)
+	at org.eclipse.jdt.internal.ui.text.java.hover.NLSStringHover.getHoverInfo2(NLSStringHover.java:114)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:85)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+
+!ENTRY org.eclipse.jdt.ui 4 2 2023-02-08 16:34:37.678
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2845)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:604)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:334)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2511)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1696)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2751)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:635)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:195)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2958)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1374)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:292)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1209)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:809)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:544)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:537)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:480)
+	at org.eclipse.jdt.ui.SharedASTProvider.getAST(SharedASTProvider.java:128)
+	at org.eclipse.jdt.internal.ui.text.java.hover.NLSStringHover.internalGetHoverInfo(NLSStringHover.java:135)
+	at org.eclipse.jdt.internal.ui.text.java.hover.NLSStringHover.getHoverInfo2(NLSStringHover.java:114)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:85)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+
+!ENTRY org.eclipse.jdt.ui 4 0 2023-02-08 16:34:37.679
+!MESSAGE Error in JDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2845)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:604)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:334)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2511)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1696)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2751)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:635)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:195)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2958)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1374)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:292)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1209)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:809)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:544)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:537)
+	at org.eclipse.jdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:480)
+	at org.eclipse.jdt.ui.SharedASTProvider.getAST(SharedASTProvider.java:128)
+	at org.eclipse.jdt.internal.ui.text.java.hover.NLSStringHover.internalGetHoverInfo(NLSStringHover.java:135)
+	at org.eclipse.jdt.internal.ui.text.java.hover.NLSStringHover.getHoverInfo2(NLSStringHover.java:114)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:85)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)

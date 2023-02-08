@@ -1,8 +1,8 @@
 package util;
 
-import java.awt.Color;
-import java.awt.Component;
 import java.awt.Font;
+import java.awt.KeyEventDispatcher;
+import java.awt.KeyboardFocusManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
@@ -18,6 +18,8 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import frases.ViewFrases;
@@ -42,9 +44,11 @@ public class Buttons {
 	public static JButton btnSair;
 	public static JButton btnSairAdd;
 	public static String line;
+	public static JPasswordField txtSenha;
+	public static JTextField txtUsuario;
 
 	public static JFrame Botoes() {
-		
+
 		BufferedImage btnFelizIcon = null;
 		BufferedImage btnTristeIcon = null;
 		BufferedImage btnMotivacionalIcon = null;
@@ -53,28 +57,38 @@ public class Buttons {
 		BufferedImage btnVoltarIcon = null;
 		BufferedImage btnNovaFraseIcon = null;
 		BufferedImage btnSalvarIcon = null;
+		BufferedImage btnEntrarIcon = null;
 		BufferedImage btnOk = null;
 		BufferedImage btnFundoIcon = null;
-		
-		
+		BufferedImage btnMostrarSenhaIcon = null;
+
 		try {
 			btnFelizIcon = ImageIO.read(new File("img/icons/feliz_button.png"));
-			btnTristeIcon = ImageIO.read(new File("img/icons/triste_button.png"));
-			btnMotivacionalIcon = ImageIO.read(new File("img/icons/motivacional_button.png"));
-			btnPerguntaIcon = ImageIO.read(new File("img/icons/pergunta_button.png"));
+			btnTristeIcon = ImageIO
+					.read(new File("img/icons/triste_button.png"));
+			btnMotivacionalIcon = ImageIO.read(new File(
+					"img/icons/motivacional_button.png"));
+			btnPerguntaIcon = ImageIO.read(new File(
+					"img/icons/pergunta_button.png"));
 			btnSairIcon = ImageIO.read(new File("img/icons/sair_button.png"));
-			btnVoltarIcon = ImageIO.read(new File("img/icons/voltar_button.png"));
-			btnNovaFraseIcon = ImageIO.read(new File("img/icons/mais_button.png"));
-			btnSalvarIcon = ImageIO.read(new File("img/icons/salvar_button.png"));
+			btnVoltarIcon = ImageIO
+					.read(new File("img/icons/voltar_button.png"));
+			btnNovaFraseIcon = ImageIO.read(new File(
+					"img/icons/mais_button.png"));
+			btnSalvarIcon = ImageIO
+					.read(new File("img/icons/salvar_button.png"));
 			btnOk = ImageIO.read(new File("img/icons/ok_button.png"));
 			btnFundoIcon = ImageIO.read(new File("img/icons/fundo_button.png"));
+			btnEntrarIcon = ImageIO
+					.read(new File("img/icons/entrar_button.png"));
+			btnMostrarSenhaIcon = ImageIO.read(new File("img/icons/olho.png"));
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		
+
 		JButton btnFundo = new JButton(new ImageIcon(btnFundoIcon));
-		btnFundo.setBounds(600, 6, 30, 30);
+		btnFundo.setBounds(585, 155, 45, 45);
 		btnFundo.setToolTipText("Gerar imagem");
 		btnFundo.setBorderPainted(false);
 		btnFundo.setContentAreaFilled(false);
@@ -91,12 +105,12 @@ public class Buttons {
 				}
 			}
 		});
-		
+
 		JButton btnInicio = new JButton(new ImageIcon(btnOk));
 		btnInicio.setBorderPainted(false);
 		btnInicio.setContentAreaFilled(false);
-	    btnInicio.setBounds(300, 106, 55, 55);
-		btnInicio.setHorizontalAlignment(SwingConstants.CENTER);	
+		btnInicio.setBounds(300, 106, 55, 55);
+		btnInicio.setHorizontalAlignment(SwingConstants.CENTER);
 		btnInicio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frameInicio.dispose();
@@ -104,14 +118,14 @@ public class Buttons {
 				ViewFrases.frase = "\n                       Selecione uma categoria para gerar sua frase";
 			}
 		});
-		
+
 		JButton btnNovaFrase = new JButton(new ImageIcon(btnNovaFraseIcon));
 		btnNovaFrase.setBorderPainted(false);
 		btnNovaFrase.setContentAreaFilled(false);
 		btnNovaFrase.setBounds(463, 162, 35, 35);
 		Frames.frame.getContentPane().add(btnNovaFrase);
 		btnNovaFrase.setToolTipText("Nova frase");
-		
+
 		btnNovaFrase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frame.dispose();
@@ -120,7 +134,7 @@ public class Buttons {
 
 			}
 		});
-		
+
 		btnFeliz = new JButton(new ImageIcon(btnFelizIcon));
 		btnFeliz.setToolTipText("Feliz");
 		btnFeliz.setBorderPainted(false);
@@ -149,10 +163,9 @@ public class Buttons {
 				MetodoAdd.AddFrase();
 			}
 		});
-		
-		
+
 		btnTriste = new JButton(new ImageIcon(btnTristeIcon));
-		btnTriste.setToolTipText("Feliz");
+		btnTriste.setToolTipText("Triste");
 		btnTriste.setBorderPainted(false);
 		btnTriste.setContentAreaFilled(false);
 		btnTriste.setBounds(135, 155, 45, 45);
@@ -166,7 +179,7 @@ public class Buttons {
 			}
 		});
 		btnTristeAdd = new JButton(new ImageIcon(btnTristeIcon));
-		btnTristeAdd.setToolTipText("Feliz");
+		btnTristeAdd.setToolTipText("Triste");
 		btnTristeAdd.setBorderPainted(false);
 		btnTristeAdd.setContentAreaFilled(false);
 		btnTristeAdd.setBounds(135, 155, 45, 45);
@@ -179,10 +192,10 @@ public class Buttons {
 				MetodoAdd.AddFrase();
 			}
 		});
-		
+
 		btnMotivacional = new JButton(new ImageIcon(btnMotivacionalIcon));
 		btnMotivacional.setToolTipText("Motivacional");
-		btnMotivacional.setBorderPainted(false);									
+		btnMotivacional.setBorderPainted(false);
 		btnMotivacional.setContentAreaFilled(false);
 		btnMotivacional.setBounds(235, 155, 45, 45);
 		btnMotivacional.setHorizontalAlignment(SwingConstants.CENTER);
@@ -196,7 +209,7 @@ public class Buttons {
 		});
 		btnMotivacionalAdd = new JButton(new ImageIcon(btnMotivacionalIcon));
 		btnMotivacionalAdd.setToolTipText("Motivacional");
-		btnMotivacionalAdd.setBorderPainted(false);									
+		btnMotivacionalAdd.setBorderPainted(false);
 		btnMotivacionalAdd.setContentAreaFilled(false);
 		btnMotivacionalAdd.setBounds(235, 155, 45, 45);
 		btnMotivacionalAdd.setHorizontalAlignment(SwingConstants.CENTER);
@@ -208,7 +221,7 @@ public class Buttons {
 				MetodoAdd.AddFrase();
 			}
 		});
-		
+
 		btnPergunta = new JButton(new ImageIcon(btnPerguntaIcon));
 		btnPergunta.setToolTipText("Pergunta");
 		btnPergunta.setBorderPainted(false);
@@ -237,12 +250,12 @@ public class Buttons {
 				MetodoAdd.AddFrase();
 			}
 		});
-		
+
 		btnSair = new JButton(new ImageIcon(btnSairIcon));
 		btnSair.setToolTipText("Sair");
 		btnSair.setBorderPainted(false);
 		btnSair.setContentAreaFilled(false);
-		btnSair.setBounds(585, 155, 45, 45);
+		btnSair.setBounds(610, 5, 22, 22);
 		btnSair.setHorizontalAlignment(SwingConstants.CENTER);
 		btnSair.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -262,7 +275,7 @@ public class Buttons {
 		btnSairAdd.setToolTipText("Sair");
 		btnSairAdd.setBorderPainted(false);
 		btnSairAdd.setContentAreaFilled(false);
-		btnSairAdd.setBounds(585, 155, 45, 45);
+		btnSairAdd.setBounds(600, 6, 30, 30);
 		btnSairAdd.setHorizontalAlignment(SwingConstants.CENTER);
 		btnSairAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -278,8 +291,9 @@ public class Buttons {
 				}
 			}
 		});
-		
+
 		btnVoltar = new JButton(new ImageIcon(btnVoltarIcon));
+		btnVoltar.setToolTipText("Voltar");
 		btnVoltar.setBorderPainted(false);
 		btnVoltar.setContentAreaFilled(false);
 		btnVoltar.setBounds(463, 155, 45, 45);
@@ -293,6 +307,7 @@ public class Buttons {
 			}
 		});
 		btnVoltarAdd = new JButton(new ImageIcon(btnVoltarIcon));
+		btnVoltarAdd.setToolTipText("Voltar");
 		btnVoltarAdd.setBorderPainted(false);
 		btnVoltarAdd.setContentAreaFilled(false);
 		btnVoltarAdd.setBounds(463, 155, 45, 45);
@@ -307,6 +322,7 @@ public class Buttons {
 		});
 
 		btnSalvar = new JButton(new ImageIcon(btnSalvarIcon));
+		btnSalvar.setToolTipText("Salvar");
 		btnSalvar.setBorderPainted(false);
 		btnSalvar.setContentAreaFilled(false);
 		btnSalvar.setBounds(35, 162, 35, 35);
@@ -320,7 +336,52 @@ public class Buttons {
 				}
 			}
 		});
-		
+
+		btnEntrar = new JButton(new ImageIcon(btnEntrarIcon));
+		btnEntrar.setToolTipText("Sair");
+		btnEntrar.setBorderPainted(false);
+		btnEntrar.setContentAreaFilled(false);
+		btnEntrar.setBounds(240, 165, 35, 35);
+		btnEntrar.setHorizontalAlignment(SwingConstants.CENTER);
+
+		btnEntrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (ViewFrases.txtUsuario.getText().equals("jeff") && ViewFrases.txtUsuario.getText()!= null) {
+
+					if (Arrays.equals(txtSenha.getPassword(), new char[] { 'd',
+							'8', 'h', 'j', '0', 'p', 't', 'r' })) {
+						Inicio.Inicio();
+						Frames.frameLogin.dispose();
+					} 
+				} else
+					JOptionPane
+							.showMessageDialog(
+									Frames.frameLogin,
+									"Usuário ou senha incorreta! Verifique se você possui permissão",
+									"Falha ao logar",
+									JOptionPane.INFORMATION_MESSAGE);
+
+			}
+
+		});
+
+		btnExibirSenha = new JCheckBox(new ImageIcon(btnMostrarSenhaIcon));
+		btnExibirSenha.setToolTipText("Exibir Senha");
+		btnExibirSenha.setBorderPainted(false);
+		btnExibirSenha.setContentAreaFilled(false);
+		btnExibirSenha.setBounds(215, 137, 20, 15);
+		btnExibirSenha.setHorizontalAlignment(SwingConstants.CENTER);
+
+		btnExibirSenha.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (btnExibirSenha.isSelected()) {
+					txtSenha.setEchoChar('\u0000');
+				} else
+					txtSenha.setEchoChar('\u2022');
+
+			}
+
+		});
 
 		Frames.frame.getContentPane().add(btnFeliz);
 		Frames.frame.getContentPane().add(btnTriste);
@@ -337,9 +398,11 @@ public class Buttons {
 		Frames.frameNovaFrase.getContentPane().add(btnVoltarAdd);
 		Frames.frameInicio.getContentPane().add(btnInicio);
 		Frames.frame.getContentPane().add(btnFundo);
-		
+		Frames.frameLogin.getContentPane().add(btnEntrar);
+		Frames.frameLogin.getContentPane().add(btnExibirSenha);
+
 		return null;
 
 	}
-	
+
 }
