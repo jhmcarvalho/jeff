@@ -41,6 +41,7 @@ public class Buttons {
 	public static JButton btnAddFrase;
 	public static JButton btnSair;
 	public static JButton btnSairAdd;
+	public static String line;
 
 	public static JFrame Botoes() {
 		
@@ -312,7 +313,7 @@ public class Buttons {
 		btnSalvar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					MetodoAdd.MetodoAdd(ViewFrases.line);
+					MetodoAdd.MetodoAdd(line);
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();

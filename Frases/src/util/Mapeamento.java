@@ -21,7 +21,7 @@ public class Mapeamento {
 			if (ViewFrases.feliz) {
 				try {
 					s = choose(new File("txt/Feliz.txt"));
-					ViewFrases.Resultado = s;
+					Fundo.Resultado = s;
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -29,7 +29,7 @@ public class Mapeamento {
 			} else if (ViewFrases.triste) {
 				try {
 					s = choose(new File("txt/Triste.txt"));
-					ViewFrases.Resultado = s;
+					Fundo.Resultado = s;
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -37,7 +37,7 @@ public class Mapeamento {
 			} else if (ViewFrases.motivacao) {
 				try {
 					s = choose(new File("txt/Motivacional.txt"));
-					ViewFrases.Resultado = s;
+					Fundo.Resultado = s;
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -45,7 +45,7 @@ public class Mapeamento {
 			} else if (ViewFrases.pergunta) {
 				try {
 					s = choose(new File("txt/Pergunta.txt"));
-					ViewFrases.Resultado = s;
+					Fundo.Resultado = s;
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

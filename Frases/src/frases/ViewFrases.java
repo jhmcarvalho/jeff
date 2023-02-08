@@ -7,28 +7,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.Arrays;
 
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
 import util.Buttons;
 import util.Frames;
-import util.Fundo;
 import util.Horario;
 import util.Inicio;
 
@@ -36,23 +28,14 @@ import util.Inicio;
 
 public class ViewFrases {
 
-	// public static JFrame frame2;
-
-
 	public JTextArea txtFrases;
 	public JTextArea Categoria;
 	public static JTextArea NovaFrase;
 	public static JTextArea txtFrases2;
 	public static JTextArea Result;
 	public static JTextField txtUsuario;
-	public JButton btnSair;
-	public JButton btnFeliz;
-	// public JButton btnTriste;
-	public JButton btnNovaFrase;
-	public static JButton btnSalvar;
-	public JButton btnVoltar;
 	public static JButton btnEntrar;
-	public static JButton btnInicio;
+
 	public static JCheckBox btnExibirSenha;
 	public JButton btnMotivacional;
 	public JButton btnPergunta;
@@ -61,12 +44,7 @@ public class ViewFrases {
 	public static boolean feliz;
 	public static boolean addFeliz;
 	public static boolean pergunta;
-	public static String line;
 	public static String frase;
-	public static String showHora;
-	public static String verificaLogin;
-	public static String Resultado;
-	public static int randomNum;
 
 	/**
 	 * Launch the application.

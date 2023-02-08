@@ -19,6 +19,8 @@ import javax.swing.JTextArea;
 import frases.ViewFrases;
 
 public class Fundo {
+	public static int randomNum;
+	public static String Resultado;
 	
 public static JTextArea Result;
 
@@ -30,9 +32,9 @@ public static JTextArea Result;
 
 			try {
 				Random rand = new Random();
-				ViewFrases.randomNum = rand.nextInt((10 - 1) + 1) + 1;
+				randomNum = rand.nextInt((10 - 1) + 1) + 1;
 				// randomNum = 10;
-				img = ImageIO.read(new File("img/Fundo" + ViewFrases.randomNum + ".jpg"));
+				img = ImageIO.read(new File("img/Fundo" + randomNum + ".jpg"));
 
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -49,17 +51,17 @@ public static JTextArea Result;
 			Result.setWrapStyleWord(true);
 			Result.setBounds(340, 240, 487, 140);
 			Result.setVisible(true);
-			if (ViewFrases.randomNum == 10 || ViewFrases.randomNum == 15) {
+			if (randomNum == 10 || randomNum == 15) {
 				Result.setForeground(Color.BLACK);
 			} else
 				Result.setForeground(Color.WHITE);
 
-			if (ViewFrases.randomNum == 12) {
+			if (randomNum == 12) {
 				Result.setBounds(30, 200, 487, 140);
 			}
 			Result.setFont(new Font("Sitka Text Italic", Font.PLAIN, 25));
 			Result.setMargin(new Insets(5, 5, 5, 5));
-			Result.setText(ViewFrases.Resultado);
+			Result.setText(Resultado);
 			Result.setColumns(10);
 			Result.setEditable(false);
 			Result.setBackground(new Color(0, 0, 0, 0));
