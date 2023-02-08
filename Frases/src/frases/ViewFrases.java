@@ -47,15 +47,14 @@ import java.awt.Font;
 
 public class ViewFrases {
 
-	public static JFrame frame;
-	public static JFrame frame2;
-	public static JFrame frame3;
-	public static JFrame frameNovaFrase;
+
+	//public static JFrame frame2;
+
 	public static JFrame frameLogin;
 	public static JFrame frmInicio;
 	public JTextArea txtFrases;
 	public JTextArea Categoria;
-	public JTextArea NovaFrase;
+	public static JTextArea NovaFrase;
 	public static JTextArea txtFrases2;
 	public static JTextArea Result;
 	public static JTextField txtUsuario;
@@ -63,7 +62,7 @@ public class ViewFrases {
 	public JButton btnFeliz;
 	//public JButton btnTriste;
 	public JButton btnNovaFrase;
-	public JButton btnSalvar;
+	public static JButton btnSalvar;
 	public JButton btnVoltar;
 	public static JButton btnEntrar;
 	public static JButton btnInicio;
@@ -73,8 +72,9 @@ public class ViewFrases {
 	public static boolean motivacao;
 	public static boolean triste;
 	public static boolean feliz;
+	public static boolean addFeliz;
 	public static boolean pergunta;
-	public String line;
+	public static String line;
 	public static String frase;
 	public static String showHora;
 	public static String verificaLogin;
@@ -88,10 +88,10 @@ public class ViewFrases {
 	 */
 
 	public static void main(String[] args) throws FileNotFoundException {
-		//Login();
+		Login();
 		//Inicio();
 		// Fundo();
-		 Geracao();
+		 //Geracao();
 
 		
 //		SwingUtilities.invokeLater( new Runnable() { 
@@ -238,51 +238,22 @@ public class ViewFrases {
 	public static void Inicio() {
 
 		JLabel Hora = new JLabel(Horario.BoasVindas());
-		frame2 = new JFrame("Frase do dia");
-		frame2.setBounds(900, 100, 667, 250);
-		frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame2.getContentPane().setLayout(null);
-		frame2.getContentPane()
-				.setBackground(new java.awt.Color(220, 230, 254));
-		ViewFrases window = new ViewFrases();
-		window.frame2.setVisible(true);
+		Buttons.frameInicio.setVisible(true);
 		JLabel lbsuafrase = new JLabel(
 				"Bem vindo ao programa gerador de frases diarias aperte OK para continuar");
 		lbsuafrase.setVisible(true);
 		Hora.setBounds(15, 3, 435, 37);
 		Hora.setFont(new Font("Rockwell", Font.BOLD, 15));
 		Hora.setVisible(true);
-		frame2.getContentPane().add(Hora);
+		Buttons.frameInicio.getContentPane().add(Hora);
 
 		lbsuafrase.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 15));
 		lbsuafrase.setBounds(87, 49, 935, 67);
-		frame2.getContentPane().add(lbsuafrase);
+		Buttons.frameInicio.getContentPane().add(lbsuafrase);
 		
-		
-//		BufferedImage buttonIcon = null;
-//		try {
-//			buttonIcon = ImageIO.read(new File("img/icons/ok_button.png"));
-//		} catch (IOException e1) {
-//			// TODO Auto-generated catch block
-//			e1.printStackTrace();
-//		}
-//		JButton btnInicio = new JButton(new ImageIcon(buttonIcon));
-//		btnInicio.setBorderPainted(false); //mudar pra true para exibir a borda do tamanho do campo
-//		btnInicio.setContentAreaFilled(false);
-//	    frame2.getContentPane().add(btnInicio);
-//	    btnInicio.setBounds(300, 106, 55, 55);
-//		btnInicio.setHorizontalAlignment(SwingConstants.CENTER);	
-//		btnInicio.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				frame2.dispose();
-//				Geracao();
-//				frase = "\n                       Selecione uma categoria para gerar sua frase";
-//			}
-//		});
-		frame2.getContentPane().add(Buttons.botaoInicio());
 	}
 
-	public void MetodoAdd(String path) throws IOException {
+	public static void MetodoAdd(String path) throws IOException {
 		String frase = NovaFrase.getText();
 		if (!frase.isEmpty()) {
 			if (feliz) {
@@ -334,33 +305,22 @@ public class ViewFrases {
 	}
 
 	public static void Categoria() {
-		frame3 = new JFrame("Frase do dia");
-		frame3.setBounds(900, 100, 667, 250);
-		frame3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame3.getContentPane().setLayout(null);
-		frame3.getContentPane()
-				.setBackground(new java.awt.Color(220, 230, 254));
-
+		
 		JLabel lbsuafrase = new JLabel("Escolha a categoria da frase:",
 				JLabel.CENTER);
 		lbsuafrase.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 18));
 		lbsuafrase.setBounds(142, 39, 325, 27);
-		frame3.getContentPane().add(lbsuafrase);
-		ViewFrases window = new ViewFrases();
-		window.frame3.setVisible(true);
-		Botoes();
+		Buttons.frame3.getContentPane().add(lbsuafrase);
+		Buttons.frame3.setVisible(true);
 
-		//btnVoltar = new JButton("Voltar");
-		frame3.getContentPane().add(Buttons.botaoVoltar());
-		frame3.getContentPane().add(Buttons.botaoFeliz());
-		frame3.getContentPane().add(Buttons.botaoTriste());
-		frame3.getContentPane().add(Buttons.botaoMotivacional());
-		frame3.getContentPane().add(Buttons.botaoPergunta());
-		frame3.getContentPane().add(Buttons.botaoSair());
+//		frame3.getContentPane().add(Buttons.botaoTriste());
+//		frame3.getContentPane().add(Buttons.botaoMotivacional());
+//		frame3.getContentPane().add(Buttons.botaoPergunta());
+//		frame3.getContentPane().add(Buttons.botaoSair());
 
 		
 		
-//		btnTriste.addActionListener(new ActionListener() {
+//		Buttons.btnFeliz.addActionListener(new ActionListener() {
 //		public void actionPerformed(ActionEvent e) {
 //			frame3.dispose();
 //			frame.dispose();
@@ -395,79 +355,25 @@ public class ViewFrases {
 //
 	}
 
-	public void AddFrase() {
-		frameNovaFrase = new JFrame("Frase do dia");
-		frameNovaFrase.getContentPane().setBackground(Color.WHITE);
-		frameNovaFrase.setBounds(900, 100, 667, 250);
-		frameNovaFrase.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frameNovaFrase.getContentPane().setLayout(null);
-		frameNovaFrase.getContentPane().setBackground(
-				new java.awt.Color(220, 230, 254));
+	public static void AddFrase() {
+		
 		JLabel NovaF = new JLabel("Digite a nova frase:", JLabel.CENTER);
 		NovaF.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 26));
 		NovaF.setBounds(142, 39, 325, 27);
-		frameNovaFrase.getContentPane().add(NovaF);
-		ViewFrases window = new ViewFrases();
-		window.frameNovaFrase.setVisible(true);
+		Buttons.frameNovaFrase.getContentPane().add(NovaF);
+		Buttons.frameNovaFrase.setVisible(true);
 		NovaFrase = new JTextArea();
 		NovaFrase.setLineWrap(true);
 		NovaFrase.setWrapStyleWord(true);
 		NovaFrase.setFont(new Font("Times New Roman", Font.PLAIN, 17));
 		NovaFrase.setMargin(new Insets(5, 5, 5, 5));
 		NovaFrase.setBounds(21, 77, 610, 67);
-		frameNovaFrase.getContentPane().add(NovaFrase);
+		Buttons.frameNovaFrase.getContentPane().add(NovaFrase);
 		NovaFrase.setColumns(10);
 		NovaFrase.setEditable(true);
 		NovaFrase.setBackground(Color.WHITE);
 
-		btnSair = new JButton("Sair");
-
-		btnSair.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				int retorno = JOptionPane
-						.showConfirmDialog(null, "Deseja realmente sair?",
-								"Confirmação de saída",
-								JOptionPane.YES_NO_OPTION,
-								JOptionPane.QUESTION_MESSAGE);
-
-				if (retorno == JOptionPane.YES_OPTION) {
-					System.exit(0);
-				}
-			}
-		});
-		btnSair.setBounds(508, 172, 123, 27);
-		btnSair.setBackground(new java.awt.Color(255, 146, 144));
-		btnSair.setForeground(Color.RED);
-		frameNovaFrase.getContentPane().add(btnSair);
-
-		btnSalvar = new JButton("Salvar");
-		btnSalvar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				try {
-					MetodoAdd(line);
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-			}
-		});
-		btnSalvar.setBounds(21, 172, 123, 27);
-		btnSalvar.setForeground(new java.awt.Color(0, 0, 255));
-		btnSalvar.setBackground(new java.awt.Color(101, 171, 255));
-		frameNovaFrase.getContentPane().add(btnSalvar);
-
-		btnVoltar = new JButton("Voltar");
-		btnVoltar.setBounds(262, 172, 123, 27);
-		btnVoltar.setForeground(new java.awt.Color(0, 0, 255));
-		btnVoltar.setBackground(new java.awt.Color(101, 171, 255));
-		frameNovaFrase.getContentPane().add(btnVoltar);
-		btnVoltar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frameNovaFrase.dispose();
-				Geracao();
-			}
-		});
+		
 
 	}
 
@@ -519,7 +425,7 @@ public class ViewFrases {
 			public void run() {
 				try {
 					ViewFrases window = new ViewFrases();
-					window.frame.setVisible(true);
+					Buttons.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -546,18 +452,14 @@ public class ViewFrases {
 	public ViewFrases() {
 
 		// Criação do frame
-		frame = new JFrame("Frase do dia");
-		frame.getContentPane().setBackground(Color.WHITE);
-		frame.setBounds(900, 100, 667, 250);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
-		frame.getContentPane().setBackground(new java.awt.Color(220, 230, 254));
+		Buttons.Botoes();
+		
 
 		JLabel lbsuafrase = new JLabel("SUA FRASE DO DIA \u00C9:",
 				JLabel.CENTER);
 		lbsuafrase.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 18));
 		lbsuafrase.setBounds(142, 39, 325, 27);
-		frame.getContentPane().add(lbsuafrase);
+		Buttons.frame.getContentPane().add(lbsuafrase);
 		txtFrases = new JTextArea();
 		txtFrases.setLineWrap(true);
 		txtFrases.setWrapStyleWord(true);
@@ -565,11 +467,10 @@ public class ViewFrases {
 		txtFrases.setMargin(new Insets(5, 5, 5, 5));
 		txtFrases.setText(frase);
 		txtFrases.setBounds(21, 77, 610, 67);
-		frame.getContentPane().add(txtFrases);
+		Buttons.frame.getContentPane().add(txtFrases);
 		txtFrases.setColumns(10);
 		txtFrases.setEditable(false);
 		txtFrases.setBackground(Color.WHITE);
-		Botoes();
 
 	
 		BufferedImage btnFundoIcon = null;
@@ -587,7 +488,7 @@ public class ViewFrases {
 		btnFundo.setContentAreaFilled(false);
 		btnFundo.setHorizontalAlignment(SwingConstants.CENTER);
 
-		frame.getContentPane().add(btnFundo);
+		Buttons.frame.getContentPane().add(btnFundo);
 
 		btnFundo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -604,40 +505,10 @@ public class ViewFrases {
 			}
 		});
 		
-		BufferedImage btnNovaFraseIcon = null;
-		try {
-			btnNovaFraseIcon = ImageIO
-					.read(new File("img/icons/mais_button.png"));
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		JButton btnNovaFrase = new JButton(new ImageIcon(btnNovaFraseIcon));
-		btnNovaFrase.setBorderPainted(false);
-		btnNovaFrase.setContentAreaFilled(false);
-		btnNovaFrase.setBounds(463, 162, 35, 35);
-		frame.getContentPane().add(btnNovaFrase);
-		btnNovaFrase.setToolTipText("Nova frase");
-		
-		btnNovaFrase.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
-				Categoria();
 
-			}
-		});
 			
 	}
 
-	public static void Botoes() {
-
-		frame.getContentPane().add(Buttons.botaoFeliz());
-		frame.getContentPane().add(Buttons.botaoTriste());
-		frame.getContentPane().add(Buttons.botaoMotivacional());
-		frame.getContentPane().add(Buttons.botaoPergunta());
-	//	frame.getContentPane().add(Buttons.btnAddFrase);
-		frame.getContentPane().add(Buttons.botaoSair());
-	}
 
 	public static void Fundo() {
 		JLabel label = new JLabel();
