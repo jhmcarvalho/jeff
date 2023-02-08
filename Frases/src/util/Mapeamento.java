@@ -1,0 +1,97 @@
+package util;
+
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
+import java.util.Scanner;
+
+import javax.swing.JLabel;
+
+import frases.ViewFrases;
+
+public class Mapeamento {
+	public static void Mapeamento() {
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		for (int i = 0; i < 1; ++i) {
+			String s = null;
+			if (ViewFrases.feliz) {
+				try {
+					s = choose(new File("txt/Feliz.txt"));
+					ViewFrases.Resultado = s;
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			} else if (ViewFrases.triste) {
+				try {
+					s = choose(new File("txt/Triste.txt"));
+					ViewFrases.Resultado = s;
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			} else if (ViewFrases.motivacao) {
+				try {
+					s = choose(new File("txt/Motivacional.txt"));
+					ViewFrases.Resultado = s;
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			} else if (ViewFrases.pergunta) {
+				try {
+					s = choose(new File("txt/Pergunta.txt"));
+					ViewFrases.Resultado = s;
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			if (!map.containsKey(s))
+				map.put(s, 0);
+			map.put(s, map.get(s) + 1);
+		}
+	}
+	public static void Geracao() {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ViewFrases window = new ViewFrases();
+					Frames.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	public static String choose(File f) throws FileNotFoundException {
+		// String frase = null;
+		Random Rand = new Random();
+		int n = 0;
+		for (Scanner sc = new Scanner(f); sc.hasNext();) {
+			++n;
+			String line = sc.nextLine();
+			if (Rand.nextInt(n) == 0)
+				ViewFrases.frase = line;
+
+		}
+
+		return ViewFrases.frase;
+
+	}
+	
+	public static void Categoria() {
+		JLabel lbsuafrase = new JLabel("Escolha a categoria da frase:",
+				JLabel.CENTER);
+		lbsuafrase.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 18));
+		lbsuafrase.setBounds(142, 39, 325, 27);
+		Frames.frameAdd.getContentPane().add(lbsuafrase);
+		Frames.frameAdd.setVisible(true);
+
+	}
+}
