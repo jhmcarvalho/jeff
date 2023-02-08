@@ -49,6 +49,7 @@ public class Buttons {
 
 	public static JFrame Botoes() {
 
+		//Cria um BufferedImage vazio, que vai receber a imagem
 		BufferedImage btnFelizIcon = null;
 		BufferedImage btnTristeIcon = null;
 		BufferedImage btnMotivacionalIcon = null;
@@ -62,31 +63,28 @@ public class Buttons {
 		BufferedImage btnFundoIcon = null;
 		BufferedImage btnMostrarSenhaIcon = null;
 
+		//tenta encontrar o arquivo do ícone e adicionar à variavel
 		try {
 			btnFelizIcon = ImageIO.read(new File("img/icons/feliz_button.png"));
-			btnTristeIcon = ImageIO
-					.read(new File("img/icons/triste_button.png"));
-			btnMotivacionalIcon = ImageIO.read(new File(
-					"img/icons/motivacional_button.png"));
-			btnPerguntaIcon = ImageIO.read(new File(
-					"img/icons/pergunta_button.png"));
+			btnTristeIcon = ImageIO.read(new File("img/icons/triste_button.png"));
+			btnMotivacionalIcon = ImageIO.read(new File("img/icons/motivacional_button.png"));
+			btnPerguntaIcon = ImageIO.read(new File("img/icons/pergunta_button.png"));
 			btnSairIcon = ImageIO.read(new File("img/icons/sair_button.png"));
-			btnVoltarIcon = ImageIO
-					.read(new File("img/icons/voltar_button.png"));
-			btnNovaFraseIcon = ImageIO.read(new File(
-					"img/icons/mais_button.png"));
-			btnSalvarIcon = ImageIO
-					.read(new File("img/icons/salvar_button.png"));
+			btnVoltarIcon = ImageIO.read(new File("img/icons/voltar_button.png"));
+			btnNovaFraseIcon = ImageIO.read(new File("img/icons/mais_button.png"));
+			btnSalvarIcon = ImageIO.read(new File("img/icons/salvar_button.png"));
 			btnOk = ImageIO.read(new File("img/icons/ok_button.png"));
 			btnFundoIcon = ImageIO.read(new File("img/icons/fundo_button.png"));
-			btnEntrarIcon = ImageIO
-					.read(new File("img/icons/entrar_button.png"));
+			btnEntrarIcon = ImageIO.read(new File("img/icons/entrar_button.png"));
 			btnMostrarSenhaIcon = ImageIO.read(new File("img/icons/olho.png"));
+			
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 
+		//Adiciona a variavel com a imagem no botão e cria o botão
+		//Botão Fundo serve para gerar a background image pra frase. Na classe "Fundo" fica o randomizador da imagem.
 		JButton btnFundo = new JButton(new ImageIcon(btnFundoIcon));
 		btnFundo.setBounds(585, 155, 45, 45);
 		btnFundo.setToolTipText("Gerar imagem");
@@ -106,6 +104,7 @@ public class Buttons {
 			}
 		});
 
+		//Simples botão de OK depois do Login.
 		JButton btnInicio = new JButton(new ImageIcon(btnOk));
 		btnInicio.setBorderPainted(false);
 		btnInicio.setContentAreaFilled(false);
@@ -119,6 +118,7 @@ public class Buttons {
 			}
 		});
 
+		//Botão que chama a função de adicionar frases novas.
 		JButton btnNovaFrase = new JButton(new ImageIcon(btnNovaFraseIcon));
 		btnNovaFrase.setBorderPainted(false);
 		btnNovaFrase.setContentAreaFilled(false);
@@ -321,6 +321,7 @@ public class Buttons {
 			}
 		});
 
+		//Botão salvar sempre apenas pra salvar frases novas.
 		btnSalvar = new JButton(new ImageIcon(btnSalvarIcon));
 		btnSalvar.setToolTipText("Salvar");
 		btnSalvar.setBorderPainted(false);
@@ -343,16 +344,13 @@ public class Buttons {
 		btnEntrar.setContentAreaFilled(false);
 		btnEntrar.setBounds(240, 165, 35, 35);
 		btnEntrar.setHorizontalAlignment(SwingConstants.CENTER);
-
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (ViewFrases.txtUsuario.getText().equals("jeff") && ViewFrases.txtUsuario.getText()!= null) {
-
-					if (Arrays.equals(txtSenha.getPassword(), new char[] { 'd',
-							'8', 'h', 'j', '0', 'p', 't', 'r' })) {
-						Inicio.Inicio();
-						Frames.frameLogin.dispose();
-					} 
+				if (ViewFrases.txtUsuario.getText().equals("jeff") && Arrays.equals(txtSenha.getPassword(), new char[] { 'd',
+								'8', 'h', 'j', '0', 'p', 't', 'r' })) {
+							Inicio.Inicio();
+							Frames.frameLogin.dispose();
+						 
 				} else
 					JOptionPane
 							.showMessageDialog(
@@ -362,6 +360,7 @@ public class Buttons {
 									JOptionPane.INFORMATION_MESSAGE);
 
 			}
+			
 
 		});
 
@@ -383,6 +382,7 @@ public class Buttons {
 
 		});
 
+		//Adiciona os botões a cada frame deles
 		Frames.frame.getContentPane().add(btnFeliz);
 		Frames.frame.getContentPane().add(btnTriste);
 		Frames.frame.getContentPane().add(btnMotivacional);

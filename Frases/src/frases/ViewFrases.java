@@ -100,7 +100,7 @@ public class ViewFrases {
 
 		
 
-		// Serve pra setar o foco no campo de usuário ao iniciar o sistema
+		// Seta o foco no campo de usuário ao iniciar o sistema
 		SwingUtilities.invokeLater(new Runnable() {
 
 			public void run() {
@@ -108,6 +108,8 @@ public class ViewFrases {
 			}
 		});
 		
+		//Chama a função de entrar no sistema com a tecla Enter
+		//KeyboardFocusManager é melhor do que o KeyListener nesse caso pois o segundo só pega o campo onde estiver o foco
 		KeyboardFocusManager.getCurrentKeyboardFocusManager()
 				.addKeyEventDispatcher(new KeyEventDispatcher() {
 					@Override
