@@ -1,12 +1,7 @@
 package util;
 
-import java.awt.Font;
-import java.awt.KeyEventDispatcher;
-import java.awt.KeyboardFocusManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -22,7 +17,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-import frases.ViewFrases;
+import main.Main;
 
 public class Buttons {
 
@@ -93,8 +88,8 @@ public class Buttons {
 		btnFundo.setHorizontalAlignment(SwingConstants.CENTER);
 		btnFundo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (ViewFrases.frase != null) {
-					Fundo.Fundo();
+				if (Main.frase != null) {
+					Fundo.ImagemFundo();
 				} else {
 					JOptionPane.showMessageDialog(Frames.frameLogin,
 							"Gere uma frase antes de exportar!",
@@ -114,7 +109,7 @@ public class Buttons {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frameInicio.dispose();
 				Mapeamento.Geracao();
-				ViewFrases.frase = "\n                       Selecione uma categoria para gerar sua frase";
+				Main.frase = "\n                       Selecione uma categoria para gerar sua frase";
 			}
 		});
 
@@ -144,9 +139,9 @@ public class Buttons {
 		btnFeliz.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frame.dispose();
-				ViewFrases.feliz = true;
+				Main.feliz = true;
 				Mapeamento.Geracao();
-				Mapeamento.Mapeamento();
+				Mapeamento.Map();
 			}
 		});
 		btnFelizAdd = new JButton(new ImageIcon(btnFelizIcon));
@@ -159,7 +154,7 @@ public class Buttons {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frameAdd.dispose();
 				Frames.frame.dispose();
-				ViewFrases.feliz = true;
+				Main.feliz = true;
 				MetodoAdd.AddFrase();
 			}
 		});
@@ -173,9 +168,9 @@ public class Buttons {
 		btnTriste.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frame.dispose();
-				ViewFrases.triste = true;
+				Main.triste = true;
 				Mapeamento.Geracao();
-				Mapeamento.Mapeamento();
+				Mapeamento.Map();
 			}
 		});
 		btnTristeAdd = new JButton(new ImageIcon(btnTristeIcon));
@@ -188,7 +183,7 @@ public class Buttons {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frameAdd.dispose();
 				Frames.frame.dispose();
-				ViewFrases.triste = true;
+				Main.triste = true;
 				MetodoAdd.AddFrase();
 			}
 		});
@@ -202,9 +197,9 @@ public class Buttons {
 		btnMotivacional.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frame.dispose();
-				ViewFrases.motivacao = true;
+				Main.motivacao = true;
 				Mapeamento.Geracao();
-				Mapeamento.Mapeamento();
+				Mapeamento.Map();
 			}
 		});
 		btnMotivacionalAdd = new JButton(new ImageIcon(btnMotivacionalIcon));
@@ -217,7 +212,7 @@ public class Buttons {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frameAdd.dispose();
 				Frames.frame.dispose();
-				ViewFrases.motivacao = true;
+				Main.motivacao = true;
 				MetodoAdd.AddFrase();
 			}
 		});
@@ -231,9 +226,9 @@ public class Buttons {
 		btnPergunta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frame.dispose();
-				ViewFrases.pergunta = true;
+				Main.pergunta = true;
 				Mapeamento.Geracao();
-				Mapeamento.Mapeamento();
+				Mapeamento.Map();
 			}
 		});
 		btnPerguntaAdd = new JButton(new ImageIcon(btnPerguntaIcon));
@@ -246,7 +241,7 @@ public class Buttons {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frameAdd.dispose();
 				Frames.frame.dispose();
-				ViewFrases.pergunta = true;
+				Main.pergunta = true;
 				MetodoAdd.AddFrase();
 			}
 		});
@@ -330,7 +325,7 @@ public class Buttons {
 		btnSalvar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					MetodoAdd.MetodoAdd(line);
+					MetodoAdd.Add(line);
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -346,9 +341,9 @@ public class Buttons {
 		btnEntrar.setHorizontalAlignment(SwingConstants.CENTER);
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (ViewFrases.txtUsuario.getText().equals("jeff") && Arrays.equals(txtSenha.getPassword(), new char[] { 'd',
-								'8', 'h', 'j', '0', 'p', 't', 'r' })) {
-							Inicio.Inicio();
+				if (Main.txtUsuario.getText().equals("admin") && Arrays.equals(txtSenha.getPassword(), new char[] { 'a',
+								'd', 'm', 'i', 'n' })) {
+							Inicio.TelaInicio();
 							Frames.frameLogin.dispose();
 						 
 				} else

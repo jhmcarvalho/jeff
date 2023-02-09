@@ -13,10 +13,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-
-import frases.ViewFrases;
 
 public class Fundo {
 	public static int randomNum;
@@ -25,7 +22,7 @@ public class Fundo {
 public static JTextArea Result;
 
 		
-		public static void Fundo() {
+		public static void ImagemFundo() {
 			JLabel label = new JLabel();
 			// obtem e coloca a imagem dentro de uma BufferedImage
 			BufferedImage img = null;

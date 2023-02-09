@@ -1,21 +1,16 @@
-package frases;
+package main;
 
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Insets;
 import java.awt.KeyEventDispatcher;
 import java.awt.KeyboardFocusManager;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.FileNotFoundException;
-import java.util.Arrays;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -24,12 +19,10 @@ import javax.swing.SwingUtilities;
 import util.Buttons;
 import util.Frames;
 import util.Horario;
-import util.Inicio;
-import util.Mapeamento;
 
 //import com.sun.awt.AWTUtilities;
 
-public class ViewFrases {
+public class Main {
 
 	public JTextArea txtFrases;
 	public JTextArea Categoria;
@@ -64,7 +57,8 @@ public class ViewFrases {
 	}
 
 	public static void Login() {
-		ViewFrases window = new ViewFrases();
+		@SuppressWarnings("unused")
+		Main window = new Main();
 		Frames.frameLogin.setVisible(true);
 
 		JLabel Hora = new JLabel(Horario.BoasVindas());
@@ -124,8 +118,8 @@ public class ViewFrases {
 				});
 		}
 
-	public ViewFrases() {
-		Frames.Frames();
+	public Main() {
+		Frames.AllFrames();
 		Buttons.Botoes();
 
 		JLabel lbsuafrase = new JLabel("SUA FRASE DO DIA \u00C9:",

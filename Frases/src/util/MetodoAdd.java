@@ -11,14 +11,14 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
-import frases.ViewFrases;
+import main.Main;
 
 public class MetodoAdd {
 
-	public static void MetodoAdd(String path) throws IOException {
-		String frase = ViewFrases.NovaFrase.getText();
+	public static void Add(String path) throws IOException {
+		String frase = Main.NovaFrase.getText();
 		if (!frase.isEmpty()) {
-			if (ViewFrases.feliz) {
+			if (Main.feliz) {
 				try {
 					FileWriter fw = new FileWriter("txt/Feliz.txt", true);
 					BufferedWriter conexao = new BufferedWriter(fw);
@@ -28,7 +28,7 @@ public class MetodoAdd {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			} else if (ViewFrases.triste) {
+			} else if (Main.triste) {
 				try {
 					FileWriter fw = new FileWriter("txt/Triste.txt", true);
 					BufferedWriter conexao = new BufferedWriter(fw);
@@ -38,7 +38,7 @@ public class MetodoAdd {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			} else if (ViewFrases.motivacao) {
+			} else if (Main.motivacao) {
 				try {
 					FileWriter fw = new FileWriter("txt/Motivacional.txt", true);
 					BufferedWriter conexao = new BufferedWriter(fw);
@@ -48,7 +48,7 @@ public class MetodoAdd {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			} else if (ViewFrases.pergunta) {
+			} else if (Main.pergunta) {
 				try {
 					FileWriter fw = new FileWriter("txt/Pergunta.txt", true);
 					BufferedWriter conexao = new BufferedWriter(fw);
@@ -59,7 +59,7 @@ public class MetodoAdd {
 					e.printStackTrace();
 				}
 				JOptionPane.showMessageDialog(null, "Frase salva com sucesso");
-				ViewFrases.NovaFrase.setText(null);
+				Main.NovaFrase.setText(null);
 			}
 		} else
 			JOptionPane.showMessageDialog(null, "Digite uma frase para salvar");
@@ -73,16 +73,16 @@ public class MetodoAdd {
 		NovaF.setBounds(142, 39, 325, 27);
 		Frames.frameNovaFrase.getContentPane().add(NovaF);
 		Frames.frameNovaFrase.setVisible(true);
-		ViewFrases.NovaFrase = new JTextArea();
-		ViewFrases.NovaFrase.setLineWrap(true);
-		ViewFrases.NovaFrase.setWrapStyleWord(true);
-		ViewFrases.NovaFrase.setFont(new Font("Times New Roman", Font.PLAIN, 17));
-		ViewFrases.NovaFrase.setMargin(new Insets(5, 5, 5, 5));
-		ViewFrases.NovaFrase.setBounds(21, 77, 610, 67);
-		Frames.frameNovaFrase.getContentPane().add(ViewFrases.NovaFrase);
-		ViewFrases.NovaFrase.setColumns(10);
-		ViewFrases.NovaFrase.setEditable(true);
-		ViewFrases.NovaFrase.setBackground(Color.WHITE);
+		Main.NovaFrase = new JTextArea();
+		Main.NovaFrase.setLineWrap(true);
+		Main.NovaFrase.setWrapStyleWord(true);
+		Main.NovaFrase.setFont(new Font("Times New Roman", Font.PLAIN, 17));
+		Main.NovaFrase.setMargin(new Insets(5, 5, 5, 5));
+		Main.NovaFrase.setBounds(21, 77, 610, 67);
+		Frames.frameNovaFrase.getContentPane().add(Main.NovaFrase);
+		Main.NovaFrase.setColumns(10);
+		Main.NovaFrase.setEditable(true);
+		Main.NovaFrase.setBackground(Color.WHITE);
 
 	}
 }

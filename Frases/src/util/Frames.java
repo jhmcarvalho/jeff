@@ -12,7 +12,7 @@ public class Frames {
 	public static JFrame frameLogin;
 	
 	//Todos os Frames são criados aqui, por organização.
-	public static JFrame Frames(){
+	public static JFrame AllFrames(){
 		//"frame" é o principal, onde as frases são geradas.
 	frame = new JFrame("Frase do dia");
 	frame.getContentPane().setBackground(Color.WHITE);

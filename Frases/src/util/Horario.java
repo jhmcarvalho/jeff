@@ -3,8 +3,6 @@ package util;
 import java.util.Calendar;
 import java.util.TimeZone;
 
-import frases.ViewFrases;
-
 public class Horario {
 	
 	public static String BoasVindas() {

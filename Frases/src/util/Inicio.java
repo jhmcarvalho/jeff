@@ -5,7 +5,7 @@ import java.awt.Font;
 import javax.swing.JLabel;
 
 public class Inicio {
-	public static void Inicio() {
+	public static void TelaInicio() {
 
 		JLabel Hora = new JLabel(Horario.BoasVindas());
 		Frames.frameInicio.setVisible(true);

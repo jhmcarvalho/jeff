@@ -11,14 +11,14 @@ import java.util.Scanner;
 
 import javax.swing.JLabel;
 
-import frases.ViewFrases;
+import main.Main;
 
 public class Mapeamento {
-	public static void Mapeamento() {
+	public static void Map() {
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		for (int i = 0; i < 1; ++i) {
 			String s = null;
-			if (ViewFrases.feliz) {
+			if (Main.feliz) {
 				try {
 					s = choose(new File("txt/Feliz.txt"));
 					Fundo.Resultado = s;
@@ -26,7 +26,7 @@ public class Mapeamento {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			} else if (ViewFrases.triste) {
+			} else if (Main.triste) {
 				try {
 					s = choose(new File("txt/Triste.txt"));
 					Fundo.Resultado = s;
@@ -34,7 +34,7 @@ public class Mapeamento {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			} else if (ViewFrases.motivacao) {
+			} else if (Main.motivacao) {
 				try {
 					s = choose(new File("txt/Motivacional.txt"));
 					Fundo.Resultado = s;
@@ -42,7 +42,7 @@ public class Mapeamento {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			} else if (ViewFrases.pergunta) {
+			} else if (Main.pergunta) {
 				try {
 					s = choose(new File("txt/Pergunta.txt"));
 					Fundo.Resultado = s;
@@ -56,11 +56,13 @@ public class Mapeamento {
 			map.put(s, map.get(s) + 1);
 		}
 	}
+	
 	public static void Geracao() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ViewFrases window = new ViewFrases();
+					@SuppressWarnings("unused")
+					Main window = new Main();
 					Frames.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -77,11 +79,11 @@ public class Mapeamento {
 			++n;
 			String line = sc.nextLine();
 			if (Rand.nextInt(n) == 0)
-				ViewFrases.frase = line;
+				Main.frase = line;
 
 		}
 
-		return ViewFrases.frase;
+		return Main.frase;
 
 	}
 	
