@@ -18,7 +18,7 @@ public class Mapeamento {
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		for (int i = 0; i < 1; ++i) {
 			String s = null;
-			if (Main.feliz) {
+			if (Buttons.feliz) {
 				try {
 					s = choose(new File("txt/Feliz.txt"));
 					Fundo.Resultado = s;
@@ -26,7 +26,7 @@ public class Mapeamento {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			} else if (Main.triste) {
+			} else if (Buttons.triste) {
 				try {
 					s = choose(new File("txt/Triste.txt"));
 					Fundo.Resultado = s;
@@ -34,7 +34,7 @@ public class Mapeamento {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			} else if (Main.motivacao) {
+			} else if (Buttons.motivacao) {
 				try {
 					s = choose(new File("txt/Motivacional.txt"));
 					Fundo.Resultado = s;
@@ -42,7 +42,7 @@ public class Mapeamento {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			} else if (Main.pergunta) {
+			} else if (Buttons.pergunta) {
 				try {
 					s = choose(new File("txt/Pergunta.txt"));
 					Fundo.Resultado = s;

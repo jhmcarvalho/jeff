@@ -41,6 +41,11 @@ public class Buttons {
 	public static String line;
 	public static JPasswordField txtSenha;
 	public static JTextField txtUsuario;
+	public static boolean motivacao;
+	public static boolean triste;
+	public static boolean feliz;
+	public static boolean addFeliz;
+	public static boolean pergunta;
 
 	public static JFrame Botoes() {
 
@@ -139,7 +144,10 @@ public class Buttons {
 		btnFeliz.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frame.dispose();
-				Main.feliz = true;
+				feliz = true;
+				triste = false;
+				motivacao = false;
+				pergunta = false;
 				Mapeamento.Geracao();
 				Mapeamento.Map();
 			}
@@ -154,7 +162,10 @@ public class Buttons {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frameAdd.dispose();
 				Frames.frame.dispose();
-				Main.feliz = true;
+				feliz = true;
+				triste = false;
+				motivacao = false;
+				pergunta = false;
 				MetodoAdd.AddFrase();
 			}
 		});
@@ -168,7 +179,10 @@ public class Buttons {
 		btnTriste.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frame.dispose();
-				Main.triste = true;
+				feliz = false;
+				triste = true;
+				motivacao = false;
+				pergunta = false;
 				Mapeamento.Geracao();
 				Mapeamento.Map();
 			}
@@ -183,7 +197,10 @@ public class Buttons {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frameAdd.dispose();
 				Frames.frame.dispose();
-				Main.triste = true;
+				feliz = false;
+				triste = true;
+				motivacao = false;
+				pergunta = false;
 				MetodoAdd.AddFrase();
 			}
 		});
@@ -197,7 +214,10 @@ public class Buttons {
 		btnMotivacional.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frame.dispose();
-				Main.motivacao = true;
+				feliz = false;
+				triste = false;
+				motivacao = true;
+				pergunta = false;
 				Mapeamento.Geracao();
 				Mapeamento.Map();
 			}
@@ -212,7 +232,10 @@ public class Buttons {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frameAdd.dispose();
 				Frames.frame.dispose();
-				Main.motivacao = true;
+				feliz = false;
+				triste = false;
+				motivacao = true;
+				pergunta = false;
 				MetodoAdd.AddFrase();
 			}
 		});
@@ -226,7 +249,10 @@ public class Buttons {
 		btnPergunta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frame.dispose();
-				Main.pergunta = true;
+				feliz = false;
+				triste = false;
+				motivacao = false;
+				pergunta = true;
 				Mapeamento.Geracao();
 				Mapeamento.Map();
 			}
@@ -241,7 +267,10 @@ public class Buttons {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frameAdd.dispose();
 				Frames.frame.dispose();
-				Main.pergunta = true;
+				feliz = false;
+				triste = false;
+				motivacao = false;
+				pergunta = true;
 				MetodoAdd.AddFrase();
 			}
 		});

@@ -35,11 +35,7 @@ public class Main {
 	public static JCheckBox btnExibirSenha;
 	public JButton btnMotivacional;
 	public JButton btnPergunta;
-	public static boolean motivacao;
-	public static boolean triste;
-	public static boolean feliz;
-	public static boolean addFeliz;
-	public static boolean pergunta;
+
 	public static String frase;
 
 	/**

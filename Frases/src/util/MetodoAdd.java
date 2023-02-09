@@ -18,7 +18,7 @@ public class MetodoAdd {
 	public static void Add(String path) throws IOException {
 		String frase = Main.NovaFrase.getText();
 		if (!frase.isEmpty()) {
-			if (Main.feliz) {
+			if (Buttons.feliz) {
 				try {
 					FileWriter fw = new FileWriter("txt/Feliz.txt", true);
 					BufferedWriter conexao = new BufferedWriter(fw);
@@ -28,7 +28,7 @@ public class MetodoAdd {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			} else if (Main.triste) {
+			} else if (Buttons.triste) {
 				try {
 					FileWriter fw = new FileWriter("txt/Triste.txt", true);
 					BufferedWriter conexao = new BufferedWriter(fw);
@@ -38,7 +38,7 @@ public class MetodoAdd {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			} else if (Main.motivacao) {
+			} else if (Buttons.motivacao) {
 				try {
 					FileWriter fw = new FileWriter("txt/Motivacional.txt", true);
 					BufferedWriter conexao = new BufferedWriter(fw);
@@ -48,7 +48,7 @@ public class MetodoAdd {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			} else if (Main.pergunta) {
+			} else if (Buttons.pergunta) {
 				try {
 					FileWriter fw = new FileWriter("txt/Pergunta.txt", true);
 					BufferedWriter conexao = new BufferedWriter(fw);
