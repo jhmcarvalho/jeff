@@ -14,11 +14,11 @@ import javax.swing.JLabel;
 import main.Main;
 
 public class Mapeamento {
-	public static void Map() {
+	public static void Map(String tipo) {
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		for (int i = 0; i < 1; ++i) {
 			String s = null;
-			if (Buttons.feliz) {
+			if (tipo == "feliz") {
 				try {
 					s = choose(new File("txt/Feliz.txt"));
 					Fundo.Resultado = s;
@@ -26,7 +26,7 @@ public class Mapeamento {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			} else if (Buttons.triste) {
+			} else if (tipo == "triste") {
 				try {
 					s = choose(new File("txt/Triste.txt"));
 					Fundo.Resultado = s;
@@ -34,7 +34,7 @@ public class Mapeamento {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			} else if (Buttons.motivacao) {
+			} else if (tipo == "motivacao") {
 				try {
 					s = choose(new File("txt/Motivacional.txt"));
 					Fundo.Resultado = s;
@@ -42,7 +42,7 @@ public class Mapeamento {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			} else if (Buttons.pergunta) {
+			} else if (tipo == "pergunta") {
 				try {
 					s = choose(new File("txt/Pergunta.txt"));
 					Fundo.Resultado = s;

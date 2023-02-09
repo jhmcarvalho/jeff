@@ -39,13 +39,9 @@ public class Buttons {
 	public static JButton btnSair;
 	public static JButton btnSairAdd;
 	public static String line;
+	public static String tipoAdd;
 	public static JPasswordField txtSenha;
 	public static JTextField txtUsuario;
-	public static boolean motivacao;
-	public static boolean triste;
-	public static boolean feliz;
-	public static boolean addFeliz;
-	public static boolean pergunta;
 
 	public static JFrame Botoes() {
 
@@ -144,12 +140,8 @@ public class Buttons {
 		btnFeliz.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frame.dispose();
-				feliz = true;
-				triste = false;
-				motivacao = false;
-				pergunta = false;
 				Mapeamento.Geracao();
-				Mapeamento.Map();
+				Mapeamento.Map("feliz");
 			}
 		});
 		btnFelizAdd = new JButton(new ImageIcon(btnFelizIcon));
@@ -161,11 +153,8 @@ public class Buttons {
 		btnFelizAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frameAdd.dispose();
+				tipoAdd = "feliz";
 				Frames.frame.dispose();
-				feliz = true;
-				triste = false;
-				motivacao = false;
-				pergunta = false;
 				MetodoAdd.AddFrase();
 			}
 		});
@@ -179,12 +168,8 @@ public class Buttons {
 		btnTriste.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frame.dispose();
-				feliz = false;
-				triste = true;
-				motivacao = false;
-				pergunta = false;
 				Mapeamento.Geracao();
-				Mapeamento.Map();
+				Mapeamento.Map("triste");
 			}
 		});
 		btnTristeAdd = new JButton(new ImageIcon(btnTristeIcon));
@@ -196,11 +181,8 @@ public class Buttons {
 		btnTristeAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frameAdd.dispose();
+				tipoAdd = "triste";
 				Frames.frame.dispose();
-				feliz = false;
-				triste = true;
-				motivacao = false;
-				pergunta = false;
 				MetodoAdd.AddFrase();
 			}
 		});
@@ -214,12 +196,8 @@ public class Buttons {
 		btnMotivacional.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frame.dispose();
-				feliz = false;
-				triste = false;
-				motivacao = true;
-				pergunta = false;
 				Mapeamento.Geracao();
-				Mapeamento.Map();
+				Mapeamento.Map("motivacao");
 			}
 		});
 		btnMotivacionalAdd = new JButton(new ImageIcon(btnMotivacionalIcon));
@@ -231,11 +209,8 @@ public class Buttons {
 		btnMotivacionalAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frameAdd.dispose();
+				tipoAdd = "motivacao";
 				Frames.frame.dispose();
-				feliz = false;
-				triste = false;
-				motivacao = true;
-				pergunta = false;
 				MetodoAdd.AddFrase();
 			}
 		});
@@ -249,12 +224,8 @@ public class Buttons {
 		btnPergunta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frame.dispose();
-				feliz = false;
-				triste = false;
-				motivacao = false;
-				pergunta = true;
 				Mapeamento.Geracao();
-				Mapeamento.Map();
+				Mapeamento.Map("pergunta");
 			}
 		});
 		btnPerguntaAdd = new JButton(new ImageIcon(btnPerguntaIcon));
@@ -266,11 +237,8 @@ public class Buttons {
 		btnPerguntaAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frameAdd.dispose();
+				tipoAdd = "pergunta";
 				Frames.frame.dispose();
-				feliz = false;
-				triste = false;
-				motivacao = false;
-				pergunta = true;
 				MetodoAdd.AddFrase();
 			}
 		});
@@ -354,7 +322,7 @@ public class Buttons {
 		btnSalvar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					MetodoAdd.Add(line);
+					MetodoAdd.Add(line, tipoAdd);
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -426,7 +394,6 @@ public class Buttons {
 		Frames.frameLogin.getContentPane().add(btnExibirSenha);
 
 		return null;
-
 	}
 
 }

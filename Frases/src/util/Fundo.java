@@ -62,11 +62,7 @@ public static JTextArea Result;
 			Result.setColumns(10);
 			Result.setEditable(false);
 			Result.setBackground(new Color(0, 0, 0, 0));
-
-			// JScrollPane scrollPane = new JScrollPane(Result);
-			// scrollPane.getViewport().setOpaque(false);
-			// scrollPane.setOpaque(false);
-
+			
 			// Cria e configura a janela
 			JFrame janela = new JFrame();
 			janela.setBounds(850, 100, 867, 440);

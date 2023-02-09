@@ -15,10 +15,12 @@ import main.Main;
 
 public class MetodoAdd {
 
-	public static void Add(String path) throws IOException {
+
+	
+	public static void Add(String path, String tipo) throws IOException {
 		String frase = Main.NovaFrase.getText();
 		if (!frase.isEmpty()) {
-			if (Buttons.feliz) {
+			if (tipo == "feliz") {
 				try {
 					FileWriter fw = new FileWriter("txt/Feliz.txt", true);
 					BufferedWriter conexao = new BufferedWriter(fw);
@@ -28,7 +30,7 @@ public class MetodoAdd {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			} else if (Buttons.triste) {
+			} else if (tipo == "triste") {
 				try {
 					FileWriter fw = new FileWriter("txt/Triste.txt", true);
 					BufferedWriter conexao = new BufferedWriter(fw);
@@ -38,7 +40,7 @@ public class MetodoAdd {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			} else if (Buttons.motivacao) {
+			} else if (tipo == "motivacao") {
 				try {
 					FileWriter fw = new FileWriter("txt/Motivacional.txt", true);
 					BufferedWriter conexao = new BufferedWriter(fw);
@@ -48,7 +50,7 @@ public class MetodoAdd {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			} else if (Buttons.pergunta) {
+			} else if (tipo == "pergunta") {
 				try {
 					FileWriter fw = new FileWriter("txt/Pergunta.txt", true);
 					BufferedWriter conexao = new BufferedWriter(fw);
