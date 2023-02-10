@@ -89,13 +89,15 @@ public class Buttons {
 		btnFundo.setHorizontalAlignment(SwingConstants.CENTER);
 		btnFundo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (Main.frase != null) {
+				if (Main.frase != null && Main.frase != "\n                       Selecione uma categoria para gerar sua frase") {
 					Fundo.ImagemFundo();
+
 				} else {
 					JOptionPane.showMessageDialog(Frames.frameLogin,
 							"Gere uma frase antes de exportar!",
 							"Falha ao exportar",
 							JOptionPane.INFORMATION_MESSAGE);
+					
 				}
 			}
 		});

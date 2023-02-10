@@ -55,9 +55,9 @@
 <fullyQualifiedTypeName name="util.Inicio"/>
 <fullyQualifiedTypeName name="javax.swing.JTextField"/>
 <fullyQualifiedTypeName name="javax.swing.JPasswordField"/>
-<fullyQualifiedTypeName name="util.Login"/>
 <fullyQualifiedTypeName name="frases.ViewFrases"/>
 <fullyQualifiedTypeName name="javax.swing.JLabel"/>
 <fullyQualifiedTypeName name="util.Buttons"/>
 <fullyQualifiedTypeName name="util.Mapeamento"/>
+<fullyQualifiedTypeName name="util.Login"/>
 </qualifiedTypeNameHistroy>

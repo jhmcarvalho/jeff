@@ -10,7 +10,7 @@ public class Inicio {
 		JLabel Hora = new JLabel(Horario.BoasVindas());
 		Frames.frameInicio.setVisible(true);
 		JLabel lbsuafrase = new JLabel(
-				"Bem vindo ao programa gerador de frases diarias aperte OK para continuar");
+				"Bem vindo ao programa gerador de frases diarias, aperte OK para continuar");
 		lbsuafrase.setVisible(true);
 		Hora.setBounds(15, 3, 435, 37);
 		Hora.setFont(new Font("Rockwell", Font.BOLD, 15));

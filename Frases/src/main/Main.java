@@ -20,18 +20,15 @@ import util.Buttons;
 import util.Frames;
 import util.Horario;
 
-//import com.sun.awt.AWTUtilities;
-
 public class Main {
 
-	public JTextArea txtFrases;
+	public static JTextArea txtFrases;
 	public JTextArea Categoria;
 	public static JTextArea NovaFrase;
 	public static JTextArea txtFrases2;
 	public static JTextArea Result;
 	public static JTextField txtUsuario;
 	public static JPasswordField txtSenha;
-
 	public static JCheckBox btnExibirSenha;
 	public JButton btnMotivacional;
 	public JButton btnPergunta;
@@ -88,8 +85,6 @@ public class Main {
 		Frames.frameLogin.getContentPane().add(JlSenha);
 		JlSenha.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 15));
 
-		
-
 		// Seta o foco no campo de usuário ao iniciar o sistema
 		SwingUtilities.invokeLater(new Runnable() {
 
@@ -134,7 +129,6 @@ public class Main {
 		txtFrases.setColumns(10);
 		txtFrases.setEditable(false);
 		txtFrases.setBackground(Color.WHITE);
-
 
 	}
 }
