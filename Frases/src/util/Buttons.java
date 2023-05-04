@@ -161,7 +161,6 @@ public class Buttons {
 				Frames.frame.dispose();
 				Mapeamento.Geracao();
 				Mapeamento.Map("feliz");
-				System.out.println(dataAgora + " , "+Mapeamento.dataGerada);
 			}
 		});
 		}
