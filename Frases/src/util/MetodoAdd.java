@@ -60,9 +60,10 @@ public class MetodoAdd {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				JOptionPane.showMessageDialog(null, "Frase salva com sucesso");
-				Main.NovaFrase.setText(null);
+				
 			}
+			JOptionPane.showMessageDialog(null, "Frase salva com sucesso");
+			Main.NovaFrase.setText(null);
 		} else
 			JOptionPane.showMessageDialog(null, "Digite uma frase para salvar");
 

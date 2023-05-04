@@ -4,6 +4,8 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -14,6 +16,8 @@ import javax.swing.JLabel;
 import main.Main;
 
 public class Mapeamento {
+	public static String dataGerada;
+	
 	public static void Map(String tipo) {
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		for (int i = 0; i < 1; ++i) {
@@ -80,6 +84,7 @@ public class Mapeamento {
 			String line = sc.nextLine();
 			if (Rand.nextInt(n) == 0)
 				Main.frase = line;
+			
 
 		}
 

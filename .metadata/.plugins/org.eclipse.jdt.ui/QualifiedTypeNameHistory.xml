@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.io.ByteArrayInputStream"/>
-<fullyQualifiedTypeName name="java.util.Collection"/>
-<fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="org.eclipse.swt.events.KeyAdapter"/>
 <fullyQualifiedTypeName name="org.eclipse.swt.events.KeyEvent"/>
 <fullyQualifiedTypeName name="java.awt.event.KeyAdapter"/>
@@ -58,6 +55,9 @@
 <fullyQualifiedTypeName name="frases.ViewFrases"/>
 <fullyQualifiedTypeName name="javax.swing.JLabel"/>
 <fullyQualifiedTypeName name="util.Buttons"/>
-<fullyQualifiedTypeName name="util.Mapeamento"/>
 <fullyQualifiedTypeName name="util.Login"/>
+<fullyQualifiedTypeName name="util.Mapeamento"/>
+<fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
 </qualifiedTypeNameHistroy>

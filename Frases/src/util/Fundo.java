@@ -30,7 +30,7 @@ public static JTextArea Result;
 			try {
 				Random rand = new Random();
 				randomNum = rand.nextInt((10 - 1) + 1) + 1;
-				// randomNum = 10;
+				// randomNum = 21;
 				img = ImageIO.read(new File("img/Fundo" + randomNum + ".jpg"));
 
 			} catch (IOException e) {
@@ -55,6 +55,9 @@ public static JTextArea Result;
 
 			if (randomNum == 12) {
 				Result.setBounds(30, 200, 487, 140);
+			}
+			if (randomNum == 16) {
+				Result.setBounds(340, 100, 487, 140);
 			}
 			Result.setFont(new Font("Sitka Text Italic", Font.PLAIN, 25));
 			Result.setMargin(new Insets(5, 5, 5, 5));

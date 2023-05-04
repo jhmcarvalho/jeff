@@ -5,7 +5,9 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -44,8 +46,13 @@ public class Buttons {
 	public static JTextField txtUsuario;
 
 	public static JFrame Botoes() {
+		
+		Date dataHoraAtual = new Date();
+		String dataAgora = new SimpleDateFormat("dd/MM/yyyy").format(dataHoraAtual);
+		
+		
 
-		//Cria um BufferedImage vazio, que vai receber a imagem
+		// Cria um BufferedImage vazio, que vai receber a imagem
 		BufferedImage btnFelizIcon = null;
 		BufferedImage btnTristeIcon = null;
 		BufferedImage btnMotivacionalIcon = null;
@@ -59,28 +66,36 @@ public class Buttons {
 		BufferedImage btnFundoIcon = null;
 		BufferedImage btnMostrarSenhaIcon = null;
 
-		//tenta encontrar o arquivo do ícone e adicionar à variavel
+		// tenta encontrar o arquivo do ícone e adicionar à variavel
 		try {
 			btnFelizIcon = ImageIO.read(new File("img/icons/feliz_button.png"));
-			btnTristeIcon = ImageIO.read(new File("img/icons/triste_button.png"));
-			btnMotivacionalIcon = ImageIO.read(new File("img/icons/motivacional_button.png"));
-			btnPerguntaIcon = ImageIO.read(new File("img/icons/pergunta_button.png"));
+			btnTristeIcon = ImageIO
+					.read(new File("img/icons/triste_button.png"));
+			btnMotivacionalIcon = ImageIO.read(new File(
+					"img/icons/motivacional_button.png"));
+			btnPerguntaIcon = ImageIO.read(new File(
+					"img/icons/pergunta_button.png"));
 			btnSairIcon = ImageIO.read(new File("img/icons/sair_button.png"));
-			btnVoltarIcon = ImageIO.read(new File("img/icons/voltar_button.png"));
-			btnNovaFraseIcon = ImageIO.read(new File("img/icons/mais_button.png"));
-			btnSalvarIcon = ImageIO.read(new File("img/icons/salvar_button.png"));
+			btnVoltarIcon = ImageIO
+					.read(new File("img/icons/voltar_button.png"));
+			btnNovaFraseIcon = ImageIO.read(new File(
+					"img/icons/mais_button.png"));
+			btnSalvarIcon = ImageIO
+					.read(new File("img/icons/salvar_button.png"));
 			btnOk = ImageIO.read(new File("img/icons/ok_button.png"));
 			btnFundoIcon = ImageIO.read(new File("img/icons/fundo_button.png"));
-			btnEntrarIcon = ImageIO.read(new File("img/icons/entrar_button.png"));
+			btnEntrarIcon = ImageIO
+					.read(new File("img/icons/entrar_button.png"));
 			btnMostrarSenhaIcon = ImageIO.read(new File("img/icons/olho.png"));
-			
+
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 
-		//Adiciona a variavel com a imagem no botão e cria o botão
-		//Botão Fundo serve para gerar a background image pra frase. Na classe "Fundo" fica o randomizador da imagem.
+		// Adiciona a variavel com a imagem no botão e cria o botão
+		// Botão Fundo serve para gerar a background image pra frase. Na classe
+		// "Fundo" fica o randomizador da imagem.
 		JButton btnFundo = new JButton(new ImageIcon(btnFundoIcon));
 		btnFundo.setBounds(585, 155, 45, 45);
 		btnFundo.setToolTipText("Gerar imagem");
@@ -89,7 +104,8 @@ public class Buttons {
 		btnFundo.setHorizontalAlignment(SwingConstants.CENTER);
 		btnFundo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (Main.frase != null && Main.frase != "\n                       Selecione uma categoria para gerar sua frase") {
+				if (Main.frase != null
+						&& Main.frase != "\n                       Selecione uma categoria para gerar sua frase") {
 					Fundo.ImagemFundo();
 
 				} else {
@@ -97,12 +113,12 @@ public class Buttons {
 							"Gere uma frase antes de exportar!",
 							"Falha ao exportar",
 							JOptionPane.INFORMATION_MESSAGE);
-					
+
 				}
 			}
 		});
 
-		//Simples botão de OK depois do Login.
+		// Simples botão de OK depois do Login.
 		JButton btnInicio = new JButton(new ImageIcon(btnOk));
 		btnInicio.setBorderPainted(false);
 		btnInicio.setContentAreaFilled(false);
@@ -116,7 +132,7 @@ public class Buttons {
 			}
 		});
 
-		//Botão que chama a função de adicionar frases novas.
+		// Botão que chama a função de adicionar frases novas.
 		JButton btnNovaFrase = new JButton(new ImageIcon(btnNovaFraseIcon));
 		btnNovaFrase.setBorderPainted(false);
 		btnNovaFrase.setContentAreaFilled(false);
@@ -139,13 +155,16 @@ public class Buttons {
 		btnFeliz.setContentAreaFilled(false);
 		btnFeliz.setBounds(35, 155, 45, 45);
 		btnFeliz.setHorizontalAlignment(SwingConstants.CENTER);
+		if(!dataAgora.equals(Mapeamento.dataGerada)){
 		btnFeliz.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frame.dispose();
 				Mapeamento.Geracao();
 				Mapeamento.Map("feliz");
+				System.out.println(dataAgora + " , "+Mapeamento.dataGerada);
 			}
 		});
+		}
 		btnFelizAdd = new JButton(new ImageIcon(btnFelizIcon));
 		btnFelizAdd.setToolTipText("Feliz");
 		btnFelizAdd.setBorderPainted(false);
@@ -315,7 +334,7 @@ public class Buttons {
 			}
 		});
 
-		//Botão salvar sempre apenas pra salvar frases novas.
+		// Botão salvar sempre apenas pra salvar frases novas.
 		btnSalvar = new JButton(new ImageIcon(btnSalvarIcon));
 		btnSalvar.setToolTipText("Salvar");
 		btnSalvar.setBorderPainted(false);
@@ -340,11 +359,12 @@ public class Buttons {
 		btnEntrar.setHorizontalAlignment(SwingConstants.CENTER);
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (Main.txtUsuario.getText().equals("admin") && Arrays.equals(txtSenha.getPassword(), new char[] { 'a',
-								'd', 'm', 'i', 'n' })) {
-							Inicio.TelaInicio();
-							Frames.frameLogin.dispose();
-						 
+				if (Main.txtUsuario.getText().equals("admin")
+						&& Arrays.equals(txtSenha.getPassword(), new char[] {
+								'a', 'd', 'm', 'i', 'n' })) {
+					Inicio.TelaInicio();
+					Frames.frameLogin.dispose();
+
 				} else
 					JOptionPane
 							.showMessageDialog(
@@ -354,7 +374,6 @@ public class Buttons {
 									JOptionPane.INFORMATION_MESSAGE);
 
 			}
-			
 
 		});
 
@@ -376,7 +395,7 @@ public class Buttons {
 
 		});
 
-		//Adiciona os botões a cada frame deles
+		// Adiciona os botões a cada frame deles
 		Frames.frame.getContentPane().add(btnFeliz);
 		Frames.frame.getContentPane().add(btnTriste);
 		Frames.frame.getContentPane().add(btnMotivacional);

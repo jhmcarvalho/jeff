@@ -19,6 +19,7 @@ import javax.swing.SwingUtilities;
 import util.Buttons;
 import util.Frames;
 import util.Horario;
+import util.Mapeamento;
 
 public class Main {
 
@@ -42,8 +43,9 @@ public class Main {
 	 */
 
 	public static void main(String[] args) throws FileNotFoundException {
-		Login();
+		//Login();
 		// Inicio();
+		Mapeamento.Geracao();
 		// Fundo();
 		// Mapeamento.Geracao();
 
