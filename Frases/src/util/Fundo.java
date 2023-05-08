@@ -30,7 +30,7 @@ public class Fundo {
 		try {
 			Random rand = new Random();
 			randomNum = rand.nextInt((10 - 1) + 1) + 1;
-			// randomNum = 21;
+			// randomNum = 4;
 			img = ImageIO.read(new File("img/Fundo" + randomNum + ".jpg"));
 
 		} catch (IOException e) {
@@ -63,12 +63,12 @@ public class Fundo {
 		try {
 			Random rand = new Random();
 			fonteRandom = rand.nextInt((8 - 1) + 1) + 1;
-			// fonteRandom = 9;
+			// fonteRandom = 2;
 
 			if (fonteRandom == 1) {
 				Result.setFont(new Font("Colonna MT", Font.PLAIN, 25));
 			} else if (fonteRandom == 2) {
-				Result.setFont(new Font("Ink Free", Font.PLAIN, 21));
+				Result.setFont(new Font("Ink Free", Font.PLAIN, 24));
 			} else if (fonteRandom == 3) {
 				Result.setFont(new Font("Jokerman", Font.PLAIN, 20));
 			} else if (fonteRandom == 4) {
