@@ -40,6 +40,7 @@ public class Buttons {
 	public static JButton btnAddFrase;
 	public static JButton btnSair;
 	public static JButton btnSairAdd;
+	public static JButton btnExportarImg;
 	public static String line;
 	public static String tipoAdd;
 	public static JPasswordField txtSenha;
@@ -393,6 +394,7 @@ public class Buttons {
 			}
 
 		});
+	
 
 		// Adiciona os botões a cada frame deles
 		Frames.frame.getContentPane().add(btnFeliz);
