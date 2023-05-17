@@ -1,44 +1,56 @@
 package util;
 
 import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
 import java.awt.Image;
 import java.awt.Insets;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
+import javax.swing.text.StyledDocument;
 
 public class Fundo {
 	public static int randomNum;
 	public static int fonteRandom;
 	public static String Resultado;
-	public static JTextArea Result;
 	public static JFrame janela;
 	public static ImageIcon imageIcon;
 	public static BufferedImage img;
 	public static int num;
-	public static JLabel label;
+	public static JLabel imgFundo;
+	public static int height = 960;
+	public static int width = 582;
 
 	public static void ImagemFundo() {
-		label = new JLabel();
+		imgFundo = new JLabel();
 		// obtem e coloca a imagem dentro de uma BufferedImage
 		BufferedImage img = null;
 
 		try {
 			Random rand = new Random();
 			randomNum = rand.nextInt((10 - 1) + 1) + 1;
-			// randomNum = 4;
+			randomNum = 22;
 			img = ImageIO.read(new File("img/Fundo" + randomNum + ".jpg"));
 
 		} catch (IOException e) {
@@ -46,119 +58,129 @@ public class Fundo {
 		}
 
 		// // Cria e configura o texto no JLabel
-		label.setText("Teste2");
-		label.setFont(new Font("Calibri", Font.BOLD, 100));
-		label.setForeground(Color.white);
-		label.setBounds(0, 0, 867, 440);
+		imgFundo.setFont(new Font("Calibri", Font.BOLD, 100));
+		imgFundo.setForeground(Color.white);
+		imgFundo.setHorizontalAlignment(SwingConstants.CENTER);
+		imgFundo.setBounds(0, 0, width, height);
 
-		Result = new JTextArea();
-		Result.setLineWrap(true);
-		Result.setWrapStyleWord(true);
-		Result.setBounds(340, 240, 487, 140);
-		Result.setVisible(true);
-		if (randomNum == 10 || randomNum == 15) {
-			Result.setForeground(Color.BLACK);
-		} else
-			Result.setForeground(Color.WHITE);
+		janela = new JFrame();
+		janela.setBounds(600, 0, width, height);
+		janela.setSize(width, height);
+		janela.getContentPane().setLayout(null);
 
-		if (randomNum == 12) {
-			Result.setBounds(30, 200, 487, 140);
-		}
-		if (randomNum == 16) {
-			Result.setBounds(340, 100, 487, 140);
-		}
+		int tamanhoMaximo = 20;
+
+	        // Dividir o texto em partes
+	        String[] palavras = Resultado.split("\\s+");
+	        StringBuilder sb = new StringBuilder();
+	        String parteAtual = "";
+
+	        for (String palavra : palavras) {
+	            if (parteAtual.length() + palavra.length() <= tamanhoMaximo) {
+	                parteAtual += palavra + " ";
+	            } else {
+	                sb.append(parteAtual.trim()).append("<br>");
+	                parteAtual = palavra + " ";
+	            }
+	        }
+
+	        if (!parteAtual.isEmpty()) {
+	            sb.append(parteAtual.trim());
+	        }
+
+	        String html = "<html><body style='line-height: 1.5; text-align: center;'>" +
+	                sb.toString() + "</body></html>";
+
+	        // Criar uma JLabel com o texto formatado
+	        JLabel jLabel = new JLabel(html);
+	        jLabel.setBounds(20, 100, 520, 640);
+	       // jLabel.setBorder(BorderFactory.createLineBorder(Color.WHITE));
+	        jLabel.setFont(new Font("Ink Free", Font.PLAIN, 25));
+	        jLabel.setForeground(Color.WHITE);
+	        jLabel.setHorizontalAlignment(SwingConstants.CENTER);
+	        
+	       janela.getContentPane().add(jLabel);
+
 
 		try {
 			Random rand = new Random();
-			fonteRandom = rand.nextInt((8 - 1) + 1) + 1;
-			// fonteRandom = 2;
+			fonteRandom = rand.nextInt((7 - 1) + 1) + 1;
+			 fonteRandom = 7;
 
 			if (fonteRandom == 1) {
-				Result.setFont(new Font("Colonna MT", Font.PLAIN, 25));
+				jLabel.setFont(new Font("Colonna MT", Font.PLAIN, 44));
 			} else if (fonteRandom == 2) {
-				Result.setFont(new Font("Ink Free", Font.PLAIN, 24));
+				jLabel.setFont(new Font("Ink Free", Font.PLAIN, 40));
 			} else if (fonteRandom == 3) {
-				Result.setFont(new Font("Jokerman", Font.PLAIN, 20));
+				jLabel.setFont(new Font("Jokerman", Font.PLAIN, 40));
 			} else if (fonteRandom == 4) {
-				Result.setFont(new Font("Segoe Print", Font.PLAIN, 20));
+				jLabel.setFont(new Font("Segoe Print", Font.PLAIN, 28));
 			} else if (fonteRandom == 5) {
-				Result.setFont(new Font("Arial", Font.PLAIN, 20));
+				jLabel.setFont(new Font("SimSun", Font.PLAIN, 30));
 			} else if (fonteRandom == 6) {
-				Result.setFont(new Font("SimSun", Font.PLAIN, 25));
+				jLabel.setFont(new Font("Stencil", Font.PLAIN, 30));
 			} else if (fonteRandom == 7) {
-				Result.setFont(new Font("Stencil", Font.PLAIN, 22));
-			} else if (fonteRandom == 8) {
-				Result.setFont(new Font("Viner Hand ITC", Font.PLAIN, 22));
+				jLabel.setFont(new Font("Viner Hand ITC", Font.PLAIN, 35));
 			}
-
+			//System.out.println("fonte" + fonteRandom);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		// Result.setFont(new Font("Colonna MT", Font.PLAIN, 25));
-		Result.setMargin(new Insets(5, 5, 5, 5));
-		Result.setText(Resultado);
-		Result.setColumns(10);
-		Result.setEditable(false);
-		Result.setBackground(new Color(0, 0, 0, 0));
-
 		// Cria e configura a janela
-		janela = new JFrame();
-		janela.setBounds(850, 100, 867, 440);
-		janela.getContentPane().setLayout(null);
 
 		// Força a imagem a ficar do tamanho da janela
-		Image dimg = img.getScaledInstance(janela.getWidth(),
-				janela.getHeight(), Image.SCALE_SMOOTH);
+		Image dimg = img.getScaledInstance(width, height, Image.SCALE_SMOOTH);
 
 		imageIcon = new ImageIcon(dimg);
-		label.setIcon(imageIcon);
+		imgFundo.setIcon(imageIcon);
 
 		// Cria o botão de exportar imagem para jpg
-				JButton btnExportarImg = new JButton("BOTAO");
-				btnExportarImg.setBorderPainted(true);
-				btnExportarImg.setContentAreaFilled(true);
-				btnExportarImg.setBounds(790, 10, 47, 20);
-				btnExportarImg.setHorizontalAlignment(SwingConstants.CENTER);
-				btnExportarImg.addActionListener(new ActionListener() {
-				    public void actionPerformed(ActionEvent e) {
-				    	num++;
-				        Fundo.exportarJpg();
-				    }
-				});
-				
+		JButton btnExportarImg = new JButton("BOTAO");
+		btnExportarImg.setBorderPainted(true);
+		btnExportarImg.setContentAreaFilled(true);
+		btnExportarImg.setBounds(470, 20, 70, 20);
+		btnExportarImg.setHorizontalAlignment(SwingConstants.CENTER);
+		btnExportarImg.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				num++;
+				Fundo.exportarJpg();
+			}
+		});
+
 		// Mostra a janela e adiciona o label a ela
 		janela.setVisible(true);
-		janela.add(Result);
-		janela.add(label);
+		// janela.add(Result);
+		janela.add(imgFundo);
 		janela.getContentPane().add(btnExportarImg);
-		
+
 	}
-	
+
 	public static void exportarJpg() {
-		 try {
-	    	// Cria um BufferedImage a partir do JFrame
-	    	int w = label.getWidth();
-	    	int h = label.getHeight();
-	        BufferedImage image = new BufferedImage(w,h, BufferedImage.TYPE_INT_RGB);
-	       
-	        janela.paint(image.getGraphics());
+		try {
+			// Cria um BufferedImage a partir do JFrame
+			int w = imgFundo.getWidth();
+			int h = imgFundo.getHeight();
+			BufferedImage image = new BufferedImage(w, h,
+					BufferedImage.TYPE_INT_RGB);
+			janela.setSize(imgFundo.getWidth(), imgFundo.getHeight());
+			janela.paint(image.getGraphics());
 
-	        // Cria o diretório de destino, caso não exista
-	        File destino = new File("D:\\Dev\\jeff\\Frases\\exportados");
-	        if (!destino.exists()) {
-	            destino.mkdirs();
-	        }
+			// Cria o diretório de destino, caso não exista
+			File destino = new File("D:\\Dev\\jeff\\Frases\\exportados");
+			if (!destino.exists()) {
+				destino.mkdirs();
+			}
 
-	        // Cria o arquivo .jpg no diretório de destino
-	        File arquivo = new File(destino, "Img " + num + ".jpg");
-	        ImageIO.write(image, "jpg", arquivo);
-	        System.out.println(num);
-	        System.out.println("Imagem exportada com sucesso para " + arquivo.getAbsolutePath());
-	        
-	    	
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	    }
+			// Cria o arquivo .jpg no diretório de destino
+			File arquivo = new File(destino, "Img " + num + ".jpg");
+			ImageIO.write(image, "jpg", arquivo);
+			System.out.println(num);
+			System.out.println("Imagem exportada com sucesso para "
+					+ arquivo.getAbsolutePath());
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
