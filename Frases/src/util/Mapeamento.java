@@ -46,10 +46,19 @@ public class Mapeamento {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			} else if (tipo == "pergunta") {
+			} else if (tipo == "romantico") {
 				try {
-					s = choose(new File("txt/Pergunta.txt"));
+					s = choose(new File("txt/Romantico.txt"));
 					Fundo.Resultado = s;
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			} else if (tipo == "biscoito") {
+				try {
+					s = choose(new File("txt/Biscoito.txt"));
+					Fundo.Resultado = s;
+					RandomNumberBiscoito.gerarNumerosAleatorios();
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

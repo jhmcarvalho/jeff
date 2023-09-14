@@ -50,9 +50,9 @@ public class MetodoAdd {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			} else if (tipo == "pergunta") {
+			} else if (tipo == "romantico") {
 				try {
-					FileWriter fw = new FileWriter("txt/Pergunta.txt", true);
+					FileWriter fw = new FileWriter("txt/Romantico.txt", true);
 					BufferedWriter conexao = new BufferedWriter(fw);
 					conexao.write(frase);
 					conexao.newLine();
@@ -60,7 +60,16 @@ public class MetodoAdd {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				
+			} else if (tipo == "biscoito") {
+				try {
+					FileWriter fw = new FileWriter("txt/Biscoito.txt", true);
+					BufferedWriter conexao = new BufferedWriter(fw);
+					conexao.write(frase);
+					conexao.newLine();
+					conexao.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
 			JOptionPane.showMessageDialog(null, "Frase salva com sucesso");
 			Main.NovaFrase.setText(null);

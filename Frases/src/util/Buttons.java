@@ -35,8 +35,10 @@ public class Buttons {
 	public static JButton btnTristeAdd;
 	public static JButton btnMotivacional;
 	public static JButton btnMotivacionalAdd;
-	public static JButton btnPergunta;
-	public static JButton btnPerguntaAdd;
+	public static JButton btnRomantico;
+	public static JButton btnRomanticoAdd;
+	public static JButton btnBiscoito;
+	public static JButton btnBiscoitoAdd;
 	public static JButton btnAddFrase;
 	public static JButton btnSair;
 	public static JButton btnSairAdd;
@@ -57,7 +59,8 @@ public class Buttons {
 		BufferedImage btnFelizIcon = null;
 		BufferedImage btnTristeIcon = null;
 		BufferedImage btnMotivacionalIcon = null;
-		BufferedImage btnPerguntaIcon = null;
+		BufferedImage btnRomanticoIcon = null;
+		BufferedImage btnBiscoitoIcon = null;
 		BufferedImage btnSairIcon = null;
 		BufferedImage btnVoltarIcon = null;
 		BufferedImage btnNovaFraseIcon = null;
@@ -74,8 +77,10 @@ public class Buttons {
 					.read(new File("img/icons/triste_button.png"));
 			btnMotivacionalIcon = ImageIO.read(new File(
 					"img/icons/motivacional_button.png"));
-			btnPerguntaIcon = ImageIO.read(new File(
-					"img/icons/pergunta_button.png"));
+			btnRomanticoIcon = ImageIO.read(new File(
+					"img/icons/romantico.png"));
+			btnBiscoitoIcon = ImageIO.read(new File(
+					"img/icons/biscoito.png"));
 			btnSairIcon = ImageIO.read(new File("img/icons/sair_button.png"));
 			btnVoltarIcon = ImageIO
 					.read(new File("img/icons/voltar_button.png"));
@@ -114,8 +119,10 @@ public class Buttons {
 							"Gere uma frase antes de exportar!",
 							"Falha ao exportar",
 							JOptionPane.INFORMATION_MESSAGE);
+					
 
 				}
+				RandomNumberBiscoito.resultado2 = null;
 			}
 		});
 
@@ -130,6 +137,7 @@ public class Buttons {
 				Frames.frameInicio.dispose();
 				Mapeamento.Geracao();
 				Main.frase = "\n                       Selecione uma categoria para gerar sua frase";
+				RandomNumberBiscoito.resultado2 = null;
 			}
 		});
 
@@ -146,6 +154,7 @@ public class Buttons {
 				Frames.frame.dispose();
 				Frames.frameAdd.dispose();
 				Mapeamento.Categoria();
+				RandomNumberBiscoito.resultado2 = null;
 
 			}
 		});
@@ -162,6 +171,7 @@ public class Buttons {
 				Frames.frame.dispose();
 				Mapeamento.Geracao();
 				Mapeamento.Map("feliz");
+				RandomNumberBiscoito.resultado2 = null;
 			}
 		});
 		}
@@ -177,6 +187,7 @@ public class Buttons {
 				tipoAdd = "feliz";
 				Frames.frame.dispose();
 				MetodoAdd.AddFrase();
+				RandomNumberBiscoito.resultado2 = null;
 			}
 		});
 
@@ -184,20 +195,21 @@ public class Buttons {
 		btnTriste.setToolTipText("Triste");
 		btnTriste.setBorderPainted(false);
 		btnTriste.setContentAreaFilled(false);
-		btnTriste.setBounds(135, 155, 45, 45);
+		btnTriste.setBounds(115, 155, 45, 45);
 		btnTriste.setHorizontalAlignment(SwingConstants.CENTER);
 		btnTriste.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frame.dispose();
 				Mapeamento.Geracao();
 				Mapeamento.Map("triste");
+				RandomNumberBiscoito.resultado2 = null;
 			}
 		});
 		btnTristeAdd = new JButton(new ImageIcon(btnTristeIcon));
 		btnTristeAdd.setToolTipText("Triste");
 		btnTristeAdd.setBorderPainted(false);
 		btnTristeAdd.setContentAreaFilled(false);
-		btnTristeAdd.setBounds(135, 155, 45, 45);
+		btnTristeAdd.setBounds(115, 155, 45, 45);
 		btnTristeAdd.setHorizontalAlignment(SwingConstants.CENTER);
 		btnTristeAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -205,6 +217,7 @@ public class Buttons {
 				tipoAdd = "triste";
 				Frames.frame.dispose();
 				MetodoAdd.AddFrase();
+				RandomNumberBiscoito.resultado2 = null;
 			}
 		});
 
@@ -212,20 +225,21 @@ public class Buttons {
 		btnMotivacional.setToolTipText("Motivacional");
 		btnMotivacional.setBorderPainted(false);
 		btnMotivacional.setContentAreaFilled(false);
-		btnMotivacional.setBounds(235, 155, 45, 45);
+		btnMotivacional.setBounds(200, 155, 45, 45);
 		btnMotivacional.setHorizontalAlignment(SwingConstants.CENTER);
 		btnMotivacional.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frame.dispose();
 				Mapeamento.Geracao();
 				Mapeamento.Map("motivacao");
+				RandomNumberBiscoito.resultado2 = null;
 			}
 		});
 		btnMotivacionalAdd = new JButton(new ImageIcon(btnMotivacionalIcon));
 		btnMotivacionalAdd.setToolTipText("Motivacional");
 		btnMotivacionalAdd.setBorderPainted(false);
 		btnMotivacionalAdd.setContentAreaFilled(false);
-		btnMotivacionalAdd.setBounds(235, 155, 45, 45);
+		btnMotivacionalAdd.setBounds(200, 155, 45, 45);
 		btnMotivacionalAdd.setHorizontalAlignment(SwingConstants.CENTER);
 		btnMotivacionalAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -233,34 +247,67 @@ public class Buttons {
 				tipoAdd = "motivacao";
 				Frames.frame.dispose();
 				MetodoAdd.AddFrase();
+				RandomNumberBiscoito.resultado2 = null;
 			}
 		});
 
-		btnPergunta = new JButton(new ImageIcon(btnPerguntaIcon));
-		btnPergunta.setToolTipText("Pergunta");
-		btnPergunta.setBorderPainted(false);
-		btnPergunta.setContentAreaFilled(false);
-		btnPergunta.setBounds(335, 155, 45, 45);
-		btnPergunta.setHorizontalAlignment(SwingConstants.CENTER);
-		btnPergunta.addActionListener(new ActionListener() {
+		btnRomantico = new JButton(new ImageIcon(btnRomanticoIcon));
+		btnRomantico.setToolTipText("Romântico");
+		btnRomantico.setBorderPainted(false);
+		btnRomantico.setContentAreaFilled(false);
+		btnRomantico.setBounds(280, 155, 45, 45);
+		btnRomantico.setHorizontalAlignment(SwingConstants.CENTER);
+		btnRomantico.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frame.dispose();
 				Mapeamento.Geracao();
-				Mapeamento.Map("pergunta");
+				Mapeamento.Map("romantico");
+				RandomNumberBiscoito.resultado2 = null;
 			}
 		});
-		btnPerguntaAdd = new JButton(new ImageIcon(btnPerguntaIcon));
-		btnPerguntaAdd.setToolTipText("Pergunta");
-		btnPerguntaAdd.setBorderPainted(false);
-		btnPerguntaAdd.setContentAreaFilled(false);
-		btnPerguntaAdd.setBounds(335, 155, 45, 45);
-		btnPerguntaAdd.setHorizontalAlignment(SwingConstants.CENTER);
-		btnPerguntaAdd.addActionListener(new ActionListener() {
+		btnRomanticoAdd = new JButton(new ImageIcon(btnRomanticoIcon));
+		btnRomanticoAdd.setToolTipText("Romântico");
+		btnRomanticoAdd.setBorderPainted(false);
+		btnRomanticoAdd.setContentAreaFilled(false);
+		btnRomanticoAdd.setBounds(280, 155, 45, 45);
+		btnRomanticoAdd.setHorizontalAlignment(SwingConstants.CENTER);
+		btnRomanticoAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Frames.frameAdd.dispose();
-				tipoAdd = "pergunta";
+				tipoAdd = "romantico";
 				Frames.frame.dispose();
 				MetodoAdd.AddFrase();
+				RandomNumberBiscoito.resultado2 = null;
+			}
+		});
+		
+		btnBiscoito = new JButton(new ImageIcon(btnBiscoitoIcon));
+		btnBiscoito.setToolTipText("Biscoito da Sorte");
+		btnBiscoito.setBorderPainted(false);
+		btnBiscoito.setContentAreaFilled(false);
+		btnBiscoito.setBounds(360, 155, 45, 45);
+		btnBiscoito.setHorizontalAlignment(SwingConstants.CENTER);
+		btnBiscoito.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frame.dispose();
+				Mapeamento.Geracao();
+				Mapeamento.Map("biscoito");
+				RandomNumberBiscoito.gerarNumerosAleatorios();
+			}
+		});
+		btnBiscoitoAdd = new JButton(new ImageIcon(btnBiscoitoIcon));
+		btnBiscoitoAdd.setToolTipText("Biscoito da Sorte");
+		btnBiscoitoAdd.setBorderPainted(false);
+		btnBiscoitoAdd.setContentAreaFilled(false);
+		btnBiscoitoAdd.setBounds(360, 155, 45, 45);
+		btnBiscoitoAdd.setHorizontalAlignment(SwingConstants.CENTER);
+		btnBiscoitoAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frames.frameAdd.dispose();
+				tipoAdd = "biscoito";
+				Frames.frame.dispose();
+				MetodoAdd.AddFrase();
+				RandomNumberBiscoito.resultado2 = null;
 			}
 		});
 
@@ -282,6 +329,7 @@ public class Buttons {
 				if (retorno == JOptionPane.YES_OPTION) {
 					System.exit(0);
 				}
+				RandomNumberBiscoito.resultado2 = null;
 			}
 		});
 		btnSairAdd = new JButton(new ImageIcon(btnSairIcon));
@@ -302,6 +350,7 @@ public class Buttons {
 				if (retorno == JOptionPane.YES_OPTION) {
 					System.exit(0);
 				}
+				RandomNumberBiscoito.resultado2 = null;
 			}
 		});
 
@@ -317,6 +366,7 @@ public class Buttons {
 				Frames.frame.dispose();
 				Frames.frameNovaFrase.dispose();
 				Mapeamento.Geracao();
+				RandomNumberBiscoito.resultado2 = null;
 			}
 		});
 		btnVoltarAdd = new JButton(new ImageIcon(btnVoltarIcon));
@@ -331,6 +381,7 @@ public class Buttons {
 				Frames.frame.dispose();
 				Frames.frameNovaFrase.dispose();
 				Mapeamento.Geracao();
+				RandomNumberBiscoito.resultado2 = null;
 			}
 		});
 
@@ -348,6 +399,7 @@ public class Buttons {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
+				RandomNumberBiscoito.resultado2 = null;
 			}
 		});
 
@@ -400,12 +452,14 @@ public class Buttons {
 		Frames.frame.getContentPane().add(btnFeliz);
 		Frames.frame.getContentPane().add(btnTriste);
 		Frames.frame.getContentPane().add(btnMotivacional);
-		Frames.frame.getContentPane().add(btnPergunta);
+		Frames.frame.getContentPane().add(btnRomantico);
+		Frames.frame.getContentPane().add(btnBiscoito);
 		Frames.frame.getContentPane().add(btnSair);
 		Frames.frameAdd.getContentPane().add(btnFelizAdd);
 		Frames.frameAdd.getContentPane().add(btnTristeAdd);
 		Frames.frameAdd.getContentPane().add(btnMotivacionalAdd);
-		Frames.frameAdd.getContentPane().add(btnPerguntaAdd);
+		Frames.frameAdd.getContentPane().add(btnRomanticoAdd);
+		Frames.frameAdd.getContentPane().add(btnBiscoitoAdd);
 		Frames.frameAdd.getContentPane().add(btnSairAdd);
 		Frames.frameAdd.getContentPane().add(btnVoltar);
 		Frames.frameNovaFrase.getContentPane().add(btnSalvar);

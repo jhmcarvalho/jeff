@@ -1,8 +1,10 @@
 package util;
 
 import java.awt.Color;
+import java.awt.Font;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class Frames {
 	public static JFrame frame;
@@ -20,6 +22,7 @@ public class Frames {
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.getContentPane().setLayout(null);
 	frame.getContentPane().setBackground(new java.awt.Color(220, 230, 254));
+	
 	
 	frameAdd = new JFrame("Frase do dia");
 	frameAdd.setBounds(900, 100, 667, 250);

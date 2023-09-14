@@ -20,6 +20,7 @@ import util.Buttons;
 import util.Frames;
 import util.Horario;
 import util.Mapeamento;
+import util.RandomNumberBiscoito;
 
 public class Main {
 
@@ -43,9 +44,9 @@ public class Main {
 	 */
 
 	public static void main(String[] args) throws FileNotFoundException {
-		//Login();
-		// Inicio();
-		Mapeamento.Geracao();
+		 Login();
+		 //Inicio();
+		 //  Mapeamento.Geracao();
 		// Fundo();
 		// Mapeamento.Geracao();
 
@@ -120,6 +121,15 @@ public class Main {
 		lbsuafrase.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 18));
 		lbsuafrase.setBounds(142, 39, 325, 27);
 		Frames.frame.getContentPane().add(lbsuafrase);
+		
+		if(RandomNumberBiscoito.resultado2 != null){
+		JLabel lbNumeroBiscoito = new JLabel();
+		lbNumeroBiscoito.setText(RandomNumberBiscoito.resultado2);
+		lbNumeroBiscoito.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 15));
+		lbNumeroBiscoito.setBounds(10, 02, 525, 27);
+		System.out.println(RandomNumberBiscoito.resultado2);
+		Frames.frame.getContentPane().add(lbNumeroBiscoito);
+		}
 		txtFrases = new JTextArea();
 		txtFrases.setLineWrap(true);
 		txtFrases.setWrapStyleWord(true);
