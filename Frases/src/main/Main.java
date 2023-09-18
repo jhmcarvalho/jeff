@@ -44,9 +44,9 @@ public class Main {
 	 */
 
 	public static void main(String[] args) throws FileNotFoundException {
-		 Login();
+		 //Login();
 		 //Inicio();
-		 //  Mapeamento.Geracao();
+		   Mapeamento.Geracao();
 		// Fundo();
 		// Mapeamento.Geracao();
 

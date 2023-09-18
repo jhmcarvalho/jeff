@@ -1,7 +1,9 @@
 package util;
 
+import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -151,6 +153,11 @@ public class Fundo {
 			int h = imgFundo.getHeight();
 			BufferedImage image = new BufferedImage(w, h,
 					BufferedImage.TYPE_INT_RGB);
+			
+			 // Define a opacidade para 50% (0.5)
+	        Graphics2D g2d = image.createGraphics();
+	        g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f));
+			
 			janela.setSize(imgFundo.getWidth(), imgFundo.getHeight());
 			janela.paint(image.getGraphics());
 

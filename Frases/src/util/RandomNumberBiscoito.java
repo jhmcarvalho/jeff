@@ -22,7 +22,7 @@ public class RandomNumberBiscoito {
 
         for (int i = 0; i < 6; i++) {
             // Gere um número aleatório entre 0 e 99.
-            int numero = random.nextInt(100);
+            int numero = random.nextInt(61);
 
             // Formate o número para ter dois dígitos.
             String numeroFormatado = String.format("%02d", numero);
