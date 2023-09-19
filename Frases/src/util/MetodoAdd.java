@@ -15,58 +15,46 @@ import main.Main;
 
 public class MetodoAdd {
 
-
-	
 	public static void Add(String path, String tipo) throws IOException {
 		String frase = Main.NovaFrase.getText();
 		if (!frase.isEmpty()) {
 			if (tipo == "feliz") {
-				try {
-					FileWriter fw = new FileWriter("txt/Feliz.txt", true);
-					BufferedWriter conexao = new BufferedWriter(fw);
+				try (BufferedWriter conexao = new BufferedWriter(
+						new FileWriter("txt/Feliz.txt", true))) {
 					conexao.write(frase);
 					conexao.newLine();
-					conexao.close();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			} else if (tipo == "triste") {
-				try {
-					FileWriter fw = new FileWriter("txt/Triste.txt", true);
-					BufferedWriter conexao = new BufferedWriter(fw);
+				try (BufferedWriter conexao = new BufferedWriter(
+						new FileWriter("txt/Triste.txt", true))) {
 					conexao.write(frase);
 					conexao.newLine();
-					conexao.close();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			} else if (tipo == "motivacao") {
-				try {
-					FileWriter fw = new FileWriter("txt/Motivacional.txt", true);
-					BufferedWriter conexao = new BufferedWriter(fw);
+				try (BufferedWriter conexao = new BufferedWriter(
+						new FileWriter("txt/Motivacional.txt", true))) {
 					conexao.write(frase);
 					conexao.newLine();
-					conexao.close();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			} else if (tipo == "romantico") {
-				try {
-					FileWriter fw = new FileWriter("txt/Romantico.txt", true);
-					BufferedWriter conexao = new BufferedWriter(fw);
+				try (BufferedWriter conexao = new BufferedWriter(
+						new FileWriter("txt/Romantico.txt", true))) {
 					conexao.write(frase);
 					conexao.newLine();
-					conexao.close();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			} else if (tipo == "biscoito") {
-				try {
-					FileWriter fw = new FileWriter("txt/Biscoito.txt", true);
-					BufferedWriter conexao = new BufferedWriter(fw);
+				try (BufferedWriter conexao = new BufferedWriter(
+						new FileWriter("txt/Biscoito.txt", true))) {
 					conexao.write(frase);
 					conexao.newLine();
-					conexao.close();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -77,9 +65,9 @@ public class MetodoAdd {
 			JOptionPane.showMessageDialog(null, "Digite uma frase para salvar");
 
 	}
-	
+
 	public static void AddFrase() {
-		
+
 		JLabel NovaF = new JLabel("Digite a nova frase:", JLabel.CENTER);
 		NovaF.setFont(new Font("Tempus Sans ITC", Font.PLAIN, 26));
 		NovaF.setBounds(142, 39, 325, 27);
